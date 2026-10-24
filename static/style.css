@@ -232,3 +232,5 @@ time, .count, .kind, .eyebrow, .byline, .more, .tags, .site-header, .site-footer
 .prose th, .prose td { text-align: left; padding: var(--space-1) var(--space-2); border-bottom: 1px solid var(--rule); }
 .prose hr { border: none; border-top: 1px solid var(--rule); margin: var(--space-5) 0; }
 .broken-ref { color: var(--rating-bad); text-decoration: wavy underline; }
+
+.draft { font-family: var(--font-ui); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--rating-okay); border: 1px solid currentColor; border-radius: 3px; padding: 0 0.3em; vertical-align: middle; }

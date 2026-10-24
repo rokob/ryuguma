@@ -1,7 +1,7 @@
 {{/* One book in a list. */}}
 {{define "book-row"}}
 <li class="book-row">
-  <a class="title" href="{{.URL}}"><cite>{{.Title}}</cite></a>
+  <a class="title" href="{{.URL}}"><cite>{{.Title}}</cite>{{if .Draft}} <span class="draft">draft</span>{{end}}</a>
   {{- with .Book.Authors}} <span class="author">{{authors .}}</span>{{end}}
   {{- with .Book.Rating}} <span class="rating rating-{{.}}">{{.}}</span>{{end}}
   <time datetime="{{isodate .Date}}">{{date .Date}}</time>
@@ -11,7 +11,7 @@
 {{/* One post in a list. */}}
 {{define "post-row"}}
 <li class="post-row">
-  <a class="title" href="{{.URL}}">{{.Title}}</a>
+  <a class="title" href="{{.URL}}">{{.Title}}</a>{{if .Draft}} <span class="draft">draft</span>{{end}}
   <time datetime="{{isodate .Date}}">{{date .Date}}</time>
   <p class="excerpt">{{with .Summary}}{{excerpt 200 .}}{{else}}{{excerpt 200 .HTML}}{{end}}</p>
 </li>
