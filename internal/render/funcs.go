@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"html"
 	"html/template"
+	"net/url"
 	"regexp"
 	"slices"
 	"strings"
@@ -24,6 +25,14 @@ var funcs = template.FuncMap{
 	"excerpt":   excerpt,
 	"hasPrefix": strings.HasPrefix,
 	"short":     func(sha string) string { return sha[:min(8, len(sha))] },
+	// host names the site a link goes to, like "openlibrary.org".
+	"host": func(link string) string {
+		u, err := url.Parse(link)
+		if err != nil {
+			return link
+		}
+		return strings.TrimPrefix(u.Hostname(), "www.")
+	},
 	"capitalize": func(v any) string {
 		s := fmt.Sprint(v)
 		if s == "" {

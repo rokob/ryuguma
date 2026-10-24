@@ -56,7 +56,10 @@ type Entry struct {
 }
 
 type Book struct {
-	Authors  []string
+	Authors []string
+	// Link points at a canonical page for the book, like its Open Library
+	// or store page.
+	Link     string
 	ISBN     string
 	Added    Date
 	Started  Date

@@ -13,6 +13,7 @@
       {{- with .Pages}}<div><dt>Pages</dt><dd>{{.}}</dd></div>{{end}}
       {{- with .Form}}<div><dt>Form</dt><dd>{{capitalize .}}</dd></div>{{end}}
       {{- with .Rating}}<div><dt>Rating</dt><dd>{{template "rating" .}}</dd></div>{{end}}
+      {{- with .Link}}<div><dt>Link</dt><dd><a href="{{.}}">{{host .}}</a></dd></div>{{end}}
       {{- end}}
     </dl>
   </header>

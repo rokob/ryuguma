@@ -19,6 +19,7 @@ func Encode(e Entry) ([]byte, error) {
 		fm = bookFrontmatter{
 			Title:    e.Title,
 			Author:   b.Authors,
+			Link:     b.Link,
 			ISBN:     b.ISBN,
 			Added:    b.Added,
 			Started:  b.Started,

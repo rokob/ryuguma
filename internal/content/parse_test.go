@@ -12,6 +12,7 @@ func TestParseReadBook(t *testing.T) {
 	src := `---
 title: Dune
 author: Frank Herbert
+link: https://openlibrary.org/works/OL893415W
 started: 2015-07-20
 finished: 2015-08-03
 pages: 896
@@ -44,6 +45,9 @@ Spice.
 	}
 	if !slices.Equal(b.Authors, []string{"Frank Herbert"}) {
 		t.Errorf("Authors = %v", b.Authors)
+	}
+	if b.Link != "https://openlibrary.org/works/OL893415W" {
+		t.Errorf("Link = %q", b.Link)
 	}
 	if b.Pages != 896 || b.Rating != content.RatingGreat || b.Form != content.FormFiction {
 		t.Errorf("Pages/Rating/Form = %d %q %q", b.Pages, b.Rating, b.Form)
@@ -163,6 +167,7 @@ func TestParseErrors(t *testing.T) {
 		{"book missing title", "books/x.md", "---\nadded: 2020-01-01\n---\n", "title"},
 		{"bad rating", "books/x.md", "---\ntitle: x\nfinished: 2020-01-01\nrating: meh\n---\n", "rating"},
 		{"bad form", "books/x.md", "---\ntitle: x\nform: poetry\n---\n", "form"},
+		{"bad link", "books/x.md", "---\ntitle: x\nlink: amazon\n---\n", "link"},
 		{"bad date", "posts/x.md", "---\ntitle: x\ndate: last tuesday\n---\n", "date"},
 		{"finished before started", "books/x.md", "---\ntitle: x\nstarted: 2020-02-01\nfinished: 2020-01-01\n---\n", "before"},
 		{"unknown directory", "notes/x.md", "---\ntitle: x\n---\n", "notes"},

@@ -18,6 +18,7 @@ func TestEncodeBookFormat(t *testing.T) {
 		Body:  "Body text.\n",
 		Book: &content.Book{
 			Authors:  []string{"Robert M. Pirsig"},
+			Link:     "https://www.amazon.com/dp/0553299611",
 			Finished: content.MustDate("2017-03-10"),
 			Pages:    468,
 			Rating:   content.RatingGood,
@@ -31,6 +32,7 @@ func TestEncodeBookFormat(t *testing.T) {
 	want := `---
 title: 'Lila: An Inquiry into Morals'
 author: Robert M. Pirsig
+link: https://www.amazon.com/dp/0553299611
 finished: 2017-03-10
 pages: 468
 rating: good

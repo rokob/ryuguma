@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"net/url"
 	"path"
 	"regexp"
 	"slices"
@@ -23,6 +24,7 @@ var slugPattern = regexp.MustCompile(`^[a-z0-9]+(-[a-z0-9]+)*$`)
 type bookFrontmatter struct {
 	Title    string   `yaml:"title"`
 	Author   names    `yaml:"author,omitempty"`
+	Link     string   `yaml:"link,omitempty"`
 	ISBN     string   `yaml:"isbn,omitempty"`
 	Added    Date     `yaml:"added,omitempty"`
 	Started  Date     `yaml:"started,omitempty"`
@@ -88,6 +90,7 @@ func parse(p string, data []byte) (Entry, error) {
 		e.Title, e.Tags, e.Draft = f.Title, f.Tags, f.Draft
 		e.Book = &Book{
 			Authors:  f.Author,
+			Link:     f.Link,
 			ISBN:     f.ISBN,
 			Added:    f.Added,
 			Started:  f.Started,
@@ -171,9 +174,17 @@ func validate(e Entry) error {
 		if b.Form != "" && !slices.Contains(Forms, b.Form) {
 			errs = append(errs, fmt.Errorf("invalid form %q (want fiction or nonfiction)", b.Form))
 		}
+		if b.Link != "" && !isWebURL(b.Link) {
+			errs = append(errs, fmt.Errorf("invalid link %q (want a full http or https URL)", b.Link))
+		}
 		if !b.Started.IsZero() && !b.Finished.IsZero() && b.Finished.Before(b.Started) {
 			errs = append(errs, fmt.Errorf("finished %s is before started %s", b.Finished, b.Started))
 		}
 	}
 	return errors.Join(errs...)
+}
+
+func isWebURL(s string) bool {
+	u, err := url.Parse(s)
+	return err == nil && (u.Scheme == "https" || u.Scheme == "http") && u.Host != ""
 }

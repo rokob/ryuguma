@@ -19,7 +19,7 @@ func fixtureSite(t *testing.T) *site.Site {
 	entries := []content.Entry{
 		{Kind: content.KindBook, Slug: "dune", Path: "books/dune.md", Title: "Dune", Tags: []string{"scifi"},
 			Date: content.MustDate("2015-08-03"),
-			Book: &content.Book{Authors: []string{"Frank Herbert"}, Finished: content.MustDate("2015-08-03"), Pages: 896, Rating: content.RatingGreat}},
+			Book: &content.Book{Authors: []string{"Frank Herbert"}, Link: "https://www.amazon.com/dp/0441013597", Finished: content.MustDate("2015-08-03"), Pages: 896, Rating: content.RatingGreat}},
 		{Kind: content.KindBook, Slug: "james", Path: "books/james.md", Title: "James",
 			Date: content.MustDate("2026-05-01"),
 			Book: &content.Book{Authors: []string{"Percival Everett"}, Started: content.MustDate("2026-05-01")}},
@@ -73,7 +73,7 @@ func TestPagesShowTheirContent(t *testing.T) {
 	}
 	checks := map[string][]string{
 		"books/dune/index.html": {"<title>Dune · ryuguma</title>", "<cite>Dune</cite>", "Frank Herbert", "896", "Referenced by", `href="/posts/hello/"`,
-			`href="https://github.com/rokob/ryuguma/commit/c0ffee1234567890"><code>c0ffee12</code>`, `href="/books/dune/history/"`},
+			`href="https://github.com/rokob/ryuguma/commit/c0ffee1234567890"><code>c0ffee12</code>`, `href="/books/dune/history/"`, `<a href="https://www.amazon.com/dp/0441013597">amazon.com</a>`},
 		"books/dune/history/index.html": {"post about dune", `href="https://github.com/rokob/ryuguma/blob/aaaa1111bbbb2222/_posts/2015-08-03-dune.md"`, "Aug 3, 2015"},
 		"books/james/index.html":        {"reading now", "Started"},
 		"index.html":                    {"Hi, I write here.", "Reading now", "James", `href="/books/dune/"`, "A small idea."},
