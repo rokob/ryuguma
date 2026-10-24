@@ -1,6 +1,7 @@
 ---
 title: Ubik
 author: Philip K. Dick
+link: https://www.amazon.com/dp/0547572298
 finished: 2015-12-22
 pages: 240
 rating: okay

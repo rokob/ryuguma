@@ -1,6 +1,7 @@
 ---
 title: Armada
 author: Ernest Cline
+link: https://www.amazon.com/dp/B00TNDID0O
 finished: 2019-04-03
 pages: 368
 rating: good

@@ -1,6 +1,7 @@
 ---
 title: American Sniper
 author: [Chris Kyle, Scott McEwen, Jim DeFelice]
+link: https://www.amazon.com/dp/0062376330
 finished: 2015-01-04
 pages: 416
 rating: good

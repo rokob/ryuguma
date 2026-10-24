@@ -1,6 +1,7 @@
 ---
 title: Waiting For Godot
 author: Samuel Beckett
+link: https://www.amazon.com/dp/080214442X
 finished: 2015-01-01
 pages: 128
 rating: bad

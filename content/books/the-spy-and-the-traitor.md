@@ -1,6 +1,7 @@
 ---
 title: The Spy and the Traitor
 author: Ben Macintyre
+link: https://www.amazon.com/dp/B0782X9PFP
 finished: 2019-06-10
 pages: 345
 rating: good

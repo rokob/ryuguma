@@ -1,6 +1,7 @@
 ---
 title: Dune Messiah
 author: Frank Herbert
+link: https://www.amazon.com/dp/B0011UGNDG
 finished: 2015-10-28
 pages: 340
 rating: great

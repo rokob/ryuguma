@@ -1,6 +1,7 @@
 ---
 title: The Short and Tragic Life of Robert Peace
 author: Jeff Hobbs
+link: https://www.amazon.com/dp/B00GEEB7LC
 finished: 2015-03-02
 pages: 433
 rating: good

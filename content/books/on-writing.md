@@ -1,6 +1,7 @@
 ---
 title: On Writing
 author: Stephen King
+link: https://www.amazon.com/dp/B000FC0SIM
 finished: 2016-09-04
 pages: 320
 rating: great

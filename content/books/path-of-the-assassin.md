@@ -1,6 +1,7 @@
 ---
 title: Path of the Assassin
 author: Brad Thor
+link: https://www.amazon.com/dp/B000FC0SP0
 finished: 2015-06-16
 pages: 496
 rating: good

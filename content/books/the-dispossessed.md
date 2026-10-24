@@ -1,6 +1,7 @@
 ---
 title: The Dispossessed
 author: Ursula K. Le Guin
+link: https://www.amazon.com/dp/B000FC11GA
 finished: 2018-04-30
 pages: 387
 rating: great

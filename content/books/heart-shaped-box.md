@@ -1,6 +1,7 @@
 ---
 title: Heart-Shaped Box
 author: Joe Hill
+link: https://www.amazon.com/dp/B004O0UTVM
 finished: 2018-10-30
 pages: 402
 rating: great

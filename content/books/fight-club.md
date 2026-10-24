@@ -1,6 +1,7 @@
 ---
 title: Fight Club
 author: Chuck Palahniuk
+link: https://www.amazon.com/dp/B000U0O9FM
 finished: 2016-01-11
 pages: 221
 rating: great

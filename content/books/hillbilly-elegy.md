@@ -1,6 +1,7 @@
 ---
 title: Hillbilly Elegy
 author: J. D. Vance
+link: https://www.amazon.com/dp/B0166ISAS8
 finished: 2017-12-24
 pages: 273
 rating: good

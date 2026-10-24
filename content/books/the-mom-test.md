@@ -1,6 +1,7 @@
 ---
 title: The Mom Test
 author: Rob Fitzpatrick
+link: https://www.amazon.com/dp/B01H4G2J1U
 finished: 2020-05-18
 pages: 138
 rating: good

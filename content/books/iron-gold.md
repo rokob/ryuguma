@@ -1,6 +1,7 @@
 ---
 title: Iron Gold
 author: Pierce Brown
+link: https://www.amazon.com/dp/B01NAC6QVU
 finished: 2019-01-21
 pages: 605
 rating: okay

@@ -1,6 +1,7 @@
 ---
 title: Annihilation
 author: Jeff VanderMeer
+link: https://www.amazon.com/dp/0374104093
 finished: 2018-01-18
 pages: 208
 rating: good

@@ -1,6 +1,7 @@
 ---
 title: Everything I Never Told You
 author: Celeste Ng
+link: https://www.amazon.com/dp/B00G3L7V0C
 finished: 2015-02-01
 pages: 298
 rating: good

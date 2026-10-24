@@ -1,6 +1,7 @@
 ---
 title: Country of My Skull
 author: Antjie Krog
+link: https://www.amazon.com/dp/0812931297
 finished: 2016-12-13
 pages: 423
 rating: great

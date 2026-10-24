@@ -1,6 +1,7 @@
 ---
 title: It
 author: Stephen King
+link: https://www.amazon.com/dp/B018ER7K5I
 finished: 2017-09-02
 pages: 1169
 rating: great

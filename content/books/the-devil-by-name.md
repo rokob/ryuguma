@@ -1,6 +1,7 @@
 ---
 title: The Devil by Name
 author: Keith Rosson
+link: https://www.amazon.com/dp/B0CN8TPK2X
 finished: 2024-11-17
 pages: 376
 rating: good

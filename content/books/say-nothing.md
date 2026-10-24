@@ -1,6 +1,7 @@
 ---
 title: Say Nothing
 author: Patrick Radden Keefe
+link: https://www.amazon.com/dp/B07CWGBK5K
 finished: 2020-05-31
 pages: 350
 rating: great

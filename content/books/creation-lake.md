@@ -1,6 +1,7 @@
 ---
 title: Creation Lake
 author: Rachel Kushner
+link: https://www.amazon.com/dp/B0CV2933TR
 finished: 2024-12-30
 pages: 413
 rating: great

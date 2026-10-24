@@ -1,6 +1,7 @@
 ---
 title: Confronting The Classics
 author: Mary Beard
+link: https://www.amazon.com/dp/B00COQ6XLI
 finished: 2021-01-09
 pages: 322
 rating: okay

@@ -1,6 +1,7 @@
 ---
 title: The Sellout
 author: Paul Beatty
+link: https://www.amazon.com/dp/B00MLN1TT0
 finished: 2017-03-30
 pages: 305
 rating: great

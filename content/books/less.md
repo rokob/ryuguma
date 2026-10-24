@@ -1,6 +1,7 @@
 ---
 title: Less
 author: Andrew Sean Greer
+link: https://www.amazon.com/dp/B01MSICPW3
 finished: 2019-06-21
 pages: 273
 rating: great

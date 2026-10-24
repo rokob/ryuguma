@@ -1,6 +1,7 @@
 ---
 title: Flow (again)
 author: Mihaly Csikszentmihalyi
+link: https://www.amazon.com/dp/B000W94FE6
 finished: 2018-08-20
 pages: 336
 rating: good

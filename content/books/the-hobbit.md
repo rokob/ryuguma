@@ -1,6 +1,7 @@
 ---
 title: The Hobbit
 author: J.R.R. Tolkien
+link: https://www.amazon.com/dp/B007978NU6
 finished: 2025-08-21
 pages: 386
 rating: great

@@ -1,6 +1,7 @@
 ---
 title: Masters of Chaos
 author: Linda Robinson
+link: https://www.amazon.com/dp/B004Q3RDW0
 finished: 2015-06-20
 pages: 418
 rating: good

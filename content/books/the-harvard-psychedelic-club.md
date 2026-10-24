@@ -1,6 +1,7 @@
 ---
 title: The Harvard Psychedelic Club
 author: Don Lattin
+link: https://www.amazon.com/dp/B003100UOM
 finished: 2018-07-01
 pages: 272
 rating: good

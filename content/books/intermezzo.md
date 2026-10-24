@@ -1,6 +1,7 @@
 ---
 title: Intermezzo
 author: Sally Rooney
+link: https://www.amazon.com/dp/0374602638
 finished: 2025-02-07
 pages: 464
 rating: okay

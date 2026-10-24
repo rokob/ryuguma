@@ -1,6 +1,7 @@
 ---
 title: The Two Towers
 author: J.R.R. Tolkien
+link: https://www.amazon.com/dp/B007978OY6
 finished: 2025-09-21
 pages: 448
 rating: great

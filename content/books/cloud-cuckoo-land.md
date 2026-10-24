@@ -1,6 +1,7 @@
 ---
 title: Cloud Cuckoo Land
 author: Anthony Doerr
+link: https://www.amazon.com/dp/B08TRMSR3Z
 finished: 2025-08-28
 pages: 637
 rating: good

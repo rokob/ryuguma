@@ -1,6 +1,7 @@
 ---
 title: Red Rising
 author: Pierce Brown
+link: https://www.amazon.com/dp/034553980X
 finished: 2015-03-17
 pages: 416
 rating: okay

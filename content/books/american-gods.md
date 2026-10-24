@@ -1,6 +1,7 @@
 ---
 title: American Gods
 author: Neil Gaiman
+link: https://www.amazon.com/dp/B004YW4L5K
 finished: 2018-06-14
 pages: 636
 rating: good

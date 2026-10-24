@@ -1,6 +1,7 @@
 ---
 title: Outlive
 author: [Peter Attia, Bill Gifford]
+link: https://www.amazon.com/dp/0593236599
 finished: 2025-02-28
 pages: 496
 rating: good

@@ -1,6 +1,7 @@
 ---
 title: The Last Patriot
 author: Brad Thor
+link: https://www.amazon.com/dp/B0010SKUYC
 finished: 2018-08-29
 pages: 356
 rating: okay

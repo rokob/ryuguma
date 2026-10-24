@@ -1,6 +1,7 @@
 ---
 title: I Don't Want to Talk About It
 author: Terrence Real
+link: https://www.amazon.com/dp/B000FC0Q0C
 finished: 2025-06-05
 pages: 384
 rating: great

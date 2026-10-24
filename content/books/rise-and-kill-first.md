@@ -1,6 +1,7 @@
 ---
 title: Rise and Kill First
 author: Ronen Bergman
+link: https://www.amazon.com/dp/B01N7LQ2NR
 finished: 2018-04-04
 pages: 631
 rating: great

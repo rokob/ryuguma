@@ -1,6 +1,7 @@
 ---
 title: Old Man's War
 author: John Scalzi
+link: https://www.amazon.com/dp/B000SEIK2S
 finished: 2019-11-27
 pages: 321
 rating: good

@@ -1,6 +1,7 @@
 ---
 title: Siddhartha
 author: Hermann Hesse
+link: https://www.amazon.com/dp/B000FC21PA
 finished: 2016-01-30
 pages: 78
 rating: good

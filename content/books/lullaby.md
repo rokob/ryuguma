@@ -1,6 +1,7 @@
 ---
 title: Lullaby
 author: Chuck Palahniuk
+link: https://www.amazon.com/dp/B0013KAJR0
 finished: 2017-05-22
 pages: 274
 rating: great

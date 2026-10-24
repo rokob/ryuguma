@@ -1,6 +1,7 @@
 ---
 title: From Strength to Strength
 author: Arthur C. Brooks
+link: https://www.amazon.com/dp/059319148X
 finished: 2025-12-14
 pages: 270
 rating: good

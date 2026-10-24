@@ -1,6 +1,7 @@
 ---
 title: '2001: A Space Odyssey'
 author: Arthur C. Clarke
+link: https://www.amazon.com/dp/B01A6E8EQ6
 finished: 2019-06-02
 pages: 255
 rating: great

@@ -1,6 +1,7 @@
 ---
 title: Roughneck Nine-One
 author: Frank Antenori and Hans Halberstadt
+link: https://www.amazon.com/dp/B005J56AKU
 finished: 2015-05-10
 pages: 352
 rating: good

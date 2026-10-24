@@ -1,6 +1,7 @@
 ---
 title: Horns
 author: Joe Hill
+link: https://www.amazon.com/dp/B0036F6WYO
 finished: 2018-03-08
 pages: 388
 rating: great

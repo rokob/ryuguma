@@ -1,6 +1,7 @@
 ---
 title: The Good Girl
 author: Mary Kubica
+link: https://www.amazon.com/dp/B00IB5BSBG
 finished: 2016-08-23
 pages: 383
 rating: good

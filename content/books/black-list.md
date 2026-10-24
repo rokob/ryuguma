@@ -1,6 +1,7 @@
 ---
 title: Black List
 author: Brad Thor
+link: https://www.amazon.com/dp/B004T4KX0U
 finished: 2021-03-26
 pages: 385
 rating: okay

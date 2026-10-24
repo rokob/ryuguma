@@ -1,6 +1,7 @@
 ---
 title: The Shining
 author: Stephen King
+link: https://www.amazon.com/dp/B001BANK32
 finished: 2018-07-12
 pages: 674
 rating: great

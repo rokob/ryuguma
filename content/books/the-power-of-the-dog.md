@@ -1,6 +1,7 @@
 ---
 title: The Power of the Dog
 author: Don Winslow
+link: https://www.amazon.com/dp/B000FCK42M
 finished: 2016-01-07
 pages: 560
 rating: great

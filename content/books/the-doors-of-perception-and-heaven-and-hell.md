@@ -1,6 +1,7 @@
 ---
 title: The Doors of Perception and Heaven and Hell
 author: Aldous Huxley
+link: https://www.amazon.com/dp/B002PEP4QY
 finished: 2019-01-25
 pages: 142
 rating: good

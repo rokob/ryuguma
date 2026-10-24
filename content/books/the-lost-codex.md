@@ -1,6 +1,7 @@
 ---
 title: The Lost Codex
 author: Alan Jacobson
+link: https://www.amazon.com/dp/B00X6OLBKK
 finished: 2015-12-18
 pages: 428
 rating: okay

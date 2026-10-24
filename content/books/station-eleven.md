@@ -1,6 +1,7 @@
 ---
 title: Station Eleven
 author: Emily St. John Mandel
+link: https://www.amazon.com/dp/B00J1IQUYM
 finished: 2018-03-20
 pages: 354
 rating: good

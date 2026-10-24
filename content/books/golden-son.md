@@ -1,6 +1,7 @@
 ---
 title: Golden Son
 author: Pierce Brown
+link: https://www.amazon.com/dp/B00I765ZEU
 finished: 2015-07-04
 pages: 466
 rating: good

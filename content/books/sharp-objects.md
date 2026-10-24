@@ -1,6 +1,7 @@
 ---
 title: Sharp Objects
 author: Gillian Flynn
+link: https://www.amazon.com/dp/0307588378
 finished: 2015-01-12
 pages: 254
 rating: great

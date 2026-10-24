@@ -1,6 +1,7 @@
 ---
 title: Shoe Dog
 author: Phil Knight
+link: https://www.amazon.com/dp/B0176M1A44
 finished: 2018-03-12
 pages: 400
 rating: great

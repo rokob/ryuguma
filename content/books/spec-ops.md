@@ -1,6 +1,7 @@
 ---
 title: Spec Ops
 author: William H. McRaven
+link: https://www.amazon.com/dp/0891416005
 finished: 2015-07-01
 pages: 432
 rating: great

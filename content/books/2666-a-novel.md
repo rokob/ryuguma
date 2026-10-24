@@ -1,6 +1,7 @@
 ---
 title: '2666: A Novel'
 author: Roberto Bolaño
+link: https://www.amazon.com/dp/B00D0K3FQI
 finished: 2024-11-05
 pages: 913
 rating: great

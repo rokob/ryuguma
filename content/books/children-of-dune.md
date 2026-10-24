@@ -1,6 +1,7 @@
 ---
 title: Children of Dune
 author: Frank Herbert
+link: https://www.amazon.com/dp/0441104029
 finished: 2015-12-09
 pages: 416
 rating: great

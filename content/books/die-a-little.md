@@ -1,6 +1,7 @@
 ---
 title: Die a Little
 author: Megan Abbott
+link: https://www.amazon.com/dp/B000FCJZPE
 finished: 2015-11-13
 pages: 256
 rating: good

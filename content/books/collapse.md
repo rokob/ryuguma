@@ -1,6 +1,7 @@
 ---
 title: Collapse
 author: Jared Diamond
+link: https://www.amazon.com/dp/B004H0M8EA
 finished: 2021-05-31
 pages: 580
 rating: great

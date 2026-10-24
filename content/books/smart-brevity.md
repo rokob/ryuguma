@@ -1,6 +1,7 @@
 ---
 title: Smart Brevity
 author: [Mike Allen, Jim VandeHei, Roy Schwartz]
+link: https://www.amazon.com/dp/B09TGMK8G6
 finished: 2025-08-15
 pages: 199
 rating: okay

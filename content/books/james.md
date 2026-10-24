@@ -1,6 +1,7 @@
 ---
 title: James
 author: Percival Everett
+link: https://www.amazon.com/dp/B0C8MGS6GR
 finished: 2026-05-09
 pages: 304
 rating: great

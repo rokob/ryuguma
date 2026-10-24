@@ -1,6 +1,7 @@
 ---
 title: Water for Elephants
 author: Sara Gruen
+link: https://www.amazon.com/dp/B003I1WY2A
 finished: 2016-07-10
 pages: 364
 rating: good

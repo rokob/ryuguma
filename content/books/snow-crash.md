@@ -1,6 +1,7 @@
 ---
 title: Snow Crash
 author: Neal Stephenson
+link: https://www.amazon.com/dp/B000FBJCJE
 finished: 2016-08-07
 pages: 480
 rating: great

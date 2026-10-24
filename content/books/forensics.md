@@ -1,6 +1,7 @@
 ---
 title: Forensics
 author: Val McDermid
+link: https://www.amazon.com/dp/B00PSSG3UK
 finished: 2015-12-31
 pages: 320
 rating: okay

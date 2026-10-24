@@ -1,6 +1,7 @@
 ---
 title: Fifty Shades of Grey
 author: E. L. James
+link: https://www.amazon.com/dp/0345803485
 finished: 2015-01-11
 pages: 514
 rating: okay

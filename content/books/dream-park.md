@@ -1,6 +1,7 @@
 ---
 title: Dream Park
 author: [Larry Niven, Steven Barnes]
+link: https://www.amazon.com/dp/B003JTHZ70
 finished: 2021-12-02
 pages: 320
 rating: good

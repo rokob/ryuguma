@@ -1,6 +1,7 @@
 ---
 title: The Nightingale
 author: Kristin Hannah
+link: https://www.amazon.com/dp/B00JO8PEN2
 finished: 2015-12-28
 pages: 593
 rating: great

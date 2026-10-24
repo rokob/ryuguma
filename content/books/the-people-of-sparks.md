@@ -1,6 +1,7 @@
 ---
 title: The People of Sparks
 author: Jeanne DuPrau
+link: https://www.amazon.com/dp/B000FC1R1O
 finished: 2015-07-23
 pages: 352
 rating: okay

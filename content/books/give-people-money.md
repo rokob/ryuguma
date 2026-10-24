@@ -1,6 +1,7 @@
 ---
 title: Give People Money
 author: Annie Lowrey
+link: https://www.amazon.com/dp/B077LMK6XT
 finished: 2018-11-20
 pages: 263
 rating: okay

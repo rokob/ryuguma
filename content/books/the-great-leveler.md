@@ -1,6 +1,7 @@
 ---
 title: The Great Leveler
 author: Walter Scheidel
+link: https://www.amazon.com/dp/B01M34NBLZ
 finished: 2018-02-26
 pages: 444
 rating: great

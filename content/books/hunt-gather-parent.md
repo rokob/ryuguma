@@ -1,6 +1,7 @@
 ---
 title: Hunt, Gather, Parent
 author: Michaeleen Doucleff
+link: https://www.amazon.com/dp/1982149671
 finished: 2021-03-27
 pages: 309
 rating: great

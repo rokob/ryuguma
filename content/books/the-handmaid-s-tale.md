@@ -1,6 +1,7 @@
 ---
 title: The Handmaid's Tale
 author: Margaret Atwood
+link: https://www.amazon.com/dp/B003JFJHTS
 finished: 2017-05-30
 pages: 325
 rating: great

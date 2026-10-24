@@ -1,6 +1,7 @@
 ---
 title: The Last Stone
 author: Mark Bowden
+link: https://www.amazon.com/dp/B07MQG23VS
 finished: 2019-05-14
 pages: 304
 rating: great

@@ -1,6 +1,7 @@
 ---
 title: Acid Test
 author: Tom Shroder
+link: https://www.amazon.com/dp/B00INIQTD8
 finished: 2018-12-29
 pages: 447
 rating: good

@@ -1,6 +1,7 @@
 ---
 title: Neuromancer
 author: William Gibson
+link: https://www.amazon.com/dp/B000O76ON6
 finished: 2015-07-07
 pages: 292
 rating: okay

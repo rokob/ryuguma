@@ -1,6 +1,7 @@
 ---
 title: The Tibetan Book of Living and Dying
 author: Sogyal Rinpoche
+link: https://www.amazon.com/dp/B000FC147G
 finished: 2016-09-19
 pages: 425
 rating: good

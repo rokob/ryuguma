@@ -1,6 +1,7 @@
 ---
 title: How to Change Your Mind
 author: Michael Pollan
+link: https://www.amazon.com/dp/B076GPJXWZ
 finished: 2019-07-09
 pages: 415
 rating: great

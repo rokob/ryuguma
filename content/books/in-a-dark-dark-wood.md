@@ -1,6 +1,7 @@
 ---
 title: In a Dark, Dark Wood
 author: Ruth Ware
+link: https://www.amazon.com/dp/B00Q102M8Q
 finished: 2019-01-31
 pages: 354
 rating: okay

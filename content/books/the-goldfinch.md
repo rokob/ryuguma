@@ -1,6 +1,7 @@
 ---
 title: The Goldfinch
 author: Donna Tartt
+link: https://www.amazon.com/dp/B00BAXFECK
 finished: 2016-02-23
 pages: 760
 rating: great

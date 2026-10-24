@@ -1,6 +1,7 @@
 ---
 title: Furiously Happy
 author: Jenny Lawson
+link: https://www.amazon.com/dp/B00V37BC4C
 finished: 2015-12-24
 pages: 353
 rating: good

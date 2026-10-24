@@ -1,6 +1,7 @@
 ---
 title: The Illustrated Man
 author: Ray Bradbury
+link: https://www.amazon.com/dp/B00C4TJADS
 finished: 2019-03-23
 pages: 291
 rating: great

@@ -1,6 +1,7 @@
 ---
 title: Zen and the Art of Motorcycle Maintenance
 author: Robert M. Pirsig
+link: https://www.amazon.com/dp/B0026772N8
 finished: 2016-03-29
 pages: 404
 rating: great

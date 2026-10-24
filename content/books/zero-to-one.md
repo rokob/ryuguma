@@ -1,6 +1,7 @@
 ---
 title: Zero To One
 author: [Peter Thiel, Blake Masters]
+link: https://www.amazon.com/dp/B00J6YBOFQ
 finished: 2015-02-17
 pages: 223
 rating: good

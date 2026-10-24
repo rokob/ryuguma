@@ -1,6 +1,7 @@
 ---
 title: Deep Work
 author: Cal Newport
+link: https://www.amazon.com/dp/1455586692
 finished: 2024-11-05
 pages: 304
 rating: good

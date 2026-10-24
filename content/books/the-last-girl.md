@@ -1,6 +1,7 @@
 ---
 title: The Last Girl
 author: Joe Hart
+link: https://www.amazon.com/dp/B011UNEZN8
 finished: 2016-05-11
 pages: 386
 rating: okay

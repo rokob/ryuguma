@@ -1,6 +1,7 @@
 ---
 title: Man's Search for Meaning
 author: Viktor E. Frankl
+link: https://www.amazon.com/dp/B009U9S6FI
 finished: 2024-11-20
 pages: 188
 rating: good
