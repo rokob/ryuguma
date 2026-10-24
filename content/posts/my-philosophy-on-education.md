@@ -2,7 +2,6 @@
 title: My philosophy on education
 date: 2019-12-01
 tags: [life, children, parenting, society]
-draft: true
 ---
 
 My philosophy on education is driven by the long term view that ultimately the purpose of education is to prepare one to face a world full of unknowns with curiosity and delight. Hopefully, everyone gets to a point where they feel they are facing a problem that no one has tried to solve before. At that point, your prior experiences and knowledge will be your aid towards accomplishing a goal that is unique to you.
