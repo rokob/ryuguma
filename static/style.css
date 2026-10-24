@@ -234,3 +234,11 @@ time, .count, .kind, .eyebrow, .byline, .more, .tags, .site-header, .site-footer
 .broken-ref { color: var(--rating-bad); text-decoration: wavy underline; }
 
 .draft { font-family: var(--font-ui); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--rating-okay); border: 1px solid currentColor; border-radius: 3px; padding: 0 0.3em; vertical-align: middle; }
+
+.provenance { margin-top: var(--space-4); font-family: var(--font-ui); font-size: var(--text-xs); color: var(--muted); }
+.provenance a { color: inherit; }
+.revisions { list-style: none; padding: 0; margin: 0; }
+.revisions li { display: grid; grid-template-columns: 7rem 1fr auto; gap: var(--space-3); align-items: baseline; padding: var(--space-2) 0; border-bottom: 1px solid var(--rule); font-size: var(--text-sm); }
+.revisions time, .revisions .links { font-family: var(--font-ui); font-size: var(--text-xs); color: var(--muted); }
+.revisions .links { display: flex; gap: var(--space-3); }
+@media (max-width: 34rem) { .revisions li { grid-template-columns: 1fr auto; } .revisions .subject { grid-column: 1 / -1; grid-row: 2; } }

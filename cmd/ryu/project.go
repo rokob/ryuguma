@@ -13,6 +13,7 @@ import (
 	"go.yaml.in/yaml/v3"
 
 	"github.com/rokob/ryuguma/internal/content"
+	"github.com/rokob/ryuguma/internal/history"
 	"github.com/rokob/ryuguma/internal/render"
 	"github.com/rokob/ryuguma/internal/site"
 )
@@ -47,6 +48,15 @@ func (p *project) load(opts site.Options) (*site.Site, error) {
 	if err != nil {
 		return nil, err
 	}
+	paths := make([]string, len(entries))
+	for i, e := range entries {
+		paths[i] = "content/" + e.Path
+	}
+	log, err := history.FromGit(p.root, paths)
+	if err != nil {
+		return nil, err
+	}
+	opts.History = func(path string) []history.Revision { return log.For("content/" + path) }
 	return site.Build(entries, opts)
 }
 

@@ -5,6 +5,7 @@ import (
 	"testing"
 
 	"github.com/rokob/ryuguma/internal/content"
+	"github.com/rokob/ryuguma/internal/history"
 	"github.com/rokob/ryuguma/internal/site"
 )
 
@@ -124,6 +125,20 @@ func TestStandalonePages(t *testing.T) {
 	}
 	if !strings.Contains(slugs(s.Lookup("dune").Backlinks), "about") {
 		t.Error("refs from standalone pages are not backlinked")
+	}
+}
+
+func TestHistoryIsAttached(t *testing.T) {
+	revs := map[string][]history.Revision{"books/dune.md": {{Commit: "abc"}}}
+	s, err := site.Build(fixture(), site.Options{History: func(p string) []history.Revision { return revs[p] }})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if h := s.Lookup("dune").History; len(h) != 1 || h[0].Commit != "abc" {
+		t.Errorf("dune history = %+v", h)
+	}
+	if h := s.Lookup("ubik").History; len(h) != 0 {
+		t.Errorf("ubik history = %+v", h)
 	}
 }
 

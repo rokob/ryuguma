@@ -7,8 +7,10 @@ import (
 	"strings"
 	"testing"
 	"testing/fstest"
+	"time"
 
 	"github.com/rokob/ryuguma/internal/content"
+	"github.com/rokob/ryuguma/internal/history"
 	"github.com/rokob/ryuguma/internal/site"
 )
 
@@ -29,7 +31,11 @@ func fixtureSite(t *testing.T) *site.Site {
 		{Kind: content.KindPage, Slug: "home", Path: "pages/home.md", Title: "Home", Body: "Hi, I write here.\n"},
 		{Kind: content.KindPage, Slug: "about", Path: "pages/about.md", Title: "About", Body: "About me.\n"},
 	}
-	s, err := site.Build(entries, site.Options{})
+	revs := map[string][]history.Revision{"books/dune.md": {
+		{Commit: "c0ffee1234567890", Date: time.Date(2026, 10, 24, 0, 0, 0, 0, time.UTC), Subject: "chore(content): migrate", Path: "content/books/dune.md"},
+		{Commit: "aaaa1111bbbb2222", Date: time.Date(2015, 8, 3, 0, 0, 0, 0, time.UTC), Subject: "post about dune", Path: "_posts/2015-08-03-dune.md"},
+	}}
+	s, err := site.Build(entries, site.Options{History: func(p string) []history.Revision { return revs[p] }})
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -45,7 +51,7 @@ func TestSiteWritesEveryPage(t *testing.T) {
 	}
 	want := []string{
 		"404.html", "about/index.html", "atoms/idea/index.html", "atoms/index.html",
-		"books/dune/index.html", "books/index.html", "books/james/index.html", "books/someday/index.html",
+		"books/dune/history/index.html", "books/dune/index.html", "books/index.html", "books/james/index.html", "books/someday/index.html",
 		"index.html", "posts/hello/index.html", "posts/index.html",
 		"tags/index.html", "tags/life/index.html", "tags/scifi/index.html",
 	}
@@ -65,12 +71,14 @@ func TestPagesShowTheirContent(t *testing.T) {
 		t.Fatalf("Site: %v", err)
 	}
 	checks := map[string][]string{
-		"books/dune/index.html":  {"<title>Dune · ryuguma</title>", "<cite>Dune</cite>", "Frank Herbert", "896", "Referenced by", `href="/posts/hello/"`},
-		"books/james/index.html": {"reading now", "Started"},
-		"index.html":             {"Hi, I write here.", "Reading now", "James", `href="/books/dune/"`, "A small idea."},
-		"books/index.html":       {"Up next", "Someday", "2015", "1 book"},
-		"posts/hello/index.html": {`<a href="/books/dune/"><cite>Dune</cite></a>`, "#life"},
-		"tags/scifi/index.html":  {"#scifi", "Dune"},
+		"books/dune/index.html": {"<title>Dune · ryuguma</title>", "<cite>Dune</cite>", "Frank Herbert", "896", "Referenced by", `href="/posts/hello/"`,
+			`href="https://github.com/rokob/ryuguma/commit/c0ffee1234567890"><code>c0ffee12</code>`, `href="/books/dune/history/"`},
+		"books/dune/history/index.html": {"post about dune", `href="https://github.com/rokob/ryuguma/blob/aaaa1111bbbb2222/_posts/2015-08-03-dune.md"`, "Aug 3, 2015"},
+		"books/james/index.html":        {"reading now", "Started"},
+		"index.html":                    {"Hi, I write here.", "Reading now", "James", `href="/books/dune/"`, "A small idea."},
+		"books/index.html":              {"Up next", "Someday", "2015", "1 book"},
+		"posts/hello/index.html":        {`<a href="/books/dune/"><cite>Dune</cite></a>`, "#life"},
+		"tags/scifi/index.html":         {"#scifi", "Dune"},
 	}
 	for name, wants := range checks {
 		html := string(out[name])

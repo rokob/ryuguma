@@ -1,0 +1,19 @@
+{{define "main"}}{{with .Page}}
+<header class="index-header">
+  <p class="eyebrow"><a href="{{.URL}}">{{.Kind}}</a></p>
+  <h1>History of {{template "ref" .}}</h1>
+  <p class="lede">Every change since it was first written, from the site's git history.</p>
+</header>
+<ol class="revisions">
+{{range .History}}
+  <li>
+    <time datetime="{{.Date.Format "2006-01-02"}}">{{.Date.Format "Jan 2, 2006"}}</time>
+    <span class="subject">{{.Subject}}</span>
+    <span class="links">
+      <a href="{{$.Config.Repo}}/commit/{{.Commit}}"><code>{{short .Commit}}</code></a>
+      <a href="{{$.Config.Repo}}/blob/{{.Commit}}/{{.Path}}">this version</a>
+    </span>
+  </li>
+{{end}}
+</ol>
+{{end}}{{end}}

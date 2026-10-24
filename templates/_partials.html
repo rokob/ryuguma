@@ -42,3 +42,12 @@
   <ul>{{range .}}<li>{{template "ref" .}} <span class="kind">{{.Kind}}</span></li>{{end}}</ul>
 </aside>
 {{end}}{{end}}
+
+{{/* Where an entry came from. Called with the root data, not the page. */}}
+{{define "provenance"}}{{with .Page.History}}{{$last := index . 0}}
+<p class="provenance">
+  Last changed <time datetime="{{$last.Date.Format "2006-01-02"}}">{{$last.Date.Format "Jan 2, 2006"}}</time>
+  in <a href="{{$.Config.Repo}}/commit/{{$last.Commit}}"><code>{{short $last.Commit}}</code></a>
+  · <a href="{{$.Page.URL}}history/">History</a>
+</p>
+{{end}}{{end}}

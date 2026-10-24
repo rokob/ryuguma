@@ -11,12 +11,15 @@ import (
 	"slices"
 
 	"github.com/rokob/ryuguma/internal/content"
+	"github.com/rokob/ryuguma/internal/history"
 	"github.com/rokob/ryuguma/internal/markdown"
 )
 
 type Options struct {
 	// Drafts includes draft entries, for previewing locally.
 	Drafts bool
+	// History returns the revisions of a file, given its path under content/.
+	History func(path string) []history.Revision
 }
 
 // Page is an entry ready to render.
@@ -26,6 +29,8 @@ type Page struct {
 	HTML      template.HTML
 	Refs      []*Page
 	Backlinks []*Page
+	// History lists this page's revisions, newest first.
+	History []history.Revision
 }
 
 type Tag struct {
@@ -66,6 +71,9 @@ func Build(entries []content.Entry, opts Options) (*Site, error) {
 			continue
 		}
 		p := &Page{Entry: e, URL: URLFor(e)}
+		if opts.History != nil {
+			p.History = opts.History(e.Path)
+		}
 		if e.Kind == content.KindPage {
 			s.Standalone = append(s.Standalone, p)
 		} else {

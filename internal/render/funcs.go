@@ -21,6 +21,7 @@ var funcs = template.FuncMap{
 	"take":      take,
 	"excerpt":   excerpt,
 	"hasPrefix": strings.HasPrefix,
+	"short":     func(sha string) string { return sha[:min(8, len(sha))] },
 	"capitalize": func(v any) string {
 		s := fmt.Sprint(v)
 		if s == "" {
