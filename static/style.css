@@ -163,7 +163,8 @@ time, .count, .kind, .eyebrow, .byline, .more, .tags, .site-header, .site-footer
 
 .book-row {
   display: grid;
-  grid-template-columns: 1fr auto;
+  /* A fixed second column keeps ratings and dates aligned down the list. */
+  grid-template-columns: 1fr 7rem;
   column-gap: var(--space-3);
   padding: var(--space-2) 0;
   border-bottom: 1px solid var(--rule);
@@ -171,8 +172,8 @@ time, .count, .kind, .eyebrow, .byline, .more, .tags, .site-header, .site-footer
 .book-row .title { grid-column: 1; text-decoration: none; color: var(--text); }
 .book-row .title:hover { color: var(--accent); }
 .book-row .author { grid-column: 1; font-size: var(--text-sm); color: var(--muted); }
-.book-row .rating { grid-column: 2; grid-row: 1; justify-self: end; }
-.book-row time { grid-column: 2; grid-row: 2; justify-self: end; font-size: var(--text-xs); color: var(--muted); }
+.book-row .rating { grid-column: 2; grid-row: 1; white-space: nowrap; }
+.book-row time { grid-column: 2; grid-row: 2; white-space: nowrap; font-size: var(--text-xs); color: var(--muted); }
 
 .post-row { padding: var(--space-3) 0; border-bottom: 1px solid var(--rule); }
 .post-row .title { font-size: var(--text-lg); text-decoration: none; color: var(--text); }

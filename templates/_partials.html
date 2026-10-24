@@ -52,5 +52,5 @@
 </p>
 {{end}}{{end}}
 
-{{/* A book rating as filled pips plus the word. */}}
+{{/* A book rating as filled pips, then the word. */}}
 {{define "rating"}}<span class="rating" title="Rated {{.}}"><span class="pips" aria-hidden="true">{{range pips .}}<i{{if .}} class="on"{{end}}></i>{{end}}</span>{{.}}</span>{{end}}
