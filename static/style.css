@@ -161,11 +161,18 @@ time, .count, .kind, .eyebrow, .byline, .more, .tags, .site-header, .site-footer
  */
 .book-list, .post-list, .mixed-list { list-style: none; padding: 0; margin: 0; }
 
+/* Book rows share their list's columns (or a whole table of lists), so
+   ratings and dates line up and the right column is only as wide as its
+   widest entry. */
+.book-list, .book-table { display: grid; grid-template-columns: 1fr auto; column-gap: var(--space-3); }
+.book-table > * { grid-column: 1 / -1; }
+.book-table > .book-list { grid-template-columns: subgrid; }
+/* Grid items keep their margins, so drop the first heading's top margin. */
+.book-table > :first-child { margin-top: 0; }
 .book-row {
   display: grid;
-  /* A fixed second column keeps ratings and dates aligned down the list. */
-  grid-template-columns: 1fr 7rem;
-  column-gap: var(--space-3);
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
   padding: var(--space-2) 0;
   border-bottom: 1px solid var(--rule);
 }
@@ -187,7 +194,7 @@ time, .count, .kind, .eyebrow, .byline, .more, .tags, .site-header, .site-footer
 
 .tag-cloud { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); }
 
-.year h2, .year h3 { display: flex; align-items: baseline; gap: var(--space-2); }
+.year h2, .year h3, h3.year { display: flex; align-items: baseline; gap: var(--space-2); }
 
 /*
  * Index and home pages

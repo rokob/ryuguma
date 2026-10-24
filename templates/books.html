@@ -20,11 +20,12 @@
 
 <section class="index-section">
   <h2>Read</h2>
+  {{/* One grid for every year, so the rating column lines up across years. */}}
+  <div class="book-table">
   {{range byYear .Site.Books}}
-  <section class="year" id="y{{.Year}}">
-    <h3>{{.Year}} <span class="count">{{len .Pages}} {{plural (len .Pages) "book" "books"}}</span></h3>
+    <h3 class="year" id="y{{.Year}}">{{.Year}} <span class="count">{{len .Pages}} {{plural (len .Pages) "book" "books"}}</span></h3>
     <ul class="book-list">{{range .Pages}}{{template "book-row" .}}{{end}}</ul>
-  </section>
   {{end}}
+  </div>
 </section>
 {{end}}
