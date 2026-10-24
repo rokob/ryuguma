@@ -3,32 +3,67 @@
 package main
 
 import (
+	"bufio"
+	"context"
 	"errors"
 	"flag"
 	"fmt"
 	"io"
+	"net/http"
 	"os"
 	"path/filepath"
 	"strings"
+	"time"
+
+	"github.com/rokob/ryuguma/internal/openlibrary"
 )
+
+// env is everything a command touches outside its arguments, so tests can
+// supply a temp repo, a fixed clock, scripted input, and a fake lookup.
+type env struct {
+	*project
+	now    func() time.Time
+	in     *bufio.Reader
+	out    io.Writer
+	search searcher
+}
+
+type searcher interface {
+	Search(ctx context.Context, title string) ([]openlibrary.Doc, error)
+}
 
 type command struct {
 	name    string
 	group   string
 	summary string
 	usage   string
-	run     func(p *project, fs *flag.FlagSet, args []string) error
+	run     func(e *env, fs *flag.FlagSet, args []string) error
 }
 
 // Commands are listed in help in this order.
 var commands = []command{
+	{name: "status", group: "Writing", summary: "what you're reading, what's next, and open drafts", usage: "ryu status", run: runStatus},
+	{name: "book add", group: "Writing", summary: "put a book on the to-read list, looked up on Open Library", usage: `ryu book add ["Title"]`, run: runBookAdd},
+	{name: "book start", group: "Writing", summary: "start reading a book from the list", usage: "ryu book start [-date d] [slug]", run: runBookStart},
+	{name: "book finish", group: "Writing", summary: "finish a book: rating, form, and pages", usage: "ryu book finish [-date d] [slug]", run: runBookFinish},
+	{name: "new post", group: "Writing", summary: "start a draft post", usage: `ryu new post ["Title"]`, run: runNewPost},
+	{name: "publish", group: "Writing", summary: "publish a draft, dated today", usage: "ryu publish [-keep-date] [slug]", run: runPublish},
 	{name: "serve", group: "Site", summary: "preview locally with drafts, rebuilding on change", usage: "ryu serve [-addr :8080] [-drafts=true]", run: runServe},
 	{name: "build", group: "Site", summary: "write the site to dist/", usage: "ryu build [-out dist] [-drafts]", run: runBuild},
 	{name: "check", group: "Site", summary: "validate content, references, and templates", usage: "ryu check", run: runCheck},
 }
 
 func main() {
-	if err := run(os.Args[1:], os.Stdout); err != nil {
+	e := &env{
+		now: time.Now,
+		in:  bufio.NewReader(os.Stdin),
+		out: os.Stdout,
+		search: &openlibrary.Client{
+			HTTP:      &http.Client{Timeout: 15 * time.Second},
+			UserAgent: "ryuguma (+https://github.com/rokob/ryuguma)",
+		},
+	}
+	if err := run(os.Args[1:], e); err != nil {
 		var usage usageError
 		if errors.As(err, &usage) {
 			fmt.Fprintln(os.Stderr, err)
@@ -43,21 +78,44 @@ type usageError string
 
 func (u usageError) Error() string { return string(u) }
 
-func run(args []string, stdout io.Writer) error {
+func run(args []string, e *env) error {
 	if len(args) == 0 || args[0] == "help" || args[0] == "-h" || args[0] == "--help" {
-		printHelp(stdout)
+		printHelp(e.out)
 		return nil
 	}
-	for _, c := range commands {
-		if c.name == args[0] {
-			p, err := findProject()
-			if err != nil {
-				return err
+	c, rest, ok := lookup(args)
+	if !ok {
+		return usageError(fmt.Sprintf("ryu: unknown command %q (run ryu with no arguments for help)", strings.Join(args[:min(2, len(args))], " ")))
+	}
+	if e.project == nil {
+		p, err := findProject()
+		if err != nil {
+			return err
+		}
+		e.project = p
+	}
+	fs := newFlags(c)
+	fs.SetOutput(e.out)
+	if err := c.run(e, fs, rest); !errors.Is(err, flag.ErrHelp) {
+		return err
+	}
+	return nil
+}
+
+// lookup matches two-word commands like "book add" before one-word ones.
+func lookup(args []string) (command, []string, bool) {
+	for _, n := range []int{2, 1} {
+		if len(args) < n {
+			continue
+		}
+		name := strings.Join(args[:n], " ")
+		for _, c := range commands {
+			if c.name == name {
+				return c, args[n:], true
 			}
-			return c.run(p, newFlags(c), args[1:])
 		}
 	}
-	return usageError(fmt.Sprintf("ryu: unknown command %q (run ryu with no arguments for help)", args[0]))
+	return command{}, nil, false
 }
 
 func printHelp(w io.Writer) {
@@ -70,7 +128,8 @@ func printHelp(w io.Writer) {
 		}
 		fmt.Fprintf(w, "  %-40s %s\n", c.usage, c.summary)
 	}
-	fmt.Fprintln(w, "\nRun ryu <command> -h for details. ryu works from anywhere inside the repo.")
+	fmt.Fprintln(w, "\nAnything left off is asked for. Run ryu <command> -h for details.")
+	fmt.Fprintln(w, "ryu works from anywhere inside the repo.")
 }
 
 // newFlags makes a flag set whose -h output shows the command's usage.

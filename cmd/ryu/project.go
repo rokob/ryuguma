@@ -62,12 +62,12 @@ func (p *project) load(opts site.Options) (*site.Site, error) {
 }
 
 // build renders the whole site into out.
-func (p *project) build(opts site.Options, out render.Output) (*site.Site, error) {
+func (p *project) build(opts site.Options, out render.Output, now time.Time) (*site.Site, error) {
 	cfg, err := p.config()
 	if err != nil {
 		return nil, err
 	}
-	cfg.BuiltAt = time.Now()
+	cfg.BuiltAt = now
 	s, err := p.load(opts)
 	if err != nil {
 		return nil, err
@@ -84,59 +84,59 @@ func (p *project) build(opts site.Options, out render.Output) (*site.Site, error
 	return s, nil
 }
 
-func runBuild(p *project, fs *flag.FlagSet, args []string) error {
+func runBuild(e *env, fs *flag.FlagSet, args []string) error {
 	outDir := fs.String("out", "dist", "output directory, relative to the repo root")
 	drafts := fs.Bool("drafts", false, "include drafts")
 	if err := fs.Parse(args); err != nil {
 		return err
 	}
-	dir := p.path(*outDir)
-	if rel, err := filepath.Rel(p.root, dir); err != nil || rel == "." || strings.HasPrefix(rel, "..") {
+	dir := e.path(*outDir)
+	if rel, err := filepath.Rel(e.root, dir); err != nil || rel == "." || strings.HasPrefix(rel, "..") {
 		return fmt.Errorf("refusing to build into %s: it must be a subdirectory of the repo", dir)
 	}
 	// Start clean so removed pages don't linger.
 	if err := os.RemoveAll(dir); err != nil {
 		return err
 	}
-	s, err := p.build(site.Options{Drafts: *drafts}, render.DirOutput(dir))
+	s, err := e.build(site.Options{Drafts: *drafts}, render.DirOutput(dir), e.now())
 	if err != nil {
 		return err
 	}
-	fmt.Printf("built %s into %s\n", summarize(s), *outDir)
+	fmt.Fprintf(e.out, "built %s into %s\n", summarize(s), *outDir)
 	return nil
 }
 
-func runCheck(p *project, fs *flag.FlagSet, args []string) error {
+func runCheck(e *env, fs *flag.FlagSet, args []string) error {
 	if err := fs.Parse(args); err != nil {
 		return err
 	}
 	// Building without drafts also catches published pages linking to drafts.
-	s, err := p.build(site.Options{}, render.MemOutput{})
+	s, err := e.build(site.Options{}, render.MemOutput{}, e.now())
 	if err != nil {
 		return err
 	}
-	withDrafts, err := p.load(site.Options{Drafts: true})
+	withDrafts, err := e.load(site.Options{Drafts: true})
 	if err != nil {
 		return err
 	}
 	drafts := len(withDrafts.All) + len(withDrafts.Standalone) - len(s.All) - len(s.Standalone)
-	fmt.Printf("ok: %s, plus %d %s\n", summarize(s), drafts, plural(drafts, "draft", "drafts"))
+	fmt.Fprintf(e.out, "ok: %s, plus %d %s\n", summarize(s), drafts, plural(drafts, "draft", "drafts"))
 	return nil
 }
 
-func runServe(p *project, fs *flag.FlagSet, args []string) error {
+func runServe(e *env, fs *flag.FlagSet, args []string) error {
 	addr := fs.String("addr", "localhost:8080", "address to listen on")
 	drafts := fs.Bool("drafts", true, "include drafts")
 	if err := fs.Parse(args); err != nil {
 		return err
 	}
-	watch := &sourceWatcher{dirs: []string{p.path("content"), p.path("templates"), p.path("static"), p.path(configFile)}}
+	watch := &sourceWatcher{dirs: []string{e.path("content"), e.path("templates"), e.path("static"), e.path(configFile)}}
 	build := func() (render.MemOutput, error) {
 		out := render.MemOutput{}
-		_, err := p.build(site.Options{Drafts: *drafts}, out)
+		_, err := e.build(site.Options{Drafts: *drafts}, out, e.now())
 		return out, err
 	}
-	fmt.Printf("serving http://%s (drafts: %v); reload the page after editing\n", *addr, *drafts)
+	fmt.Fprintf(e.out, "serving http://%s (drafts: %v); reload the page after editing\n", *addr, *drafts)
 	err := http.ListenAndServe(*addr, newDevServer(build, watch.changed))
 	if errors.Is(err, http.ErrServerClosed) {
 		return nil
