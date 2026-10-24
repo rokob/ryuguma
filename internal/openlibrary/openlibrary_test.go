@@ -15,7 +15,7 @@ func TestSearch(t *testing.T) {
 	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		gotQuery = r.URL.Query().Get("title")
 		gotUA = r.Header.Get("User-Agent")
-		w.Write([]byte(`{"docs":[{"key":"/works/OL1W","title":"Dune","author_name":["Frank Herbert"],"first_publish_year":1965,"number_of_pages_median":612}]}`))
+		w.Write([]byte(`{"docs":[{"key":"/works/OL1W","title":"Dune","author_name":["Frank Herbert"],"first_publish_year":1965,"number_of_pages_median":612,"edition_count":96}]}`))
 	}))
 	defer srv.Close()
 
@@ -28,7 +28,7 @@ func TestSearch(t *testing.T) {
 		t.Errorf("query %q ua %q", gotQuery, gotUA)
 	}
 	want := openlibrary.Doc{Key: "/works/OL1W", Title: "Dune", Authors: []string{"Frank Herbert"}, FirstPublishYear: 1965, Pages: 612}
-	if len(docs) != 1 || docs[0].Title != want.Title || !slices.Equal(docs[0].Authors, want.Authors) || docs[0].Pages != 612 {
+	if len(docs) != 1 || docs[0].Title != want.Title || !slices.Equal(docs[0].Authors, want.Authors) || docs[0].Pages != 612 || docs[0].Editions != 96 {
 		t.Errorf("docs = %+v", docs)
 	}
 }
@@ -87,5 +87,23 @@ func TestBestFallsBackToFirstWithAuthors(t *testing.T) {
 	}
 	if _, m := openlibrary.Best(nil, "Anything", 0); m != openlibrary.MatchNone {
 		t.Errorf("empty: match = %v", m)
+	}
+}
+
+func TestRankPutsTitleMatchesFirst(t *testing.T) {
+	docs := []openlibrary.Doc{
+		{Title: "The Making of Stanley Kubrick's '2001: A Space Odyssey'"},
+		{Title: "The Making of 2001, a space odyssey"},
+		{Title: "2001 A SPACE ODYSSEY", Authors: []string{"Arthur C. Clarke"}},
+		{Title: "2001 : a space odyssey", Authors: []string{"Stanley Kubrick"}},
+	}
+	ranked := openlibrary.Rank(docs, "2001: a Space Odyssey")
+	var got []string
+	for _, d := range ranked {
+		got = append(got, d.Title)
+	}
+	want := []string{"2001 A SPACE ODYSSEY", "2001 : a space odyssey", "The Making of Stanley Kubrick's '2001: A Space Odyssey'", "The Making of 2001, a space odyssey"}
+	if !slices.Equal(got, want) {
+		t.Errorf("Rank =\n%q\nwant\n%q", got, want)
 	}
 }
