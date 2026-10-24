@@ -1,0 +1,7 @@
+#!/bin/sh
+# Runs ryu from the current source, so it is never stale. The build is
+# cached and takes a moment only after Go code changes.
+set -e
+root=$(dirname "$0")
+go build -C "$root" -o bin/ryu ./cmd/ryu
+exec "$root/bin/ryu" "$@"

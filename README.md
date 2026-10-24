@@ -12,20 +12,19 @@ This repo continues the history of [rokob.github.com](https://github.com/rokob/r
 
 ## Writing
 
-Run `ryu` with no arguments to see every command. Anything you leave off is asked for.
+Run `./ryu` from the repo root with no arguments to see every command. Anything you leave off
+is asked for. The script rebuilds from source when the Go code has changed, so it is never stale.
 
 ```sh
-go install ./cmd/ryu      # or: go run ./cmd/ryu <command>
-
-ryu status                # reading now, up next, open drafts
-ryu book add "Piranesi"   # look it up on Open Library, add to the to-read list
-ryu book start            # pick from the to-read list
-ryu book finish           # pick from what you're reading; asks rating, form, pages
-ryu new atom "Name"       # type a small idea, Ctrl-D to publish it
-ryu new post "Title"      # start a draft post
-ryu publish               # pick a draft, publish it dated today
-ryu serve                 # preview at localhost:8080 with drafts; reload after editing
-ryu check                 # validate content, references, and templates
+./ryu status                # reading now, up next, open drafts
+./ryu book add "Piranesi"   # look it up on Open Library, add to the to-read list
+./ryu book start            # pick from the to-read list
+./ryu book finish           # pick from what you're reading; asks rating, form, pages
+./ryu new atom "Name"       # type a small idea, Ctrl-D to publish it
+./ryu new post "Title"      # start a draft post
+./ryu publish               # pick a draft, publish it dated today
+./ryu serve                 # preview at localhost:8080 with drafts; reload after editing
+./ryu check                 # validate content, references, and templates
 ```
 
 After `ryu` changes a file, commit it with jj as usual. Pushing to `main` deploys.
