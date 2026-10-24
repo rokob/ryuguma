@@ -42,6 +42,7 @@ comes from the dates: no `started` means to read, `started` without `finished` m
 ---
 title: The Wind-Up Bird Chronicle
 author: Haruki Murakami          # or a list: [Daniel J. Siegel, Tina Payne Bryson]
+link: https://www.amazon.com/dp/B003XT605Y   # canonical page for the book, shown on its page
 added: 2026-01-10                # put on the to-read list
 started: 2026-08-01
 finished: 2026-10-19
