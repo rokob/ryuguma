@@ -5,3 +5,6 @@
 /bin/
 
 .DS_Store
+
+# wrangler
+/.wrangler/
