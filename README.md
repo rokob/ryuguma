@@ -1,6 +1,9 @@
-This is the source branch for my blog. This used to be deployed by Travis, but they shut down their
-free tier so now it is run by Github Actions.
+# ryuguma
 
-I used Jekyll for a long time and then moved to Gatsby to try it out and it has been not that bad. I
-am considering moving to something simpler though because Gatsby is more than I need and it is
-always terrifying to keep it up to date.
+Source for my personal site: books I've read, posts, and atoms (small ideas).
+
+A small Go program reads everything under `content/`, builds an in-memory model of
+the site, and renders static HTML. No framework, little to no client-side JS.
+
+This repo continues the history of [rokob.github.com](https://github.com/rokob/rokob.github.com)
+(Jekyll, then Gatsby), so `git log --follow` on any post goes back to when it was written.

@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: andrewledvina.com
-Token: a954105270a7b86818d7625bbe794b6539f88bebd9637c8714eb2118125937ca
