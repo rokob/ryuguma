@@ -116,16 +116,20 @@ func TestNewPostPromptsForTitle(t *testing.T) {
 func TestBookAddUsesOpenLibrary(t *testing.T) {
 	h := newHarness(t, nil)
 	h.search.docs = map[string][]openlibrary.Doc{"Piranesi": {
-		{Title: "Piranesi", Authors: []string{"Susanna Clarke"}, FirstPublishYear: 2020, Pages: 272},
+		{Key: "/works/OL20111013W", Title: "Piranesi", Authors: []string{"Susanna Clarke"}, FirstPublishYear: 2020, Pages: 272},
 		{Title: "Piranesi Notes", Authors: []string{"Someone Else"}},
 	}}
-	if err := h.run("1\nFrom a friend.\n", "book", "add", "Piranesi"); err != nil {
+	// Pick the first match, accept its Open Library page as the link, add a note.
+	if err := h.run("1\n\nFrom a friend.\n", "book", "add", "Piranesi"); err != nil {
 		t.Fatal(err)
 	}
 	e := h.entry("books/piranesi.md")
 	b := e.Book
 	if !slices.Equal(b.Authors, []string{"Susanna Clarke"}) || b.Pages != 272 || b.Added.String() != "2026-10-25" {
 		t.Errorf("book = %+v", b)
+	}
+	if b.Link != "https://openlibrary.org/works/OL20111013W" {
+		t.Errorf("Link = %q, want the Open Library page by default", b.Link)
 	}
 	if b.Status() != content.StatusToRead || e.Body != "From a friend.\n" {
 		t.Errorf("status %s body %q", b.Status(), e.Body)
@@ -138,12 +142,16 @@ func TestBookAddUsesOpenLibrary(t *testing.T) {
 func TestBookAddByHandWhenLookupFails(t *testing.T) {
 	h := newHarness(t, nil)
 	h.search.err = errors.New("offline")
-	if err := h.run("Jane Doe\n\n", "book", "add", "Some Book"); err != nil {
+	// Something that isn't a URL is asked again.
+	if err := h.run("Jane Doe\nnot a url\nhttps://example.com/some-book\n\n", "book", "add", "Some Book"); err != nil {
 		t.Fatal(err)
 	}
 	b := h.entry("books/some-book.md").Book
 	if !slices.Equal(b.Authors, []string{"Jane Doe"}) || b.Pages != 0 {
 		t.Errorf("book = %+v", b)
+	}
+	if b.Link != "https://example.com/some-book" {
+		t.Errorf("Link = %q", b.Link)
 	}
 	if !strings.Contains(h.out.String(), "offline") {
 		t.Errorf("lookup error not reported:\n%s", h.out.String())
@@ -172,12 +180,15 @@ func TestBookFinish(t *testing.T) {
 		"books/james.md": "---\ntitle: James\nauthor: Percival Everett\nstarted: 2026-10-01\npages: 300\n---\n",
 	})
 	// An invalid rating is asked again; a blank page count keeps the old one.
-	if err := h.run("meh\ngreat\nfiction\n\n", "book", "finish", "-date", "2026-10-20", "james"); err != nil {
+	if err := h.run("meh\ngreat\nfiction\n\nhttps://www.amazon.com/dp/B0CHVGKQH1\n", "book", "finish", "-date", "2026-10-20", "james"); err != nil {
 		t.Fatal(err)
 	}
 	b := h.entry("books/james.md").Book
 	if b.Status() != content.StatusRead || b.Finished.String() != "2026-10-20" {
 		t.Errorf("finished = %s", b.Finished)
+	}
+	if b.Link != "https://www.amazon.com/dp/B0CHVGKQH1" {
+		t.Errorf("Link = %q", b.Link)
 	}
 	if b.Rating != content.RatingGreat || b.Form != content.FormFiction || b.Pages != 300 {
 		t.Errorf("book = %+v", b)

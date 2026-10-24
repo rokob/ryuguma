@@ -136,6 +136,21 @@ func (e *env) create(en content.Entry) error {
 	return f.Close()
 }
 
+// askLink asks for a book's canonical link. Enter accepts def, which may be
+// empty; anything else must be a full URL.
+func (e *env) askLink(def string) (string, error) {
+	for {
+		s, err := e.ask("Link to the book (Enter to accept, or paste a URL)", def)
+		if err != nil {
+			return "", err
+		}
+		if s == "" || content.IsWebURL(s) {
+			return s, nil
+		}
+		fmt.Fprintln(e.out, "Enter a full URL starting with https://, or leave it blank.")
+	}
+}
+
 func (e *env) today() content.Date { return content.DateOf(e.now()) }
 
 // dateFlag adds -date, defaulting to today.
@@ -290,8 +305,13 @@ func runBookAdd(e *env, fs *flag.FlagSet, args []string) error {
 			return err
 		}
 	}
+	defaultLink := ""
 	if chosen >= 0 {
-		b.Authors, b.Pages = candidates[chosen].Authors, candidates[chosen].Pages
+		c := candidates[chosen]
+		b.Authors, b.Pages = c.Authors, c.Pages
+		if c.Key != "" {
+			defaultLink = openlibrary.DefaultBaseURL + c.Key
+		}
 	} else {
 		author, err := e.ask("Author (separate several with ;)", "")
 		if err != nil {
@@ -302,6 +322,9 @@ func runBookAdd(e *env, fs *flag.FlagSet, args []string) error {
 				b.Authors = append(b.Authors, a)
 			}
 		}
+	}
+	if b.Link, err = e.askLink(defaultLink); err != nil {
+		return err
 	}
 	note, err := e.ask("Note, like where you heard of it (optional)", "")
 	if err != nil {
@@ -445,8 +468,12 @@ func runBookFinish(e *env, fs *flag.FlagSet, args []string) error {
 		}
 		fmt.Fprintln(e.out, "Enter a page count.")
 	}
+	link, err := e.askLink(b.Link)
+	if err != nil {
+		return err
+	}
 
-	b.Rating, b.Form, b.Pages, b.Finished = content.Rating(rating), content.Form(form), pages, when
+	b.Rating, b.Form, b.Pages, b.Link, b.Finished = content.Rating(rating), content.Form(form), pages, link, when
 	if err := e.save(en); err != nil {
 		return err
 	}

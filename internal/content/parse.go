@@ -174,7 +174,7 @@ func validate(e Entry) error {
 		if b.Form != "" && !slices.Contains(Forms, b.Form) {
 			errs = append(errs, fmt.Errorf("invalid form %q (want fiction or nonfiction)", b.Form))
 		}
-		if b.Link != "" && !isWebURL(b.Link) {
+		if b.Link != "" && !IsWebURL(b.Link) {
 			errs = append(errs, fmt.Errorf("invalid link %q (want a full http or https URL)", b.Link))
 		}
 		if !b.Started.IsZero() && !b.Finished.IsZero() && b.Finished.Before(b.Started) {
@@ -184,7 +184,7 @@ func validate(e Entry) error {
 	return errors.Join(errs...)
 }
 
-func isWebURL(s string) bool {
+func IsWebURL(s string) bool {
 	u, err := url.Parse(s)
 	return err == nil && (u.Scheme == "https" || u.Scheme == "http") && u.Host != ""
 }
