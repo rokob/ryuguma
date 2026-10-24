@@ -32,10 +32,9 @@
   --accent-soft: #ece8f7;
   --code-bg: #f3f1ec;
 
-  --rating-great: #2f6b3a;
-  --rating-good: #4f7a3a;
-  --rating-okay: #8a6d1f;
-  --rating-bad: #9a3b2f;
+  --attention: #8a6d1f;
+  --danger: #9a3b2f;
+  --pip-off: #d9d4cb;
 
   /* One-hue ramp for charts, low to high. Validated as an ordinal ramp
      against --bg in both schemes; keep that true when changing it. */
@@ -55,10 +54,9 @@
     --accent-soft: #2a2540;
     --code-bg: #212026;
 
-    --rating-great: #84c48f;
-    --rating-good: #a7c48a;
-    --rating-okay: #d8bd6a;
-    --rating-bad: #e08c7f;
+    --attention: #d8bd6a;
+    --danger: #e08c7f;
+    --pip-off: #4a4752;
 
     --ramp-1: #5a4aab;
     --ramp-2: #7765cf;
@@ -148,11 +146,11 @@ time, .count, .kind, .eyebrow, .byline, .more, .tags, .site-header, .site-footer
 .kind { text-transform: uppercase; letter-spacing: 0.06em; }
 .more { font-size: var(--text-sm); margin: var(--space-3) 0 0; }
 
-.rating { font-family: var(--font-ui); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.06em; }
-.rating-great { color: var(--rating-great); }
-.rating-good { color: var(--rating-good); }
-.rating-okay { color: var(--rating-okay); }
-.rating-bad { color: var(--rating-bad); }
+/* Ratings are a count of filled pips, so they read without color. */
+.rating { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-ui); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.pips { display: inline-flex; gap: 2px; }
+.pips i { width: 7px; height: 7px; border-radius: 2px; background: var(--pip-off); }
+.pips i.on { background: var(--text); }
 
 .tags { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-3); list-style: none; padding: 0; margin: var(--space-3) 0 0; font-size: var(--text-sm); }
 .tags a { color: var(--muted); text-decoration: none; }
@@ -244,9 +242,9 @@ time, .count, .kind, .eyebrow, .byline, .more, .tags, .site-header, .site-footer
 .prose table { border-collapse: collapse; width: 100%; font-size: var(--text-sm); }
 .prose th, .prose td { text-align: left; padding: var(--space-1) var(--space-2); border-bottom: 1px solid var(--rule); }
 .prose hr { border: none; border-top: 1px solid var(--rule); margin: var(--space-5) 0; }
-.broken-ref { color: var(--rating-bad); text-decoration: wavy underline; }
+.broken-ref { color: var(--danger); text-decoration: wavy underline; }
 
-.draft { font-family: var(--font-ui); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--rating-okay); border: 1px solid currentColor; border-radius: 3px; padding: 0 0.3em; vertical-align: middle; }
+.draft { font-family: var(--font-ui); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--attention); border: 1px solid currentColor; border-radius: 3px; padding: 0 0.3em; vertical-align: middle; }
 
 .provenance { margin-top: var(--space-4); font-family: var(--font-ui); font-size: var(--text-xs); color: var(--muted); }
 .provenance a { color: inherit; }

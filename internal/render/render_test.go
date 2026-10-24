@@ -155,3 +155,16 @@ func TestHeatBin(t *testing.T) {
 		}
 	}
 }
+
+func TestPips(t *testing.T) {
+	pips := funcs["pips"].(func(content.Rating) []bool)
+	for r, want := range map[content.Rating][]bool{
+		content.RatingBad:   {true, false, false, false},
+		content.RatingGood:  {true, true, true, false},
+		content.RatingGreat: {true, true, true, true},
+	} {
+		if got := pips(r); !slices.Equal(got, want) {
+			t.Errorf("pips(%s) = %v, want %v", r, got, want)
+		}
+	}
+}

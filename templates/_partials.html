@@ -3,7 +3,7 @@
 <li class="book-row">
   <a class="title" href="{{.URL}}"><cite>{{.Title}}</cite>{{if .Draft}} <span class="draft">draft</span>{{end}}</a>
   {{- with .Book.Authors}} <span class="author">{{authors .}}</span>{{end}}
-  {{- with .Book.Rating}} <span class="rating rating-{{.}}">{{.}}</span>{{end}}
+  {{- with .Book.Rating}} {{template "rating" .}}{{end}}
   <time datetime="{{isodate .Date}}">{{date .Date}}</time>
 </li>
 {{end}}
@@ -51,3 +51,6 @@
   · <a href="{{$.Page.URL}}history/">History</a>
 </p>
 {{end}}{{end}}
+
+{{/* A book rating as filled pips plus the word. */}}
+{{define "rating"}}<span class="rating" title="Rated {{.}}"><span class="pips" aria-hidden="true">{{range pips .}}<i{{if .}} class="on"{{end}}></i>{{end}}</span>{{.}}</span>{{end}}

@@ -5,6 +5,7 @@ import (
 	"html"
 	"html/template"
 	"regexp"
+	"slices"
 	"strings"
 	"time"
 	"unicode/utf8"
@@ -48,6 +49,15 @@ var funcs = template.FuncMap{
 	},
 	"bin":         heatBin,
 	"ratingNames": func() []content.Rating { return content.Ratings },
+	// pips marks how many of the rating levels a rating fills: great fills all.
+	"pips": func(r content.Rating) []bool {
+		n := slices.Index(content.Ratings, r) + 1
+		pips := make([]bool, len(content.Ratings))
+		for i := range n {
+			pips[i] = true
+		}
+		return pips
+	},
 	"monthNames": func() []string {
 		var names []string
 		for m := time.January; m <= time.December; m++ {
