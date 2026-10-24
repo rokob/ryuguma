@@ -30,6 +30,7 @@ func fixtureSite(t *testing.T) *site.Site {
 		{Kind: content.KindAtom, Slug: "idea", Path: "atoms/idea.md", Date: content.MustDate("2026-06-01"), Body: "A small idea.\n"},
 		{Kind: content.KindPage, Slug: "home", Path: "pages/home.md", Title: "Home", Body: "Hi, I write here.\n"},
 		{Kind: content.KindPage, Slug: "about", Path: "pages/about.md", Title: "About", Body: "About me.\n"},
+		{Kind: content.KindPage, Slug: "reading", Path: "pages/reading.md", Title: "Reading", Body: "Why I track books.\n"},
 	}
 	revs := map[string][]history.Revision{"books/dune.md": {
 		{Commit: "c0ffee1234567890", Date: time.Date(2026, 10, 24, 0, 0, 0, 0, time.UTC), Subject: "chore(content): migrate", Path: "content/books/dune.md"},
@@ -52,7 +53,7 @@ func TestSiteWritesEveryPage(t *testing.T) {
 	want := []string{
 		"404.html", "about/index.html", "atoms/idea/index.html", "atoms/index.html",
 		"books/dune/history/index.html", "books/dune/index.html", "books/index.html", "books/james/index.html", "books/someday/index.html",
-		"index.html", "posts/hello/index.html", "posts/index.html",
+		"index.html", "posts/hello/index.html", "posts/index.html", "reading/index.html",
 		"tags/index.html", "tags/life/index.html", "tags/scifi/index.html",
 	}
 	var got []string
@@ -135,6 +136,22 @@ func TestAuthors(t *testing.T) {
 	for want, names := range cases {
 		if got := authors(names); got != want {
 			t.Errorf("authors(%v) = %q, want %q", names, got, want)
+		}
+	}
+}
+
+func TestComma(t *testing.T) {
+	for n, want := range map[int]string{0: "0", 999: "999", 1000: "1,000", 75191: "75,191", 1234567: "1,234,567", -4200: "-4,200"} {
+		if got := comma(n); got != want {
+			t.Errorf("comma(%d) = %q, want %q", n, got, want)
+		}
+	}
+}
+
+func TestHeatBin(t *testing.T) {
+	for n, want := range map[int]int{0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 4, 9: 4} {
+		if got := heatBin(n); got != want {
+			t.Errorf("heatBin(%d) = %d, want %d", n, got, want)
 		}
 	}
 }

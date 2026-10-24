@@ -10,6 +10,7 @@ import (
 	"os"
 	"path"
 	"path/filepath"
+	"time"
 
 	"github.com/rokob/ryuguma/internal/site"
 )
@@ -19,6 +20,8 @@ type Config struct {
 	URL    string `yaml:"url"`
 	Author string `yaml:"author"`
 	Repo   string `yaml:"repo"`
+	// BuiltAt is when the build runs, for anything relative to "now".
+	BuiltAt time.Time `yaml:"-"`
 }
 
 // Output receives generated files. Names are slash-separated paths relative
@@ -82,7 +85,12 @@ func Site(s *site.Site, cfg Config, tmpl fs.FS, out Output) error {
 		if p.Slug == homeSlug {
 			continue
 		}
-		r.page(indexFor(p.URL), "page.html", Data{Path: p.URL, Title: p.Title, Page: p})
+		// A page can have its own template, like page-reading.html.
+		name := "page-" + p.Slug + ".html"
+		if _, err := fs.Stat(tmpl, name); err != nil {
+			name = "page.html"
+		}
+		r.page(indexFor(p.URL), name, Data{Path: p.URL, Title: p.Title, Page: p})
 	}
 	for i := range s.Tags {
 		t := &s.Tags[i]

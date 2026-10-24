@@ -36,6 +36,13 @@
   --rating-good: #4f7a3a;
   --rating-okay: #8a6d1f;
   --rating-bad: #9a3b2f;
+
+  /* One-hue ramp for charts, low to high. Validated as an ordinal ramp
+     against --bg in both schemes; keep that true when changing it. */
+  --ramp-1: #a596e3;
+  --ramp-2: #7d68d0;
+  --ramp-3: #5a40b6;
+  --ramp-4: #3a1f8c;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -52,6 +59,11 @@
     --rating-good: #a7c48a;
     --rating-okay: #d8bd6a;
     --rating-bad: #e08c7f;
+
+    --ramp-1: #5a4aab;
+    --ramp-2: #7765cf;
+    --ramp-3: #9a8aec;
+    --ramp-4: #c6bcfb;
   }
 }
 
@@ -242,3 +254,62 @@ time, .count, .kind, .eyebrow, .byline, .more, .tags, .site-header, .site-footer
 .revisions time, .revisions .links { font-family: var(--font-ui); font-size: var(--text-xs); color: var(--muted); }
 .revisions .links { display: flex; gap: var(--space-3); }
 @media (max-width: 34rem) { .revisions li { grid-template-columns: 1fr auto; } .revisions .subject { grid-column: 1 / -1; grid-row: 2; } }
+
+/*
+ * Reading stats
+ */
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.table-scroll { overflow-x: auto; }
+
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: var(--space-3); margin: var(--space-5) 0; }
+.kpi { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-3) 0; border-top: 2px solid var(--text); font-family: var(--font-ui); }
+.kpi-label { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.kpi-value { font-size: var(--text-2xl); font-weight: 600; line-height: 1.1; }
+.kpi-note { font-size: var(--text-xs); color: var(--muted); }
+
+.ledger, .heatmap { border-collapse: collapse; font-family: var(--font-ui); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
+.ledger { width: 100%; }
+.ledger th, .ledger td { padding: var(--space-1) var(--space-2); border-bottom: 1px solid var(--rule); text-align: left; vertical-align: middle; }
+.ledger thead th { font-size: var(--text-xs); font-weight: 400; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.ledger tbody th { font-weight: 600; }
+.ledger tbody th a { color: inherit; }
+.ledger .num { text-align: right; white-space: nowrap; }
+.ledger tr.empty td, .ledger tr.empty th { color: var(--muted); }
+.ledger .bar-col { width: 24%; }
+.ledger .rating-col { width: 20%; }
+.bar-cell { display: flex; align-items: center; gap: var(--space-2); }
+.bar-value { flex: none; min-width: 3.5rem; text-align: right; }
+.bar-track { flex: 1; }
+.bar { display: block; height: 10px; width: calc(var(--v) * 100%); border-radius: 0 4px 4px 0; background: var(--ramp-3); }
+
+.stack { display: flex; gap: 2px; height: 10px; }
+.seg { min-width: 2px; }
+.seg:first-child { border-radius: 0; }
+.seg:last-child { border-radius: 0 4px 4px 0; }
+.r0 { background: var(--ramp-1); }
+.r1 { background: var(--ramp-2); }
+.r2 { background: var(--ramp-3); }
+.r3 { background: var(--ramp-4); }
+
+.heatmap th { font-weight: 400; color: var(--muted); font-size: var(--text-xs); padding: 0 var(--space-2) 0 0; text-align: right; }
+.heatmap thead th { text-align: center; padding: 0 0 var(--space-1); }
+.heatmap abbr { text-decoration: none; }
+.heatmap { width: 100%; table-layout: fixed; }
+.heatmap th:first-child { width: 3rem; }
+.heatmap td { height: 1.5rem; padding: 0; border: 2px solid var(--bg); border-radius: 4px; }
+.heatmap .q0 { background: var(--rule); }
+.heatmap .q1, .legend .q1 { background: var(--ramp-1); }
+.heatmap .q2, .legend .q2 { background: var(--ramp-2); }
+.heatmap .q3, .legend .q3 { background: var(--ramp-3); }
+.heatmap .q4, .legend .q4 { background: var(--ramp-4); }
+.legend .q0 { background: var(--rule); }
+.heatmap .future { background: transparent; }
+
+.legend { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-3); list-style: none; padding: 0; margin: var(--space-2) 0 0; font-family: var(--font-ui); font-size: var(--text-xs); color: var(--muted); }
+.legend li { display: flex; align-items: center; gap: var(--space-1); }
+.swatch { display: inline-block; width: 0.75rem; height: 0.75rem; border-radius: 3px; }
+
+.columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 0 var(--space-5); }
+.ranked { padding-left: 1.5em; margin: 0; }
+.ranked li { padding: var(--space-1) 0; }
+.ranked-value { font-family: var(--font-ui); font-size: var(--text-xs); color: var(--muted); white-space: nowrap; }

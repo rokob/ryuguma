@@ -1,7 +1,7 @@
 {{define "main"}}
 <header class="index-header">
   <h1>Books</h1>
-  <p class="lede">{{len .Site.Books}} books read, {{pageCount .Site.Books}} pages.</p>
+  <p class="lede">{{len .Site.Books}} books read, {{comma (pageCount .Site.Books)}} pages. <a href="/reading/">Reading stats</a></p>
 </header>
 
 {{with .Site.Reading}}
@@ -21,7 +21,7 @@
 <section class="index-section">
   <h2>Read</h2>
   {{range byYear .Site.Books}}
-  <section class="year">
+  <section class="year" id="y{{.Year}}">
     <h3>{{.Year}} <span class="count">{{len .Pages}} {{plural (len .Pages) "book" "books"}}</span></h3>
     <ul class="book-list">{{range .Pages}}{{template "book-row" .}}{{end}}</ul>
   </section>

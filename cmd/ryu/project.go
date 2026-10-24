@@ -9,6 +9,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"time"
 
 	"go.yaml.in/yaml/v3"
 
@@ -66,6 +67,7 @@ func (p *project) build(opts site.Options, out render.Output) (*site.Site, error
 	if err != nil {
 		return nil, err
 	}
+	cfg.BuiltAt = time.Now()
 	s, err := p.load(opts)
 	if err != nil {
 		return nil, err

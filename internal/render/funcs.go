@@ -6,6 +6,7 @@ import (
 	"html/template"
 	"regexp"
 	"strings"
+	"time"
 	"unicode/utf8"
 
 	"github.com/rokob/ryuguma/internal/content"
@@ -36,6 +37,24 @@ var funcs = template.FuncMap{
 		}
 		return many
 	},
+	"readingStats": site.Reading,
+	"comma":        comma,
+	"frac":         frac,
+	"percent": func(n, total int) string {
+		if total == 0 {
+			return "–"
+		}
+		return fmt.Sprintf("%d%%", (100*n+total/2)/total)
+	},
+	"bin":         heatBin,
+	"ratingNames": func() []content.Rating { return content.Ratings },
+	"monthNames": func() []string {
+		var names []string
+		for m := time.January; m <= time.December; m++ {
+			names = append(names, m.String())
+		}
+		return names
+	},
 	"pageCount": func(pages []*site.Page) int {
 		total := 0
 		for _, p := range pages {
@@ -45,6 +64,38 @@ var funcs = template.FuncMap{
 		}
 		return total
 	},
+}
+
+// comma formats 63481 as "63,481".
+func comma(n int) string {
+	s := fmt.Sprint(n)
+	if n < 0 {
+		return "-" + comma(-n)
+	}
+	for i := len(s) - 3; i > 0; i -= 3 {
+		s = s[:i] + "," + s[i:]
+	}
+	return s
+}
+
+// frac is n/max for CSS, as a string so templates can put it in a style.
+func frac(n, max int) string {
+	if max == 0 {
+		return "0"
+	}
+	return fmt.Sprintf("%.3f", float64(n)/float64(max))
+}
+
+// heatBin buckets a month's book count for the heatmap: 0, 1, 2, 3–4, 5+.
+func heatBin(n int) int {
+	switch {
+	case n >= 5:
+		return 4
+	case n >= 3:
+		return 3
+	default:
+		return n
+	}
 }
 
 type YearGroup struct {
