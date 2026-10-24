@@ -1,0 +1,12 @@
+{{define "main"}}{{with .Page}}
+<article class="entry atom-page">
+  <p class="eyebrow"><a href="/atoms/">Atom</a>{{if .Draft}} · draft{{end}}</p>
+  {{with .Title}}<h1>{{.}}</h1>{{end}}
+  <div class="prose">{{.HTML}}</div>
+  <footer class="entry-footer">
+    <p class="byline"><time datetime="{{isodate .Date}}">{{date .Date}}</time></p>
+    {{template "tag-list" .Tags}}
+    {{template "backlinks" .}}
+  </footer>
+</article>
+{{end}}{{end}}

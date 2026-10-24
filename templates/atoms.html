@@ -1,0 +1,9 @@
+{{define "main"}}
+<header class="index-header">
+  <h1>Atoms</h1>
+  <p class="lede">Small ideas, one at a time.</p>
+</header>
+<div class="atom-stream">
+{{range .Site.Atoms}}{{template "atom" .}}{{else}}<p>Nothing yet.</p>{{end}}
+</div>
+{{end}}

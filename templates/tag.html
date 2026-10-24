@@ -1,0 +1,15 @@
+{{define "main"}}{{with .Tag}}
+<header class="index-header">
+  <p class="eyebrow"><a href="/tags/">Tag</a></p>
+  <h1>#{{.Name}}</h1>
+</header>
+<ul class="mixed-list">
+{{range .Pages}}
+  <li>
+    <span class="kind">{{.Kind}}</span>
+    {{template "ref" .}}
+    <time datetime="{{isodate .Date}}">{{date .Date}}</time>
+  </li>
+{{end}}
+</ul>
+{{end}}{{end}}

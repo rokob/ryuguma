@@ -1,0 +1,14 @@
+{{define "main"}}{{with .Page}}
+<article class="entry post">
+  <header class="entry-header">
+    <p class="eyebrow"><a href="/posts/">Post</a>{{if .Draft}} · draft{{end}}</p>
+    <h1>{{.Title}}</h1>
+    <p class="byline"><time datetime="{{isodate .Date}}">{{date .Date}}</time></p>
+  </header>
+  <div class="prose">{{.HTML}}</div>
+  <footer class="entry-footer">
+    {{template "tag-list" .Tags}}
+    {{template "backlinks" .}}
+  </footer>
+</article>
+{{end}}{{end}}

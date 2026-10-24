@@ -1,0 +1,14 @@
+{{define "main"}}
+<header class="index-header">
+  <h1>Posts</h1>
+  <p class="lede">Writing about whatever.</p>
+</header>
+{{range byYear .Site.Posts}}
+<section class="year">
+  <h2>{{.Year}}</h2>
+  <ul class="post-list">{{range .Pages}}{{template "post-row" .}}{{end}}</ul>
+</section>
+{{else}}
+<p>Nothing yet.</p>
+{{end}}
+{{end}}

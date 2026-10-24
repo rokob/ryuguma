@@ -1,0 +1,25 @@
+{{define "main"}}{{with .Page}}
+<article class="entry book">
+  <header class="entry-header">
+    <p class="eyebrow"><a href="/books/">Book</a>
+      {{- if eq .Book.Status "reading"}} · reading now{{else if eq .Book.Status "to-read"}} · on the list{{end}}</p>
+    <h1><cite>{{.Title}}</cite></h1>
+    {{with .Book.Authors}}<p class="byline">by {{authors .}}</p>{{end}}
+    <dl class="facts">
+      {{- with .Book}}
+      {{- if not .Finished.IsZero}}<div><dt>Finished</dt><dd><time datetime="{{isodate .Finished}}">{{date .Finished}}</time></dd></div>{{end}}
+      {{- if and .Finished.IsZero (not .Started.IsZero)}}<div><dt>Started</dt><dd><time datetime="{{isodate .Started}}">{{date .Started}}</time></dd></div>{{end}}
+      {{- if and .Started.IsZero (not .Added.IsZero)}}<div><dt>Added</dt><dd><time datetime="{{isodate .Added}}">{{date .Added}}</time></dd></div>{{end}}
+      {{- with .Pages}}<div><dt>Pages</dt><dd>{{.}}</dd></div>{{end}}
+      {{- with .Form}}<div><dt>Form</dt><dd>{{capitalize .}}</dd></div>{{end}}
+      {{- with .Rating}}<div><dt>Rating</dt><dd class="rating rating-{{.}}">{{capitalize .}}</dd></div>{{end}}
+      {{- end}}
+    </dl>
+  </header>
+  <div class="prose">{{.HTML}}</div>
+  <footer class="entry-footer">
+    {{template "tag-list" .Tags}}
+    {{template "backlinks" .}}
+  </footer>
+</article>
+{{end}}{{end}}

@@ -1,0 +1,6 @@
+{{define "main"}}{{with .Page}}
+<article class="entry page">
+  <header class="entry-header"><h1>{{.Title}}</h1></header>
+  <div class="prose">{{.HTML}}</div>
+</article>
+{{end}}{{end}}

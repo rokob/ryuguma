@@ -1,0 +1,33 @@
+{{define "base"}}<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{with .Title}}{{.}} · {{end}}{{.Config.Title}}</title>
+{{- with .Page}}{{with .Summary}}
+<meta name="description" content="{{.}}">{{end}}{{end}}
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="site-name" href="/">{{.Config.Title}}</a>
+  <nav class="site-nav" aria-label="Site">
+    <a href="/books/"{{if hasPrefix .Path "/books/"}} class="here"{{end}}>Books</a>
+    <a href="/posts/"{{if hasPrefix .Path "/posts/"}} class="here"{{end}}>Posts</a>
+    <a href="/atoms/"{{if hasPrefix .Path "/atoms/"}} class="here"{{end}}>Atoms</a>
+    <a href="/about/"{{if hasPrefix .Path "/about/"}} class="here"{{end}}>About</a>
+  </nav>
+</header>
+<main id="main">
+{{block "main" .}}{{end}}
+</main>
+<footer class="site-footer">
+  <a href="/tags/">Tags</a>
+  <a href="{{.Config.Repo}}">Source</a>
+</footer>
+</body>
+</html>
+{{end}}

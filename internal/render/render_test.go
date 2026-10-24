@@ -1,0 +1,132 @@
+package render
+
+import (
+	"html/template"
+	"os"
+	"slices"
+	"strings"
+	"testing"
+	"testing/fstest"
+
+	"github.com/rokob/ryuguma/internal/content"
+	"github.com/rokob/ryuguma/internal/site"
+)
+
+func fixtureSite(t *testing.T) *site.Site {
+	t.Helper()
+	entries := []content.Entry{
+		{Kind: content.KindBook, Slug: "dune", Path: "books/dune.md", Title: "Dune", Tags: []string{"scifi"},
+			Date: content.MustDate("2015-08-03"),
+			Book: &content.Book{Authors: []string{"Frank Herbert"}, Finished: content.MustDate("2015-08-03"), Pages: 896, Rating: content.RatingGreat}},
+		{Kind: content.KindBook, Slug: "james", Path: "books/james.md", Title: "James",
+			Date: content.MustDate("2026-05-01"),
+			Book: &content.Book{Authors: []string{"Percival Everett"}, Started: content.MustDate("2026-05-01")}},
+		{Kind: content.KindBook, Slug: "someday", Path: "books/someday.md", Title: "Someday",
+			Date: content.MustDate("2026-02-01"), Book: &content.Book{Added: content.MustDate("2026-02-01")}},
+		{Kind: content.KindPost, Slug: "hello", Path: "posts/hello.md", Title: "Hello", Date: content.MustDate("2014-01-01"),
+			Tags: []string{"life"}, Body: "First I read [[dune]].\n"},
+		{Kind: content.KindAtom, Slug: "idea", Path: "atoms/idea.md", Date: content.MustDate("2026-06-01"), Body: "A small idea.\n"},
+		{Kind: content.KindPage, Slug: "home", Path: "pages/home.md", Title: "Home", Body: "Hi, I write here.\n"},
+		{Kind: content.KindPage, Slug: "about", Path: "pages/about.md", Title: "About", Body: "About me.\n"},
+	}
+	s, err := site.Build(entries, site.Options{})
+	if err != nil {
+		t.Fatal(err)
+	}
+	return s
+}
+
+var cfg = Config{Title: "ryuguma", URL: "https://ryuguma.com", Repo: "https://github.com/rokob/ryuguma"}
+
+func TestSiteWritesEveryPage(t *testing.T) {
+	out := MemOutput{}
+	if err := Site(fixtureSite(t), cfg, os.DirFS("../../templates"), out); err != nil {
+		t.Fatalf("Site: %v", err)
+	}
+	want := []string{
+		"404.html", "about/index.html", "atoms/idea/index.html", "atoms/index.html",
+		"books/dune/index.html", "books/index.html", "books/james/index.html", "books/someday/index.html",
+		"index.html", "posts/hello/index.html", "posts/index.html",
+		"tags/index.html", "tags/life/index.html", "tags/scifi/index.html",
+	}
+	var got []string
+	for name := range out {
+		got = append(got, name)
+	}
+	slices.Sort(got)
+	if !slices.Equal(got, want) {
+		t.Errorf("files =\n%v\nwant\n%v", got, want)
+	}
+}
+
+func TestPagesShowTheirContent(t *testing.T) {
+	out := MemOutput{}
+	if err := Site(fixtureSite(t), cfg, os.DirFS("../../templates"), out); err != nil {
+		t.Fatalf("Site: %v", err)
+	}
+	checks := map[string][]string{
+		"books/dune/index.html":  {"<title>Dune · ryuguma</title>", "<cite>Dune</cite>", "Frank Herbert", "896", "Referenced by", `href="/posts/hello/"`},
+		"books/james/index.html": {"reading now", "Started"},
+		"index.html":             {"Hi, I write here.", "Reading now", "James", `href="/books/dune/"`, "A small idea."},
+		"books/index.html":       {"Up next", "Someday", "2015", "1 book"},
+		"posts/hello/index.html": {`<a href="/books/dune/"><cite>Dune</cite></a>`, "#life"},
+		"tags/scifi/index.html":  {"#scifi", "Dune"},
+	}
+	for name, wants := range checks {
+		html := string(out[name])
+		for _, w := range wants {
+			if !strings.Contains(html, w) {
+				t.Errorf("%s: missing %q", name, w)
+			}
+		}
+	}
+}
+
+func TestTemplateErrorsNameTheFile(t *testing.T) {
+	tmpl := fstest.MapFS{
+		"_layout.html": {Data: []byte(`{{define "base"}}{{block "main" .}}{{end}}{{end}}`)},
+		"home.html":    {Data: []byte(`{{define "main"}}{{.Nope}}{{end}}`)},
+	}
+	err := Site(fixtureSite(t), cfg, tmpl, MemOutput{})
+	if err == nil || !strings.Contains(err.Error(), "index.html") {
+		t.Errorf("err = %v", err)
+	}
+}
+
+func TestCopy(t *testing.T) {
+	src := fstest.MapFS{"style.css": {Data: []byte("a{}")}, "img/x.png": {Data: []byte("png")}, ".DS_Store": {Data: []byte("junk")}}
+	out := MemOutput{}
+	if err := Copy(out, "static", src); err != nil {
+		t.Fatal(err)
+	}
+	if len(out) != 2 || string(out["static/style.css"]) != "a{}" || out["static/img/x.png"] == nil {
+		t.Errorf("out = %v", out)
+	}
+}
+
+func TestExcerpt(t *testing.T) {
+	body := template.HTML("<h2>Skip me</h2><p>First <em>paragraph</em> &amp; more words here.</p><p>Second.</p>")
+	if got := excerpt(100, body); got != "First paragraph & more words here." {
+		t.Errorf("excerpt = %q", got)
+	}
+	if got := excerpt(18, body); got != "First paragraph &…" {
+		t.Errorf("short excerpt = %q", got)
+	}
+	if got := excerpt(10, "plain summary text"); got != "plain…" {
+		t.Errorf("string excerpt = %q", got)
+	}
+}
+
+func TestAuthors(t *testing.T) {
+	cases := map[string][]string{
+		"":            nil,
+		"A":           {"A"},
+		"A and B":     {"A", "B"},
+		"A, B, and C": {"A", "B", "C"},
+	}
+	for want, names := range cases {
+		if got := authors(names); got != want {
+			t.Errorf("authors(%v) = %q, want %q", names, got, want)
+		}
+	}
+}

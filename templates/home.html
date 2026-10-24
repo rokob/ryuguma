@@ -1,0 +1,31 @@
+{{define "main"}}
+{{with .Page}}<section class="intro prose">{{.HTML}}</section>{{end}}
+
+{{with .Site.Reading}}
+<section class="home-section">
+  <h2>Reading now</h2>
+  <ul class="book-list">{{range .}}{{template "book-row" .}}{{end}}</ul>
+</section>
+{{end}}
+
+<section class="home-section">
+  <h2><a href="/books/">Recently read</a></h2>
+  <ul class="book-list">{{range take 6 .Site.Books}}{{template "book-row" .}}{{end}}</ul>
+  <p class="more"><a href="/books/">All {{len .Site.Books}} books</a></p>
+</section>
+
+{{with .Site.Posts}}
+<section class="home-section">
+  <h2><a href="/posts/">Posts</a></h2>
+  <ul class="post-list">{{range take 4 .}}{{template "post-row" .}}{{end}}</ul>
+  <p class="more"><a href="/posts/">All {{len .}} posts</a></p>
+</section>
+{{end}}
+
+{{with .Site.Atoms}}
+<section class="home-section">
+  <h2><a href="/atoms/">Atoms</a></h2>
+  {{range take 3 .}}{{template "atom" .}}{{end}}
+</section>
+{{end}}
+{{end}}
