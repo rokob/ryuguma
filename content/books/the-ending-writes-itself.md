@@ -1,6 +1,6 @@
 ---
 title: The Ending Writes Itself
-author: Evelyn Clarke (Novelist)
+author: Evelyn Clarke
 finished: 2026-06-22
 pages: 352
 rating: good
