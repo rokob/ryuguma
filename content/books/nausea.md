@@ -1,5 +1,6 @@
 ---
 title: Nausea
+author: Jean-Paul Sartre
 finished: 2017-12-08
 pages: 192
 rating: okay

@@ -1,5 +1,6 @@
 ---
 title: Chosen Soldier
+author: Dick Couch
 finished: 2015-06-08
 pages: 416
 rating: good

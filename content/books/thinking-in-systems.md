@@ -1,5 +1,6 @@
 ---
 title: Thinking in Systems
+author: Donella H. Meadows
 finished: 2021-02-21
 pages: 217
 rating: great

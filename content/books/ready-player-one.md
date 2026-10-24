@@ -1,5 +1,6 @@
 ---
 title: Ready Player One
+author: Ernest Cline
 finished: 2015-02-13
 pages: 386
 rating: good

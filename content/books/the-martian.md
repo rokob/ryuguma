@@ -1,5 +1,6 @@
 ---
 title: The Martian
+author: Andy Weir
 finished: 2015-01-26
 pages: 385
 rating: good

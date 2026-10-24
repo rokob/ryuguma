@@ -1,5 +1,6 @@
 ---
 title: The Drawing of the Three
+author: Stephen King
 finished: 2017-05-16
 pages: 529
 rating: good

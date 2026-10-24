@@ -1,5 +1,6 @@
 ---
 title: The Athena Project
+author: Brad Thor
 finished: 2020-06-14
 pages: 337
 rating: okay

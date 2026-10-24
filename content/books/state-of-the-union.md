@@ -1,5 +1,6 @@
 ---
 title: State of the Union
+author: Brad Thor
 finished: 2015-07-09
 pages: 592
 rating: good

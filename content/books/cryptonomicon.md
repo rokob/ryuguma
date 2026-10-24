@@ -1,5 +1,6 @@
 ---
 title: Cryptonomicon
+author: Neal Stephenson
 finished: 2015-05-04
 pages: 1168
 rating: good

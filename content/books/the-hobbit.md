@@ -1,5 +1,6 @@
 ---
 title: The Hobbit
+author: J.R.R. Tolkien
 finished: 2025-08-21
 pages: 386
 rating: great

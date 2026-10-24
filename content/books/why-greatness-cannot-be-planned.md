@@ -1,5 +1,6 @@
 ---
 title: Why Greatness Cannot Be Planned
+author: [Kenneth O. Stanley, Joel Lehman]
 finished: 2021-03-19
 pages: 154
 rating: okay

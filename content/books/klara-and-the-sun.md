@@ -1,5 +1,6 @@
 ---
 title: Klara and the Sun
+author: Kazuo Ishiguro
 finished: 2021-11-07
 pages: 321
 rating: good

@@ -1,5 +1,6 @@
 ---
 title: I Am Pilgrim
+author: Terry Hayes
 finished: 2015-01-19
 pages: 801
 rating: great

@@ -1,5 +1,6 @@
 ---
 title: The Thursday Murder Club
+author: Richard Osman
 finished: 2025-12-04
 pages: 363
 rating: good

@@ -1,5 +1,6 @@
 ---
 title: The Return Of The King
+author: J.R.R. Tolkien
 finished: 2025-11-08
 pages: 432
 rating: great

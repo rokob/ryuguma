@@ -1,5 +1,6 @@
 ---
 title: Inside Delta Force
+author: Eric L. Haney
 finished: 2015-05-23
 pages: 336
 rating: good

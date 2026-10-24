@@ -1,5 +1,6 @@
 ---
 title: Everything I Never Told You
+author: Celeste Ng
 finished: 2015-02-01
 pages: 298
 rating: good

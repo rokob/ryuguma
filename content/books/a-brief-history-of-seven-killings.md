@@ -1,5 +1,6 @@
 ---
 title: A Brief History of Seven Killings
+author: Marlon James
 finished: 2018-08-11
 pages: 688
 rating: good

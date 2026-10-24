@@ -1,5 +1,6 @@
 ---
 title: Fates and Furies
+author: Lauren Groff
 finished: 2016-03-10
 pages: 391
 rating: good

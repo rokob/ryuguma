@@ -1,5 +1,6 @@
 ---
 title: James
+author: Percival Everett
 finished: 2026-05-09
 pages: 304
 rating: great

@@ -1,5 +1,6 @@
 ---
 title: The Martian Chronicles
+author: Ray Bradbury
 finished: 2018-10-10
 pages: 298
 rating: good

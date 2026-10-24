@@ -1,5 +1,6 @@
 ---
 title: Annihilation
+author: Jeff VanderMeer
 finished: 2018-01-18
 pages: 208
 rating: good

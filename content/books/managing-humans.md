@@ -1,5 +1,6 @@
 ---
 title: Managing Humans
+author: Michael Lopp
 finished: 2021-11-20
 pages: 281
 rating: okay

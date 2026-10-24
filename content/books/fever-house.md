@@ -1,5 +1,6 @@
 ---
 title: Fever House
+author: Keith Rosson
 finished: 2024-11-12
 pages: 426
 rating: great

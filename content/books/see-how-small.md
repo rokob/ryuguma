@@ -1,5 +1,6 @@
 ---
 title: See How Small
+author: Scott Blackwood
 finished: 2015-01-30
 pages: 218
 rating: okay

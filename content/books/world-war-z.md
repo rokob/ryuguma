@@ -1,5 +1,6 @@
 ---
 title: World War Z
+author: Max Brooks
 finished: 2015-07-25
 pages: 352
 rating: great

@@ -1,5 +1,6 @@
 ---
 title: The Wind-Up Bird Chronicle
+author: Haruki Murakami
 finished: 2026-10-19
 pages: 626
 rating: great

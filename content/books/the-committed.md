@@ -1,5 +1,6 @@
 ---
 title: The Committed
+author: Viet Thanh Nguyen
 finished: 2022-04-15
 pages: 400
 rating: great

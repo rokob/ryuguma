@@ -1,5 +1,6 @@
 ---
 title: Never Enough
+author: Jennifer Breheny Wallace
 finished: 2025-07-13
 pages: 314
 rating: good

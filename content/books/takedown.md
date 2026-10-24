@@ -1,5 +1,6 @@
 ---
 title: Takedown
+author: Brad Thor
 finished: 2015-12-10
 pages: 528
 rating: good

@@ -1,5 +1,6 @@
 ---
 title: Atomic Habits
+author: James Clear
 finished: 2020-01-09
 pages: 270
 rating: good

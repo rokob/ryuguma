@@ -1,5 +1,6 @@
 ---
 title: The Three-Body Problem
+author: Cixin Liu
 finished: 2020-01-20
 pages: 400
 rating: good

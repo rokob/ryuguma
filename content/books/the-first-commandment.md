@@ -1,5 +1,6 @@
 ---
 title: The First Commandment
+author: Brad Thor
 finished: 2017-12-31
 pages: 421
 rating: good

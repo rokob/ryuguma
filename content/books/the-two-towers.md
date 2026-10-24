@@ -1,5 +1,6 @@
 ---
 title: The Two Towers
+author: J.R.R. Tolkien
 finished: 2025-09-21
 pages: 448
 rating: great

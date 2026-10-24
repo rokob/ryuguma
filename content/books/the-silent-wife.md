@@ -1,5 +1,6 @@
 ---
 title: The Silent Wife
+author: A. S. A. Harrison
 finished: 2019-03-04
 pages: 386
 rating: bad

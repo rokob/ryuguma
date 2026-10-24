@@ -1,5 +1,6 @@
 ---
 title: Morning Star
+author: Pierce Brown
 finished: 2016-04-15
 pages: 545
 rating: good

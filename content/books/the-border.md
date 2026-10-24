@@ -1,5 +1,6 @@
 ---
 title: The Border
+author: Don Winslow
 finished: 2022-06-19
 pages: 729
 rating: good

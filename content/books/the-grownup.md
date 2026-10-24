@@ -1,5 +1,6 @@
 ---
 title: The Grownup
+author: Gillian Flynn
 finished: 2015-12-16
 pages: 66
 rating: good

@@ -1,5 +1,6 @@
 ---
 title: '2001: A Space Odyssey'
+author: Arthur C. Clarke
 finished: 2019-06-02
 pages: 255
 rating: great

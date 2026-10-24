@@ -1,5 +1,6 @@
 ---
 title: Deep Work
+author: Cal Newport
 finished: 2024-11-05
 pages: 304
 rating: good

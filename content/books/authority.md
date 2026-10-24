@@ -1,5 +1,6 @@
 ---
 title: Authority
+author: Jeff VanderMeer
 finished: 2018-04-22
 pages: 353
 rating: okay

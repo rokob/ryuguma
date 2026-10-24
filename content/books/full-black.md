@@ -1,5 +1,6 @@
 ---
 title: Full Black
+author: Brad Thor
 finished: 2021-01-22
 pages: 402
 rating: okay

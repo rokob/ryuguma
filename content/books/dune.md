@@ -1,5 +1,6 @@
 ---
 title: Dune
+author: Frank Herbert
 finished: 2015-08-03
 pages: 894
 rating: great

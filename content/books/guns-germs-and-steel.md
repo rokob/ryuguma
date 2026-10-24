@@ -1,5 +1,6 @@
 ---
 title: Guns, Germs, and Steel
+author: Jared Diamond
 finished: 2015-03-30
 pages: 480
 rating: good

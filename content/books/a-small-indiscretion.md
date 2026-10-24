@@ -1,5 +1,6 @@
 ---
 title: A Small Indiscretion
+author: Jan Ellison
 finished: 2015-06-22
 pages: 354
 rating: good

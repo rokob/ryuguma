@@ -1,5 +1,6 @@
 ---
 title: Ghost Wall
+author: Sarah Moss
 finished: 2020-05-12
 pages: 146
 rating: good

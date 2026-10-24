@@ -1,5 +1,6 @@
 ---
 title: 13 Hours
+author: Mitchell Zuckoff
 finished: 2015-11-16
 pages: 352
 rating: good

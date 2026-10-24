@@ -1,5 +1,6 @@
 ---
 title: Between the World and Me
+author: Ta-Nehisi Coates
 finished: 2018-01-29
 pages: 176
 rating: great

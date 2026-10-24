@@ -1,5 +1,6 @@
 ---
 title: The Left Hand of Darkness
+author: Ursula K. Le Guin
 finished: 2018-03-01
 pages: 320
 rating: good

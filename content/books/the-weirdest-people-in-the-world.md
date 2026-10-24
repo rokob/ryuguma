@@ -1,5 +1,6 @@
 ---
 title: The WEIRDest People in the World
+author: Joseph Henrich
 finished: 2022-03-26
 pages: 490
 rating: great

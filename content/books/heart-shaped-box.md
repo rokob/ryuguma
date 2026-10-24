@@ -1,5 +1,6 @@
 ---
 title: Heart-Shaped Box
+author: Joe Hill
 finished: 2018-10-30
 pages: 402
 rating: great

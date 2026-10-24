@@ -1,5 +1,6 @@
 ---
 title: The Nightingale
+author: Kristin Hannah
 finished: 2015-12-28
 pages: 593
 rating: great

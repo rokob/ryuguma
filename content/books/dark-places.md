@@ -1,5 +1,6 @@
 ---
 title: Dark Places
+author: Gillian Flynn
 finished: 2015-05-25
 pages: 349
 rating: great

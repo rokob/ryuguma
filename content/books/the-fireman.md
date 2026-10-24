@@ -1,5 +1,6 @@
 ---
 title: The Fireman
+author: Joe Hill
 finished: 2020-01-02
 pages: 742
 rating: good

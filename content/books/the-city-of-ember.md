@@ -1,5 +1,6 @@
 ---
 title: The City of Ember
+author: Jeanne DuPrau
 finished: 2015-07-02
 pages: 270
 rating: okay

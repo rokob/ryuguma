@@ -1,5 +1,6 @@
 ---
 title: The Fellowship Of The Ring
+author: J.R.R. Tolkien
 finished: 2025-09-05
 pages: 432
 rating: great

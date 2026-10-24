@@ -1,5 +1,6 @@
 ---
 title: Pretty Girls
+author: Karin Slaughter
 finished: 2015-10-29
 pages: 548
 rating: good

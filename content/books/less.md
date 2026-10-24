@@ -1,5 +1,6 @@
 ---
 title: Less
+author: Andrew Sean Greer
 finished: 2019-06-21
 pages: 273
 rating: great

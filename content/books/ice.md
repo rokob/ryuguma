@@ -1,5 +1,6 @@
 ---
 title: Ice
+author: Anna Kavan
 finished: 2019-02-10
 pages: 183
 rating: good

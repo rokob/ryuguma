@@ -1,5 +1,6 @@
 ---
 title: Die a Little
+author: Megan Abbott
 finished: 2015-11-13
 pages: 256
 rating: good

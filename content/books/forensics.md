@@ -1,5 +1,6 @@
 ---
 title: Forensics
+author: Val McDermid
 finished: 2015-12-31
 pages: 320
 rating: okay

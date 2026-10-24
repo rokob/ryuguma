@@ -1,5 +1,6 @@
 ---
 title: Pale Fire
+author: Vladimir Nabokov
 finished: 2019-04-14
 pages: 322
 rating: bad

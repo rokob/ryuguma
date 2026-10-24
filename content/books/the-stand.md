@@ -1,5 +1,6 @@
 ---
 title: The Stand
+author: Stephen King
 finished: 2020-05-04
 pages: 1348
 rating: good

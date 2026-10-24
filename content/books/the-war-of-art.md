@@ -1,5 +1,6 @@
 ---
 title: The War of Art
+author: Steven Pressfield
 finished: 2018-01-21
 pages: 190
 rating: good

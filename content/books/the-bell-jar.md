@@ -1,5 +1,6 @@
 ---
 title: The Bell Jar
+author: Sylvia Plath
 finished: 2016-02-29
 pages: 288
 rating: good

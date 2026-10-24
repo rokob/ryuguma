@@ -1,5 +1,6 @@
 ---
 title: The Cartel
+author: Don Winslow
 finished: 2017-11-30
 pages: 770
 rating: great

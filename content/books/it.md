@@ -1,5 +1,6 @@
 ---
 title: It
+author: Stephen King
 finished: 2017-09-02
 pages: 1169
 rating: great

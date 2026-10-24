@@ -1,5 +1,6 @@
 ---
 title: When Breath Becomes Air
+author: Paul Kalanithi
 finished: 2016-04-27
 pages: 258
 rating: good

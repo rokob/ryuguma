@@ -1,5 +1,6 @@
 ---
 title: Lions of Kandahar
+author: Rusty Bradley
 finished: 2015-03-10
 pages: 304
 rating: good

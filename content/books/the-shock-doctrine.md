@@ -1,5 +1,6 @@
 ---
 title: The Shock Doctrine
+author: Naomi Klein
 finished: 2018-09-20
 pages: 724
 rating: good

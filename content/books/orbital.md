@@ -1,5 +1,6 @@
 ---
 title: Orbital
+author: Samantha Harvey
 finished: 2025-08-10
 pages: 224
 rating: good

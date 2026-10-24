@@ -1,5 +1,6 @@
 ---
 title: Dark Matter
+author: Blake Crouch
 finished: 2018-03-15
 pages: 354
 rating: okay

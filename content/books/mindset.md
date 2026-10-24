@@ -1,5 +1,6 @@
 ---
 title: Mindset
+author: Carol S. Dweck
 finished: 2015-11-08
 pages: 288
 rating: good

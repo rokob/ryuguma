@@ -1,5 +1,6 @@
 ---
 title: The War on Normal People
+author: Andrew Yang
 finished: 2018-08-25
 pages: 305
 rating: okay

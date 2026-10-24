@@ -1,5 +1,6 @@
 ---
 title: All the Light We Cannot See
+author: Anthony Doerr
 finished: 2016-01-28
 pages: 545
 rating: great

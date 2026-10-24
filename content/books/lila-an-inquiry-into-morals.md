@@ -1,5 +1,6 @@
 ---
 title: 'Lila: An Inquiry Into Morals'
+author: Robert M. Pirsig
 finished: 2017-03-10
 pages: 482
 rating: good

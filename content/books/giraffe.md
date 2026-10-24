@@ -1,5 +1,6 @@
 ---
 title: Giraffe
+author: J. M. Ledgard
 finished: 2016-04-26
 pages: 304
 rating: great

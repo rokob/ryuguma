@@ -1,5 +1,6 @@
 ---
 title: The Philosophical Baby
+author: Alison Gopnik
 finished: 2021-03-08
 pages: 249
 rating: good

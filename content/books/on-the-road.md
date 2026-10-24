@@ -1,5 +1,6 @@
 ---
 title: On the Road
+author: Jack Kerouac
 finished: 2015-06-12
 pages: 293
 rating: okay

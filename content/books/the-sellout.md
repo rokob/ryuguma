@@ -1,5 +1,6 @@
 ---
 title: The Sellout
+author: Paul Beatty
 finished: 2017-03-30
 pages: 305
 rating: great

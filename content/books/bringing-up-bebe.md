@@ -1,5 +1,6 @@
 ---
 title: Bringing Up Bébé
+author: Pamela Druckerman
 finished: 2018-06-29
 pages: 266
 rating: good

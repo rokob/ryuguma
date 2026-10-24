@@ -1,5 +1,6 @@
 ---
 title: Munich
+author: Robert Harris
 finished: 2019-06-16
 pages: 322
 rating: great

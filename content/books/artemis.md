@@ -1,5 +1,6 @@
 ---
 title: Artemis
+author: Andy Weir
 finished: 2018-04-06
 pages: 322
 rating: good

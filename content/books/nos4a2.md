@@ -1,5 +1,6 @@
 ---
 title: NOS4A2
+author: Joe Hill
 finished: 2018-05-18
 pages: 995
 rating: great

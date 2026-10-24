@@ -1,5 +1,6 @@
 ---
 title: The Moonlit Garden
+author: Corina Bomann
 finished: 2016-01-13
 pages: 430
 rating: okay

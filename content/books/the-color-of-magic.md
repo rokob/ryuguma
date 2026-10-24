@@ -1,5 +1,6 @@
 ---
 title: The Color of Magic
+author: Terry Pratchett
 finished: 2016-09-22
 pages: 293
 rating: okay

@@ -1,5 +1,6 @@
 ---
 title: The Real Lolita
+author: Sarah Weinman
 finished: 2019-02-06
 pages: 252
 rating: good

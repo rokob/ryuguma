@@ -1,5 +1,6 @@
 ---
 title: Blowback
+author: Brad Thor
 finished: 2015-11-03
 pages: 608
 rating: good

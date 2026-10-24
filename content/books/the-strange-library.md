@@ -1,5 +1,6 @@
 ---
 title: The Strange Library
+author: Haruki Murakami
 finished: 2015-03-05
 pages: 96
 rating: bad

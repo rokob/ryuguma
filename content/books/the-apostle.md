@@ -1,5 +1,6 @@
 ---
 title: The Apostle
+author: Brad Thor
 finished: 2018-12-09
 pages: 369
 rating: good

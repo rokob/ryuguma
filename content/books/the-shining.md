@@ -1,5 +1,6 @@
 ---
 title: The Shining
+author: Stephen King
 finished: 2018-07-12
 pages: 674
 rating: great

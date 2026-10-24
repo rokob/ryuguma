@@ -1,5 +1,6 @@
 ---
 title: Catch 22
+author: Joseph Heller
 finished: 2016-07-01
 pages: 530
 rating: good

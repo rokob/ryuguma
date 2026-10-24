@@ -1,5 +1,6 @@
 ---
 title: The Whole-Brain Child
+author: [Daniel J. Siegel, Tina Payne Bryson]
 finished: 2020-03-08
 pages: 192
 rating: okay

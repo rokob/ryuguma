@@ -1,5 +1,6 @@
 ---
 title: The Blessing Of A Skinned Knee
+author: Wendy Mogel
 finished: 2018-03-22
 pages: 304
 rating: good

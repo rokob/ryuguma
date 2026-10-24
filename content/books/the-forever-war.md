@@ -1,5 +1,6 @@
 ---
 title: The Forever War
+author: Joe Haldeman
 finished: 2019-12-20
 pages: 292
 rating: good

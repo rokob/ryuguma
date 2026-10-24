@@ -1,5 +1,6 @@
 ---
 title: The Curious Incident of the Dog in the Night-Time
+author: Mark Haddon
 finished: 2015-06-15
 pages: 240
 rating: great

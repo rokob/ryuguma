@@ -1,5 +1,6 @@
 ---
 title: Walden
+author: Henry David Thoreau
 finished: 2015-07-21
 pages: 112
 rating: okay

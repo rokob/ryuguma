@@ -1,5 +1,6 @@
 ---
 title: An Officer and a Spy
+author: Robert Harris
 finished: 2015-02-08
 pages: 449
 rating: okay

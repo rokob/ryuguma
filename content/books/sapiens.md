@@ -1,5 +1,6 @@
 ---
 title: 'Sapiens: A Brief History of Humankind'
+author: Yuval Noah Harari
 finished: 2016-11-02
 pages: 469
 rating: good

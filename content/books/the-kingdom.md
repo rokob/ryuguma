@@ -1,5 +1,6 @@
 ---
 title: The Kingdom
+author: Emmanuel Carrère
 finished: 2020-08-06
 pages: 401
 rating: great

@@ -1,5 +1,6 @@
 ---
 title: Bull Mountain
+author: Brian Panowich
 finished: 2016-01-02
 pages: 306
 rating: great

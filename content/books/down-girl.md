@@ -1,5 +1,6 @@
 ---
 title: Down Girl
+author: Kate Manne
 finished: 2018-02-07
 pages: 309
 rating: great

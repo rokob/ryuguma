@@ -1,5 +1,6 @@
 ---
 title: The Danish Way of Parenting
+author: [Jessica Joelle Alexander, Iben Dissing Sandahl]
 finished: 2018-07-04
 pages: 146
 rating: okay

@@ -1,5 +1,6 @@
 ---
 title: Submergence
+author: J. M. Ledgard
 finished: 2015-12-14
 pages: 226
 rating: good

@@ -1,5 +1,6 @@
 ---
 title: The Talented Mr. Ripley
+author: Patricia Highsmith
 finished: 2021-04-16
 pages: 275
 rating: great

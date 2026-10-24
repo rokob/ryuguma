@@ -1,5 +1,6 @@
 ---
 title: Asymmetry
+author: Lisa Halliday
 finished: 2019-02-27
 pages: 305
 rating: good

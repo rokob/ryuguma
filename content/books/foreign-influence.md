@@ -1,5 +1,6 @@
 ---
 title: Foreign Influence
+author: Brad Thor
 finished: 2019-02-17
 pages: 388
 rating: good

@@ -1,5 +1,6 @@
 ---
 title: Rejection
+author: Tony Tulathimutte
 finished: 2025-08-17
 pages: 272
 rating: good

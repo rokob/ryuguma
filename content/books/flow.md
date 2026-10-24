@@ -1,5 +1,6 @@
 ---
 title: Flow
+author: Mihaly Csikszentmihalyi
 finished: 2015-06-06
 pages: 336
 rating: good

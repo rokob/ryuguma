@@ -1,5 +1,6 @@
 ---
 title: The Man Who Died Twice
+author: Richard Osman
 finished: 2026-01-02
 pages: 365
 rating: good

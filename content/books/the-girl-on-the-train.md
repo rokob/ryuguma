@@ -1,5 +1,6 @@
 ---
 title: The Girl on the Train
+author: Paula Hawkins
 finished: 2015-05-17
 pages: 326
 rating: good
