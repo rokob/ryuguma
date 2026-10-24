@@ -115,6 +115,7 @@ internal/site/       in-memory model: pages, refs, backlinks, tags, reading stat
 internal/history/    per-file git history, following renames
 internal/render/     templates to files
 internal/openlibrary/ book lookup
+tools/favicon/        regenerates the 竜熊 favicon (its own module; see main.go)
 content/ templates/ static/
 ```
 
