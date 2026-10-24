@@ -1,15 +1,10 @@
 ---
-layout: post
 title: Rejection
-date: '2025-08-17T16:58:05Z'
-categories: book
-tags:
-- book
-- fiction
-- good
-- society
-published: true
-pagecount: 272
+finished: 2025-08-17
+pages: 272
+rating: good
+form: fiction
+tags: [society]
 ---
 
 I picked up [*Rejection*][book-amaz] last year but do not remember why and didn't manage to read it

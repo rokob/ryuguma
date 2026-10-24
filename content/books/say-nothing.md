@@ -1,13 +1,10 @@
 ---
-layout: post
 title: Say Nothing
-date: '2020-05-31T21:06:56Z'
-categories: book
-tags:
-- book
-- great
-- history
-pagecount: 350
+finished: 2020-05-31
+pages: 350
+rating: great
+form: nonfiction
+tags: [history]
 ---
 
 [*Say Nothing*][book-amaz] is a history of "The Troubles" which is a part of history that I only

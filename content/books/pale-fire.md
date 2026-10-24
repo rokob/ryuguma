@@ -1,13 +1,9 @@
 ---
-layout: post
 title: Pale Fire
-date: '2019-04-14T18:35:40Z'
-categories: book
-tags:
-- book
-- fiction
-- bad
-pagecount: 322
+finished: 2019-04-14
+pages: 322
+rating: bad
+form: fiction
 ---
 
 I could not stand [*Pale Fire*][book-amaz]. I barely read it to tell the truth. Or I should say I

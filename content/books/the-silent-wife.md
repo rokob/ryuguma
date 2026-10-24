@@ -1,14 +1,10 @@
 ---
-layout: post
 title: The Silent Wife
-date: '2019-03-04T21:44:12Z'
-categories: book
-tags:
-- bad
-- book
-- fiction
-- thriller
-pagecount: 386
+finished: 2019-03-04
+pages: 386
+rating: bad
+form: fiction
+tags: [thriller]
 ---
 
 Taya had a book club with some friends, and for some reason they decided to read

@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Siddhartha
-date: 2016-01-30 10:01:52
-categories: book
-tags: ["book", "fiction", "good", "life"]
-pagecount: 78
+finished: 2016-01-30
+pages: 78
+rating: good
+form: fiction
+tags: [life]
 ---
 
 I am not sure where I had first heard of [*Siddhartha*][sid-amazon],

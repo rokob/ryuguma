@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Submergence
-date: 2015-12-14 16:12:38
-categories: book
-tags: ["book", "fiction", "good", "society"]
-pagecount: 226
+finished: 2015-12-14
+pages: 226
+rating: good
+form: fiction
+tags: [society]
 ---
 
 I have been trying to figure out how [*Submergence*][sub-amazon]

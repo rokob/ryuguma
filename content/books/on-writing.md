@@ -1,10 +1,9 @@
 ---
-layout: post
 title: On Writing
-date: 2016-09-04T18:01:04Z
-categories: book
-tags: ["book", "great", "nonfiction"]
-pagecount: 320
+finished: 2016-09-04
+pages: 320
+rating: great
+form: nonfiction
 ---
 
 [*On Writing*][writing-amaz] came to my attention through an interaction with a friend. I have

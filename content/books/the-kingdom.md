@@ -1,15 +1,10 @@
 ---
-layout: post
 title: The Kingdom
-date: '2020-08-06T13:21:04Z'
-categories: book
-tags:
-- book
-- great
-- history
-- nonfiction
-- religion
-pagecount: 401
+finished: 2020-08-06
+pages: 401
+rating: great
+form: nonfiction
+tags: [history, religion]
 ---
 
 [*The Kingdom*][book-amaz] is both really annoying and amazing. It radically altered how I view

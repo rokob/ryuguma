@@ -1,10 +1,10 @@
 ---
-layout: post
 title: 13 Hours
-date: 2015-11-16 22:11:16
-categories: book
-tags: ["book", "good", "military", "nonfiction"]
-pagecount: 352
+finished: 2015-11-16
+pages: 352
+rating: good
+form: nonfiction
+tags: [military]
 ---
 
 I forget what movie I was at when I first saw the preview for

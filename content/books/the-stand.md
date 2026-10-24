@@ -1,15 +1,10 @@
 ---
-layout: post
 title: The Stand
-date: '2020-05-04T22:05:47Z'
-categories: book
-tags:
-- book
-- fiction
-- good
-- society
-published: true 
-pagecount: 1348
+finished: 2020-05-04
+pages: 1348
+rating: good
+form: fiction
+tags: [society]
 ---
 
 We are in a pandemic so I decided to pick up [*The Stand*][book-amaz] and give it a shot. This was

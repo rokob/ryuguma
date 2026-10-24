@@ -1,9 +1,7 @@
 ---
-layout: post
-title: "Something new"
-date: 2014-05-03 16:49:22
-categories: life
-tags: ["life", "career", "work", "facebook"]
+title: Something new
+date: 2014-05-03
+tags: [life, career, work, facebook]
 ---
 
 As of about three weeks ago, I no longer work at Facebook. I am now at a

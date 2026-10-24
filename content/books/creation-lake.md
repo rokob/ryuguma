@@ -1,15 +1,10 @@
 ---
-layout: post
 title: Creation Lake
-date: '2024-12-30T10:14:52Z'
-categories: book
-tags:
-- book
-- fiction
-- great
-- thriller
-published: true
-pagecount: 413
+finished: 2024-12-30
+pages: 413
+rating: great
+form: fiction
+tags: [thriller]
 ---
 
 [*Creation Lake*][book-amaz] was a shortlist finalist for the Booker Prize which has become one of

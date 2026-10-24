@@ -1,11 +1,10 @@
 ---
-layout: post
 title: Give People Money
-date: 2018-11-20T08:39:55Z
-categories: book
-tags: ["book", "nonfiction", "okay", "society"]
-published: true
-pagecount: 263
+finished: 2018-11-20
+pages: 263
+rating: okay
+form: nonfiction
+tags: [society]
 ---
 
 [*Give People Money*][book-amaz] is yet another book on Universal Basic Income. The writing is

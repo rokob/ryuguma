@@ -1,10 +1,10 @@
---- 
-layout: post
+---
 title: World War Z
-date: 2015-07-25 15:07:19
-categories: book
-tags: ["book", "fiction", "great", "scifi", "society"]
-pagecount: 352
+finished: 2015-07-25
+pages: 352
+rating: great
+form: fiction
+tags: [scifi, society]
 ---
 
 Movies and books are often times two sides of the

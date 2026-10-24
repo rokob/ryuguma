@@ -1,14 +1,10 @@
 ---
-layout: post
 title: The Mom Test
-date: '2020-05-18T11:18:46Z'
-categories: book
-tags:
-- book
-- good
-- nonfiction
-- business
-pagecount: 138
+finished: 2020-05-18
+pages: 138
+rating: good
+form: nonfiction
+tags: [business]
 ---
 
 I heard about [*The Mom Test*][book-amaz] several times on different startup and tech podcasts. I

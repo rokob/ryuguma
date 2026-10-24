@@ -1,14 +1,9 @@
 ---
-layout: post
 title: Orbital
-date: '2025-08-10T09:19:27Z'
-categories: book
-tags:
-- book
-- good
-- fiction
-published: true
-pagecount: 224
+finished: 2025-08-10
+pages: 224
+rating: good
+form: fiction
 ---
 
  I picked [*Orbital*][book-amaz] to read as it is a winner of the Booker prize which has

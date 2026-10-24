@@ -1,9 +1,7 @@
 ---
-layout: post
-title:  "Playing with Haskell"
-date:   2014-01-12 23:17:19
-categories: code
-tags: ["haskell", "moving"]
+title: Playing with Haskell
+date: 2014-01-12
+tags: [code, haskell, moving]
 ---
 
 Before I get in to the coding part of this post I figured I would talk a little

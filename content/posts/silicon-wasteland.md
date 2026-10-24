@@ -1,9 +1,7 @@
 ---
-layout: post
 title: Silicon Wasteland
-date: 2015-01-07 18:01:30
-categories: life
-tags: ["life", "work", "society", "musings"]
+date: 2015-01-07
+tags: [life, work, society, musings]
 ---
 
 I have recently become more disillusioned with the culture

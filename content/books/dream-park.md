@@ -1,14 +1,10 @@
 ---
-layout: post
 title: Dream Park
-date: '2021-12-02T21:39:02Z'
-categories: book
-tags:
-- book
-- fiction
-- good
-- scifi
-pagecount: 320
+finished: 2021-12-02
+pages: 320
+rating: good
+form: fiction
+tags: [scifi]
 ---
 
 I listen to the A16Z podcasts and one of them is One on One with A and Z which is pretty good. I

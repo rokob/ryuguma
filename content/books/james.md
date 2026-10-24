@@ -1,14 +1,9 @@
 ---
-layout: post
 title: James
-date: '2026-05-09T00:00:00+00:00'
-categories: book
-tags:
-- book
-- fiction
-- great
-published: true
-pagecount: 304
+finished: 2026-05-09
+pages: 304
+rating: great
+form: fiction
 ---
 
 Holy shit I don't know how this almost passed me by. I had heard of [*James*][book-amaz] just

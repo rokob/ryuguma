@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The Color of Magic
-date: 2016-09-22T22:18:10Z
-categories: book
-tags: ["book", "fiction", "okay", "scifi"]
-pagecount: 293
+finished: 2016-09-22
+pages: 293
+rating: okay
+form: fiction
+tags: [scifi]
 ---
 
 I was recommended to read one of the books in this series, so I chose the first one,

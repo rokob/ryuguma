@@ -1,15 +1,10 @@
 ---
-layout: post
 title: How to Change Your Mind
-date: '2019-07-09T13:27:58Z'
-categories: book
-tags:
-- book
-- drugs
-- great
-- nonfiction
-- philosophy
-pagecount: 415
+finished: 2019-07-09
+pages: 415
+rating: great
+form: nonfiction
+tags: [drugs, philosophy]
 ---
 
 I fell behind on writing these after reading, so this is just going to be a marker. I read

@@ -1,15 +1,10 @@
 ---
-layout: post
 title: The Return Of The King
-date: '2025-11-08T00:00:00+00:00'
-categories: book
-tags:
-- book
-- fantasy
-- fiction
-- great
-published: true
-pagecount: 432
+finished: 2025-11-08
+pages: 432
+rating: great
+form: fiction
+tags: [fantasy]
 ---
 
 Finally the end, [*The Return Of The King*][book-amaz]. It took longer than the others for me to

@@ -1,15 +1,10 @@
 ---
-layout: post
 title: From Strength to Strength
-date: '2025-12-14T00:00:00+00:00'
-categories: book
-tags:
-- book
-- nonfiction
-- good
-- life
-published: true
-pagecount: 270
+finished: 2025-12-14
+pages: 270
+rating: good
+form: nonfiction
+tags: [life]
 ---
 
 I picked up [*From Strength to Strength*][book-amaz] after hearing about it on a podcast. It is a

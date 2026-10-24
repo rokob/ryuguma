@@ -1,10 +1,10 @@
---- 
-layout: post
+---
 title: Spec Ops
-date: 2015-07-01 11:07:40
-categories: book
-tags: ["book", "great", "history", "military", "nonfiction"]
-pagecount: 432
+finished: 2015-07-01
+pages: 432
+rating: great
+form: nonfiction
+tags: [history, military]
 ---
 
 I was looking for books related to the history of unconvential

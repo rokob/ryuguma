@@ -1,10 +1,10 @@
 ---
-layout: post
 title: A Brief History of Seven Killings
-date: 2018-08-11T16:52:25Z
-categories: book
-tags: ["book", "crime", "death", "drugs", "fiction", "good"]
-pagecount: 688
+finished: 2018-08-11
+pages: 688
+rating: good
+form: fiction
+tags: [crime, death, drugs]
 ---
 
 [*A Brief History of Seven Killings*][book-amaz], winner of the 2015 Man Booker Prize, is a

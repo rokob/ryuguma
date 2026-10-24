@@ -1,16 +1,16 @@
 ---
-layout: post
 title: Flow (again)
-date: 2018-08-20T13:51:31Z
-categories: book
-tags: ["book", "good", "nonfiction", "philosophy"]
-pagecount: 336
+finished: 2018-08-20
+pages: 336
+rating: good
+form: nonfiction
+tags: [philosophy]
 ---
 
 I had this book [*Flow*][book-amaz] on my Kindle and couldn't remember whether I had read it
 yet or not, so I decided to read it. Just now as I sat down to write this I realized I coud have
 checked this blog to find out if I had read it before and lo and behold [I read it in
-2015](/blog/2015-06-06-flow/). This is somewhat disheartening as while reading it this time I
+2015](/books/flow/). This is somewhat disheartening as while reading it this time I
 had a lot of profound thoughts about it being meaningful and how I want to change some things, but
 clearly I had some of these thoughts before and here I am.
 
@@ -45,7 +45,7 @@ nothing about. There are some sports where the other side is very dangerous, nam
 skydiving. It is worth taking a detour at this point a bit more into the concepts to help clarify my
 thoughts. Flow can be explained with two diagrams, the first is the simple one:
 
-![Flow Diagram](images/flow_simple.jpg)
+![Flow Diagram](/images/flow_simple.jpg)
 
 We achieve flow when the challenges we face are balanced against our skills. Naturally by partaking
 in an activity we either increase our skill or increase the challenge we take on. Depending on the
@@ -61,7 +61,7 @@ so that I blow up and end up in an anxious state.
 
 The second diagram expands on this graph to give names to other regions:
 
-![Expanded Flow Diagram](images/flow_expanded.png)
+![Expanded Flow Diagram](/images/flow_expanded.png)
 
 This diagram is a bit misleading as it seems like anxiety only occurs when your skill level somehow
 declines. The actual meaning of the axes is a bit ambigious as time is clearly somehow involved here

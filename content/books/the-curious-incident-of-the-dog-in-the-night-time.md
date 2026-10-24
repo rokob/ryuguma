@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The Curious Incident of the Dog in the Night-Time
-date: 2015-06-15 13:06:13
-categories: book
-tags: ["book", "fiction", "great", "personality"]
-pagecount: 240
+finished: 2015-06-15
+pages: 240
+rating: great
+form: fiction
+tags: [personality]
 ---
 
 There has been an increasing amount of discussion

@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Red Rising
-date: 2015-03-17 16:03:22
-categories: book
-tags: ["book", "fiction", "okay", "scifi"]
-pagecount: 416
+finished: 2015-03-17
+pages: 416
+rating: okay
+form: fiction
+tags: [scifi]
 ---
 
 I just finished another book that further reinforced how much I like

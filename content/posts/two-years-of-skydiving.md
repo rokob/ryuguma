@@ -1,9 +1,7 @@
 ---
-layout: post
 title: Two Years of Skydiving
-date: 2018-01-15T16:07:03-08:00
-categories: life
-tags: ["life"]
+date: 2018-01-15
+tags: [life]
 ---
 
 On July 13, 2013 I did a tandem skydive. It took me two and a half years to finally get around to

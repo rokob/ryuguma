@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Hillbilly Elegy
-date: 2017-12-24T15:39:20-08:00
-categories: book
-tags: ["book", "good", "life", "nonfiction", "personality", "relationships", "society"]
-pagecount: 273
+finished: 2017-12-24
+pages: 273
+rating: good
+form: nonfiction
+tags: [life, personality, relationships, society]
 ---
 
 When one gets married, there is an expectation of a gift or favor given to the attendees by the

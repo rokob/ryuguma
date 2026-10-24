@@ -1,16 +1,10 @@
 ---
-layout: post
 title: The Doors of Perception and Heaven and Hell
-date: '2019-01-25T20:30:11Z'
-categories: book
-tags:
-- book
-- drugs
-- good
-- nonfiction
-- philosophy
-- death
-pagecount: 142
+finished: 2019-01-25
+pages: 142
+rating: good
+form: nonfiction
+tags: [drugs, philosophy, death]
 ---
 
 [*The Doors of Perception and Heaven and Hell*][book-amaz] is actually two essays really put

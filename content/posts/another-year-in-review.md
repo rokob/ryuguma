@@ -1,12 +1,7 @@
 ---
-layout: post
 title: Another Year In Review
-date: '2019-01-01T17:08:17Z'
-categories: life
-tags:
-- life
-- parenting
-- society
+date: 2019-01-01
+tags: [life, parenting, society]
 ---
 
 Another year in the books, and somehow they each seem to be crazier than the last. 2018 was really
@@ -69,10 +64,8 @@ fiction to non-fiction was not around 3:1. I didn't intentionally read more non-
 that is just what came up on my list. Another year of mostly good books, I am pretty good at
 screening books for whether I will like it or not. This is the biggest thing that helps me to read
 more as I want to finish books I enjoy more. Bad books are just killer for momentum. My favorite
-books this year were: [*Rise and Kill First*](/blog/2018-04-04-rise-and-kill-first/), [*The Shock
-Doctrine*](/blog/2018-09-20-the-shock-doctrine/), [*The
-Dispossessed*](/blog/2018-04-30-the-dispossessed/), [*NOS4A2*](/blog/2018-05-18-nos4a2/), and
-[*Horns*](/blog/2018-03-08-horns/). Looking back there were a lot of books I really enjoyed this
+books this year were: [[rise-and-kill-first]], [[the-shock-doctrine]], [[the-dispossessed]], [[nos4a2]], and
+[[horns]]. Looking back there were a lot of books I really enjoyed this
 year so that list is far from complete, but they stuck out more as I was thinking back. I'm hoping
 to beat this year's total, but I am going to try to expand my horizons a little bit so we shall see.
 I would be excited to read less if it meant higher quality, but there is nothing wrong with high

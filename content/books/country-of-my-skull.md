@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Country of My Skull
-date: 2016-12-13T12:24:08Z
-categories: book
-tags: ["book", "crime", "death", "great", "history", "nonfiction"]
-pagecount: 423
+finished: 2016-12-13
+pages: 423
+rating: great
+form: nonfiction
+tags: [crime, death, history]
 ---
 
 [*Country of My Skull*][skull-amazon] is a very good book both in content and style. I had never

@@ -1,15 +1,10 @@
 ---
-layout: post
 title: Why Greatness Cannot Be Planned
-date: '2021-03-19T21:38:49Z'
-categories: book
-tags:
-- book
-- nonfiction
-- okay
-- life
-- systems
-pagecount: 154
+finished: 2021-03-19
+pages: 154
+rating: okay
+form: nonfiction
+tags: [life, systems]
 ---
 
 [*Why Greatness Cannot Be Planned*][book-amaz] is less of a book and more of a series of blog posts.

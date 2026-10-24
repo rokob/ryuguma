@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The Blessing Of A Skinned Knee
-date: 2018-03-22T16:25:21Z
-categories: book
-tags: ["book", "good", "nonfiction", "parenting"]
-pagecount: 304
+finished: 2018-03-22
+pages: 304
+rating: good
+form: nonfiction
+tags: [parenting]
 ---
 
 [*The Blessing Of A Skinned Knee*][book-amaz] was recommended by our future pediatrician. In many

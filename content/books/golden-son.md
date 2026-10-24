@@ -1,10 +1,10 @@
---- 
-layout: post
+---
 title: Golden Son
-date: 2015-07-04 13:07:33
-categories: book
-tags: ["book", "fiction", "good", "scifi"]
-pagecount: 466
+finished: 2015-07-04
+pages: 466
+rating: good
+form: fiction
+tags: [scifi]
 ---
 
 I read *Red Rising* a while ago and enjoyed it enough

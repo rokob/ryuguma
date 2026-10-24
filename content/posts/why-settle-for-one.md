@@ -1,9 +1,7 @@
 ---
-layout: post
-title: "Why settle for one ugly API when you can have two?"
-date: 2014-05-06 19:53:28
-categories: code
-tags: ["ruby", "code", "api"]
+title: Why settle for one ugly API when you can have two?
+date: 2014-05-06
+tags: [code, ruby, api]
 ---
 
 In my new job I am working exclusively in Ruby at the moment. What that means for this blog is that most of

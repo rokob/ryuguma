@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Acid Test
-date: '2018-12-29T16:41:58Z'
-categories: book
-tags: ["book", "drugs", "good", "history", "nonfiction"]
-pagecount: 447
+finished: 2018-12-29
+pages: 447
+rating: good
+form: nonfiction
+tags: [drugs, history]
 ---
 
 Another member of the drug related books on Taya's bookshelf,
@@ -12,7 +12,7 @@ Another member of the drug related books on Taya's bookshelf,
 subtitle is "LSD, Ecstasy, and the Power to Heal" which is basically descriptive of the theme.
 
 The focus of this book is on theraputic uses of various psychoactive compounds including LSD and
-MDMA, but also DMT as well as a smattering of others. It reminded me of [*The Harvard Psychedelic Club*](/blog/2018-07-01-the-harvard-psychedelic-club/)
+MDMA, but also DMT as well as a smattering of others. It reminded me of [[the-harvard-psychedelic-club]]
 in the format being many small chapters focusing on a particular individual. I already knew the
 vague story of most of the MDMA related history, but there are a lot of details which are very
 interesting.

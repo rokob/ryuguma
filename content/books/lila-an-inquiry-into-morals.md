@@ -1,10 +1,10 @@
 ---
-layout: post
 title: 'Lila: An Inquiry Into Morals'
-date: 2017-03-10T20:26:55Z
-categories: book
-tags: ["book", "good", "nonfiction", "philosophy"]
-pagecount: 482
+finished: 2017-03-10
+pages: 482
+rating: good
+form: nonfiction
+tags: [philosophy]
 ---
 
 Written by the author of *Zen and The Art of Motorcycle Maintenance*, [*Lila: An Inquiry Into

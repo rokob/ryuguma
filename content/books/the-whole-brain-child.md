@@ -1,14 +1,10 @@
 ---
-layout: post
 title: The Whole-Brain Child
-date: '2020-03-08T22:17:05Z'
-categories: book
-tags:
-- book
-- nonfiction
-- okay
-- parenting
-pagecount: 192
+finished: 2020-03-08
+pages: 192
+rating: okay
+form: nonfiction
+tags: [parenting]
 ---
 
 [*The Whole-Brain Child*][book-amaz] is part of the current parenting zeitgeist mostly coming

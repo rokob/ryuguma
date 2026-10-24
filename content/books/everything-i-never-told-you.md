@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Everything I Never Told You
-date: 2015-02-01 10:02:00
-categories: book
-tags: ["book", "relationships", "good", "fiction"]
-pagecount: 298
+finished: 2015-02-01
+pages: 298
+rating: good
+form: fiction
+tags: [relationships]
 ---
 
 I really need to stop reading books about families

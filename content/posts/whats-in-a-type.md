@@ -1,10 +1,8 @@
 ---
-layout: post
-title: "What's in a type?"
-date: 2014-05-17 17:53:27
-categories: code
-tags: ["go", "code", "ruby", "erlang", "types", "objc"]
-excerpt: This post is mostly going to be about my experiences and where I currently stand on the subject of types in programming languages. It is a bit rambling and not necessarily informative, but I am trying to categorize some of the things I have heard and experienced working with different languages and different people over time. Some topics discussed being what object oriented really means, where it is done well, and where it breaks down. Also a bit about interfaces being, in my mind, the most important thing to make easy to analyze statically.
+title: What's in a type?
+date: 2014-05-17
+summary: This post is mostly going to be about my experiences and where I currently stand on the subject of types in programming languages. It is a bit rambling and not necessarily informative, but I am trying to categorize some of the things I have heard and experienced working with different languages and different people over time. Some topics discussed being what object oriented really means, where it is done well, and where it breaks down. Also a bit about interfaces being, in my mind, the most important thing to make easy to analyze statically.
+tags: [code, go, ruby, erlang, types, objc]
 ---
 
 ### Disclaimer:

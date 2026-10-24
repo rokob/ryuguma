@@ -1,14 +1,10 @@
 ---
-layout: post
 title: Armada
-date: '2019-04-03T23:36:02Z'
-categories: book
-tags:
-- book
-- fiction
-- good
-- scifi
-pagecount: 368
+finished: 2019-04-03
+pages: 368
+rating: good
+form: fiction
+tags: [scifi]
 ---
 
 I enjoyed *Ready Player One* so much that I knew I was going to read [*Armada*][book-amaz]

@@ -1,14 +1,10 @@
 ---
-layout: post
 title: Confronting The Classics
-date: '2021-01-09T20:36:03Z'
-categories: book
-tags:
-- book
-- history
-- okay
-- nonfiction
-pagecount: 322
+finished: 2021-01-09
+pages: 322
+rating: okay
+form: nonfiction
+tags: [history]
 ---
 
 [*Confronting The Classics*][book-amaz] I picked up because Taya had suggested that I might like it

@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Blowback
-date: 2015-11-03 17:11:32
-categories: book
-tags: ["book", "fiction", "good", "thriller"]
-pagecount: 608
+finished: 2015-11-03
+pages: 608
+rating: good
+form: fiction
+tags: [thriller]
 ---
 
 [*Blowback*][blowback-amazon] is book four in Brad Thor's Scot Harvath

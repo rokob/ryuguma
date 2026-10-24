@@ -1,14 +1,10 @@
 ---
-layout: post
 title: Old Man's War
-date: '2019-11-27T23:25:19Z'
-categories: book
-tags:
-- book
-- fiction
-- good
-- scifi
-pagecount: 321
+finished: 2019-11-27
+pages: 321
+rating: good
+form: fiction
+tags: [scifi]
 ---
 
 I picked up [*Old Man's War*][book-amaz] after hearing about it a few times. It is a fun and

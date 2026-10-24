@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The Bell Jar
-date: 2016-02-29 13:02:58
-categories: book
-tags: ["book", "fiction", "good", "life"]
-pagecount: 288
+finished: 2016-02-29
+pages: 288
+rating: good
+form: fiction
+tags: [life]
 ---
 
 Thank goodness for leap day as I managed to technically get in another book

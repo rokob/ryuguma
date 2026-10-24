@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Fates and Furies
-date: 2016-03-10 10:03:27
-categories: book
-tags: ["book", "fiction", "good", "relationships"]
-pagecount: 391
+finished: 2016-03-10
+pages: 391
+rating: good
+form: fiction
+tags: [relationships]
 ---
 
 [*Fates and Furies*][fates-amazon] is yet another work of

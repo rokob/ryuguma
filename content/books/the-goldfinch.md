@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The Goldfinch
-date: 2016-02-23 17:02:02
-categories: book
-tags: ["book", "fiction", "great", "life"]
-pagecount: 760
+finished: 2016-02-23
+pages: 760
+rating: great
+form: fiction
+tags: [life]
 ---
 
 I was in an airport bookshop and saw [*The Goldfinch*][gold-amazon]

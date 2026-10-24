@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Dark Matter
-date: 2018-03-15T16:32:57Z
-categories: book
-tags: ["book", "fiction", "okay", "scifi", "thriller"]
-pagecount: 354
+finished: 2018-03-15
+pages: 354
+rating: okay
+form: fiction
+tags: [scifi, thriller]
 ---
 
 In trying to keep the sources of my books diverse I pull from some lists periodically just to keep

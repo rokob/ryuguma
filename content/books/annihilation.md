@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Annihilation
-date: 2018-01-18T12:54:52-08:00
-categories: book
-tags: ["book", "fiction", "good", "scifi"]
-pagecount: 208
+finished: 2018-01-18
+pages: 208
+rating: good
+form: fiction
+tags: [scifi]
 ---
 
 Part of being married is experiencing new things that you would otherwise have not because of your

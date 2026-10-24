@@ -1,17 +1,10 @@
 ---
-layout: post
 title: Man's Search for Meaning
-date: '2024-11-20T19:45:10Z'
-categories: book
-tags:
-- book
-- death
-- good
-- history
-- nonfiction
-- philosophy
-published: true
-pagecount: 188
+finished: 2024-11-20
+pages: 188
+rating: good
+form: nonfiction
+tags: [death, history, philosophy]
 ---
 
 Why I decided to buy and read [*Man's Search for Meaning*][book-amaz] at this moment I do not know.

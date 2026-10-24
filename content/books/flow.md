@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Flow
-date: 2015-06-06 18:06:21
-categories: book
-tags: ["book", "good", "nonfiction", "personality", "life"]
-pagecount: 336
+finished: 2015-06-06
+pages: 336
+rating: good
+form: nonfiction
+tags: [personality, life]
 ---
 
 I am usually not a fan of psychology books, especially not

@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Bringing Up Bébé
-date: 2018-06-29T09:50:24Z
-categories: book
-tags: ["book", "good", "life", "nonfiction", "parenting"]
-pagecount: 266
+finished: 2018-06-29
+pages: 266
+rating: good
+form: nonfiction
+tags: [life, parenting]
 ---
 
 [*Bringing Up Bébé*][book-amaz] is a book memoir combined with a book on parenting advice. The main

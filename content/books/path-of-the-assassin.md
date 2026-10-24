@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Path of the Assassin
-date: 2015-06-16 14:06:16
-categories: book
-tags: ["book", "fiction", "good", "military", "thriller"]
-pagecount: 496
+finished: 2015-06-16
+pages: 496
+rating: good
+form: fiction
+tags: [military, thriller]
 ---
 
 After reading *The Lions of Lucerne*, I really wanted to

@@ -1,10 +1,9 @@
 ---
-layout: post
 title: Horns
-date: 2018-03-08T23:00:04-08:00
-categories: book
-tags: ["book", "fiction", "great"]
-pagecount: 388
+finished: 2018-03-08
+pages: 388
+rating: great
+form: fiction
 ---
 
 [*Horns*][amaz-horns] is a wonderful dark comedy by Joe Hill.

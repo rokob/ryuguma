@@ -1,13 +1,9 @@
 ---
-layout: post
 title: Asymmetry
-date: '2019-02-27T20:03:51Z'
-categories: book
-tags:
-- book
-- fiction
-- good
-pagecount: 305
+finished: 2019-02-27
+pages: 305
+rating: good
+form: fiction
 ---
 
 Winner of a few awards and top of quite a few lists, [*Asymmetry*][book-amaz] is a book that defies

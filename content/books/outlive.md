@@ -1,15 +1,10 @@
 ---
-layout: post
 title: Outlive
-date: '2025-02-28T18:57:01Z'
-categories: book
-tags:
-- book
-- good
-- nonfiction
-- science
-- life
-pagecount: 496
+finished: 2025-02-28
+pages: 496
+rating: good
+form: nonfiction
+tags: [science, life]
 ---
 
 I have been listening to *The Drive* which is the podcast by Peter Attia for a while now. I am

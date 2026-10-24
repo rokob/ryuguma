@@ -1,14 +1,10 @@
 ---
-layout: post
 title: Iron Gold
-date: '2019-01-21T20:49:38Z'
-categories: book
-tags:
-- book
-- fiction
-- okay
-- scifi
-pagecount: 605
+finished: 2019-01-21
+pages: 605
+rating: okay
+form: fiction
+tags: [scifi]
 ---
 
 [*Iron Gold*][book-amaz] is the fourth book in the *Red Rising* series which I originally thought

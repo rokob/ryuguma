@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Takedown
-date: 2015-12-10 21:12:24
-categories: book
-tags: ["book", "fiction", "good", "thriller"]
-pagecount: 528
+finished: 2015-12-10
+pages: 528
+rating: good
+form: fiction
+tags: [thriller]
 ---
 
 I just finished [*Takedown*][takedown-amazon], which is book 5

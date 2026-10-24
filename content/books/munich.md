@@ -1,17 +1,13 @@
 ---
-layout: post
 title: Munich
-date: '2019-06-16T13:40:40Z'
-categories: book
-tags:
-- book
-- fiction
-- great
-- history
-pagecount: 322
+finished: 2019-06-16
+pages: 322
+rating: great
+form: fiction
+tags: [history]
 ---
 
-From the author of [*An Officer and a Spy*](/blog/2015-02-08-an-officer-and-a-spy/) comes
+From the author of [[an-officer-and-a-spy]] comes
 [*Munich*][book-amaz] yet another wonderful piece of historical fiction. This is a fictional spy
 thriller within the real setting of the Munich Conference in September 1938.
 

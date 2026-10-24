@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Furiously Happy
-date: 2015-12-24 19:12:34
-categories: book
-tags: ["book", "good", "introversion", "nonfiction"]
-pagecount: 353
+finished: 2015-12-24
+pages: 353
+rating: good
+form: nonfiction
+tags: [introversion]
 ---
 
 In my attempt to read a book a week this year, I have gone through a

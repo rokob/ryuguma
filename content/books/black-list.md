@@ -1,14 +1,10 @@
 ---
-layout: post
 title: Black List
-date: '2021-03-26T21:41:32Z'
-categories: book
-tags:
-- book
-- fiction
-- okay
-- thriller
-pagecount: 385
+finished: 2021-03-26
+pages: 385
+rating: okay
+form: fiction
+tags: [thriller]
 ---
 
 [*Black List*][book-amaz] is yet another Scot Harvath novel by Brad Thor. It was still fun to read

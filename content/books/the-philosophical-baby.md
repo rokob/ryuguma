@@ -1,16 +1,10 @@
 ---
-layout: post
 title: The Philosophical Baby
-date: '2021-03-08T20:29:53Z'
-categories: book
-tags:
-- book
-- children
-- good
-- nonfiction
-- parenting
-- philosophy
-pagecount: 249
+finished: 2021-03-08
+pages: 249
+rating: good
+form: nonfiction
+tags: [children, parenting, philosophy]
 ---
 
 [*The Philosophical Baby*][book-amaz] is an interesting book from when viewed as a parenting book.

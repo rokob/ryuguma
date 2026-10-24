@@ -1,14 +1,10 @@
 ---
-layout: post
 title: The Fireman
-date: '2020-01-02T10:24:34Z'
-categories: book
-tags:
-- book
-- fiction
-- good
-- scifi
-pagecount: 742
+finished: 2020-01-02
+pages: 742
+rating: good
+form: fiction
+tags: [scifi]
 ---
 
 I really like Joe Hill and the latest novel of his for me was [*The Fireman*][book-amaz]. The idea

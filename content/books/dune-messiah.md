@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Dune Messiah
-date: 2015-10-28 17:10:47
-categories: book
-tags: ["book", "fiction", "great", "scifi"]
-pagecount: 340
+finished: 2015-10-28
+pages: 340
+rating: great
+form: fiction
+tags: [scifi]
 ---
 
 I started reading another book right after *Dune* but

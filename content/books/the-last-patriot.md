@@ -1,11 +1,10 @@
 ---
-layout: post
 title: The Last Patriot
-date: 2018-08-29T13:28:58Z
-categories: book
-tags: ["book", "fiction", "okay", "thriller"]
-published: true
-pagecount: 356
+finished: 2018-08-29
+pages: 356
+rating: okay
+form: fiction
+tags: [thriller]
 ---
 
 [*The Last Patriot*][book-amaz] is the next installment in the Scot Harvath series after *The First

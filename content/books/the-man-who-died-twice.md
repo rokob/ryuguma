@@ -1,15 +1,10 @@
 ---
-layout: post
 title: The Man Who Died Twice
-date: '2026-01-02T00:00:00+00:00'
-categories: book
-tags:
-- book
-- crime
-- fiction
-- good
-published: true
-pagecount: 365
+finished: 2026-01-02
+pages: 365
+rating: good
+form: fiction
+tags: [crime]
 ---
 
 The second book in the *Thursday Murder Club* series, [*The Man Who Died Twice*][book-amaz] is just

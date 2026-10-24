@@ -1,16 +1,10 @@
 ---
-layout: post
 title: Never Enough
-date: '2025-07-13T10:46:43Z'
-categories: book
-tags:
-- book
-- children
-- good
-- nonfiction
-- parenting
-published: true
-pagecount: 314
+finished: 2025-07-13
+pages: 314
+rating: good
+form: nonfiction
+tags: [children, parenting]
 ---
 
 [*Never Enough*][book-amaz] came to me as a book that some people read as part of a discussion group

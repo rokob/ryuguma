@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Artemis
-date: 2018-04-06T16:00:08Z
-categories: book
-tags: ["book", "fiction", "good", "scifi", "thriller"]
-pagecount: 322
+finished: 2018-04-06
+pages: 322
+rating: good
+form: fiction
+tags: [scifi, thriller]
 ---
 
 From the author of *The Martian*, [*Artemis*][book-amaz] is a great heist story set on the moon in

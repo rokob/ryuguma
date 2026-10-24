@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The Nightingale
-date: 2015-12-28 23:12:40
-categories: book
-tags: ["book", "fiction", "great", "history"]
-pagecount: 593
+finished: 2015-12-28
+pages: 593
+rating: great
+form: fiction
+tags: [history]
 ---
 
 Even though this book kept popping up on Amazon recommendations

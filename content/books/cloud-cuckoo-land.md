@@ -1,14 +1,9 @@
 ---
-layout: post
 title: Cloud Cuckoo Land
-date: '2025-08-28T00:00:00+00:00'
-categories: book
-tags:
-- book
-- fiction
-- good
-published: true
-pagecount: 637
+finished: 2025-08-28
+pages: 637
+rating: good
+form: fiction
 ---
 
 [*Cloud Cuckoo Land*][book-amaz] is a weird title and I don't really know why I decided to pick it

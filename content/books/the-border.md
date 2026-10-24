@@ -1,15 +1,10 @@
 ---
-layout: post
 title: The Border
-date: '2022-06-19T20:43:48Z'
-categories: book
-tags:
-- book
-- crime
-- drugs
-- fiction
-- good
-pagecount: 729
+finished: 2022-06-19
+pages: 729
+rating: good
+form: fiction
+tags: [crime, drugs]
 ---
 
 [*The Border*][book-amaz] is the last in the *Power of the Dog* trilogy. Maybe not as good as the

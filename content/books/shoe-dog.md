@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Shoe Dog
-date: 2018-03-12T12:58:57Z
-categories: book
-tags: ["book", "business", "great", "life", "nonfiction"]
-pagecount: 400
+finished: 2018-03-12
+pages: 400
+rating: great
+form: nonfiction
+tags: [business, life]
 ---
 
 [*Shoe Dog*][book-amaz], the autobiography or memoir by Phil Knight, is a thoroughly engaging and

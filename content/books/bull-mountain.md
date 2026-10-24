@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Bull Mountain
-date: 2016-01-02 16:01:11
-categories: book
-tags: ["book", "crime", "fiction", "great"]
-pagecount: 306
+finished: 2016-01-02
+pages: 306
+rating: great
+form: fiction
+tags: [crime]
 ---
 
 Another Amazon recommendation that hit the spot, [*Bull Mountain*][bull-amazon]

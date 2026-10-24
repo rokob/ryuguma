@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The Girl on the Train
-date: 2015-05-17 18:05:52
-categories: book
-tags: ["book", "crime", "good", "fiction", "thriller"]
-pagecount: 326
+finished: 2015-05-17
+pages: 326
+rating: good
+form: fiction
+tags: [crime, thriller]
 ---
 
 The Amazon lists of top books seems to be a bit hit or miss with me, but

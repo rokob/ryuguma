@@ -1,13 +1,9 @@
 ---
-layout: post
 title: The Committed
-date: '2022-04-15T21:03:59Z'
-categories: book
-tags:
-- book
-- fiction
-- great
-pagecount: 400
+finished: 2022-04-15
+pages: 400
+rating: great
+form: fiction
 ---
 
 [*The Committed*][book-amaz] is the sequel to *The Sympathizer*. Both are very good.

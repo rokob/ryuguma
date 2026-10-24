@@ -1,15 +1,10 @@
 ---
-layout: post
 title: The Real Lolita
-date: '2019-02-06T22:10:41Z'
-categories: book
-tags:
-- book
-- good
-- history
-- nonfiction
-- crime
-pagecount: 252
+finished: 2019-02-06
+pages: 252
+rating: good
+form: nonfiction
+tags: [history, crime]
 ---
 
 I still need to read *Lolita*. It is one of the only audiobooks that I have ever made it all the way

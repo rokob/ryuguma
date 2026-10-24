@@ -1,10 +1,9 @@
 ---
-layout: post
 title: The Sellout
-date: 2017-03-30T20:46:28Z
-categories: book
-tags: ["book", "fiction", "great"]
-pagecount: 305
+finished: 2017-03-30
+pages: 305
+rating: great
+form: fiction
 ---
 
 Winner of the Man Booker Prize, [*The Sellout*][sellout-amazon] is an hilarous, irreverent novel set

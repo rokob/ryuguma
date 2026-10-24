@@ -1,14 +1,9 @@
 ---
-layout: post
 title: The Wind-Up Bird Chronicle
-date: '2026-10-19T00:00:00+00:00'
-categories: book
-tags:
-- book
-- fiction
-- great
-published: true
-pagecount: 626
+finished: 2026-10-19
+pages: 626
+rating: great
+form: fiction
 ---
 
 It took me forever to read this book not because it was not amazing but mostly from my own scattered

@@ -1,15 +1,10 @@
 ---
-layout: post
 title: The Thursday Murder Club
-date: '2025-12-04T00:00:00+00:00'
-categories: book
-tags:
-- book
-- crime
-- fiction
-- good
-published: true
-pagecount: 363
+finished: 2025-12-04
+pages: 363
+rating: good
+form: fiction
+tags: [crime]
 ---
 
 I love a good murder mystery and [*The Thursday Murder Club*][book-amaz] is exactly in my preferred

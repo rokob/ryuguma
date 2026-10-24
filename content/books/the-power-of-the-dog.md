@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The Power of the Dog
-date: 2016-01-07 17:01:39
-categories: book
-tags: ["book", "crime", "fiction", "great"]
-pagecount: 560
+finished: 2016-01-07
+pages: 560
+rating: great
+form: fiction
+tags: [crime]
 ---
 
 I have seen [*The Power of the Dog*][dog-amazon] on Amazon for quite

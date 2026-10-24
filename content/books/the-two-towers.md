@@ -1,15 +1,10 @@
 ---
-layout: post
 title: The Two Towers
-date: '2025-09-21T00:00:00+00:00'
-categories: book
-tags:
-- book
-- fantasy
-- fiction
-- great
-published: true
-pagecount: 448
+finished: 2025-09-21
+pages: 448
+rating: great
+form: fiction
+tags: [fantasy]
 ---
 
 [*The Two Towers*][book-amaz] is the second in the Lord of the Rings trilogy and yeah like the first

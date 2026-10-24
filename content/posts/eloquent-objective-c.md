@@ -1,9 +1,7 @@
 ---
-layout: post
-title: "Eloquent Objective-C"
-date: 2014-05-31 23:34:02
-categories: code
-tags: ["code", "book", "objc", "ruby"]
+title: Eloquent Objective-C
+date: 2014-05-31
+tags: [code, book, objc, ruby]
 ---
 
 I recently made a transition from writing Objective-C all day to writing Ruby all day.

@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The Shining
-date: 2018-07-12T11:23:04Z
-categories: book
-tags: ["book", "fiction", "great", "thriller"]
-pagecount: 674
+finished: 2018-07-12
+pages: 674
+rating: great
+form: fiction
+tags: [thriller]
 ---
 
 [*The Shining*][book-amaz] is yet another Stephen King book that made it on to my list. I have seen

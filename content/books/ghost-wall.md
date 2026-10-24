@@ -1,13 +1,9 @@
 ---
-layout: post
 title: Ghost Wall
-date: '2020-05-12T22:47:42Z'
-categories: book
-tags:
-- book
-- fiction
-- good
-pagecount: 146
+finished: 2020-05-12
+pages: 146
+rating: good
+form: fiction
 ---
 
 [*Ghost Wall*][book-amaz] is very short and quite good. It starts off a little slow, but once it

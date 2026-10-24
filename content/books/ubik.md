@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Ubik
-date: 2015-12-22 11:12:57
-categories: book
-tags: ["book", "fiction", "okay", "scifi"]
-pagecount: 240
+finished: 2015-12-22
+pages: 240
+rating: okay
+form: fiction
+tags: [scifi]
 ---
 
 Philip K. Dick is widely regarded as one of the top tier

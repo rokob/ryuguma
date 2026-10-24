@@ -1,13 +1,10 @@
 ---
-layout: post
 title: Full Black
-date: '2021-01-22T20:54:59Z'
-categories: book
-tags:
-- fiction
-- okay
-- thriller
-pagecount: 402
+finished: 2021-01-22
+pages: 402
+rating: okay
+form: fiction
+tags: [thriller]
 ---
 
 [*Full Black*][book-amaz] is the next installment in the Scot Harvath series by Brad Thor. I have

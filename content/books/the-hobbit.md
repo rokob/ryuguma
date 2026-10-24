@@ -1,15 +1,10 @@
 ---
-layout: post
 title: The Hobbit
-date: '2025-08-21T11:03:19Z'
-categories: book
-tags:
-- book
-- fiction
-- great
-- fantasy
-published: true
-pagecount: 386
+finished: 2025-08-21
+pages: 386
+rating: great
+form: fiction
+tags: [fantasy]
 ---
 
 [*The Hobbit*][book-amaz] is a book I have clearly known about for a long time but never got around

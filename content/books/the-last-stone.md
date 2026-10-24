@@ -1,15 +1,10 @@
 ---
-layout: post
 title: The Last Stone
-date: '2019-05-14T23:15:48Z'
-categories: book
-tags:
-- book
-- crime
-- great
-- history
-- nonfiction
-pagecount: 304
+finished: 2019-05-14
+pages: 304
+rating: great
+form: nonfiction
+tags: [crime, history]
 ---
 
 Having children changes your outlook on life. [*The Last Stone*][book-amaz] is a true crime story

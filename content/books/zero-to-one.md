@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Zero To One
-date: 2015-02-17 22:02:22
-categories: book
-tags: ["book", "good", "nonfiction", "business"]
-pagecount: 223
+finished: 2015-02-17
+pages: 223
+rating: good
+form: nonfiction
+tags: [business]
 ---
 
 Everyone in Silicon Valley has been talking about Peter

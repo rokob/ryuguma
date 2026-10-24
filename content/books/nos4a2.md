@@ -1,10 +1,10 @@
 ---
-layout: post
 title: NOS4A2
-date: 2018-05-18T21:34:32Z
-categories: book
-tags: ["crime", "fiction", "great", "scifi"]
-pagecount: 995
+finished: 2018-05-18
+pages: 995
+rating: great
+form: fiction
+tags: [crime, scifi]
 ---
 
 After reading *Horns*, I put [*NOS4A2*][book-amaz] on my list and was excited to get to it. The dark

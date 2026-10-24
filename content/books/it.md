@@ -1,10 +1,10 @@
 ---
-layout: post
 title: It
-date: 2017-09-02T19:54:49-08:00
-categories: book
-tags: ["book", "fiction", "great", "scifi"]
-pagecount: 1169
+finished: 2017-09-02
+pages: 1169
+rating: great
+form: fiction
+tags: [scifi]
 ---
 
 I am not entirely sure why I avoided reading Stephen King all these years,

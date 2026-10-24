@@ -1,9 +1,7 @@
 ---
-layout: post
 title: Life updates
-date: 2016-08-07T16:33:09Z
-categories: life
-tags: ["career", "life", "relationships"]
+date: 2016-08-07
+tags: [life, career, relationships]
 ---
 
 The last non-book post I wrote was on New Years. Some things have happened in my life since then.

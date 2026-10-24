@@ -1,13 +1,9 @@
 ---
-layout: post
 title: Less
-date: '2019-06-21T22:25:39Z'
-categories: book
-tags:
-- book
-- fiction
-- great
-pagecount: 273
+finished: 2019-06-21
+pages: 273
+rating: great
+form: fiction
 ---
 
 Halfway through reading [*Less*][book-amaz] I came to the conclusion that I don't think I have read

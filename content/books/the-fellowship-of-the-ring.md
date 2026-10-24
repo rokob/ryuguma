@@ -1,15 +1,10 @@
 ---
-layout: post
 title: The Fellowship Of The Ring
-date: '2025-09-05T00:00:00+00:00'
-categories: book
-tags:
-- book
-- fantasy
-- fiction
-- great
-published: true
-pagecount: 432
+finished: 2025-09-05
+pages: 432
+rating: great
+form: fiction
+tags: [fantasy]
 ---
 
 After *The Hobbit* I knew that I was going to read the Lord of The Rings triology so I quickly

@@ -1,9 +1,7 @@
 ---
-layout: post
-title: "Swiftly Working on iOS"
-date: 2014-06-02 23:37:09
-categories: code
-tags: ["code", "objc", "swift"]
+title: Swiftly Working on iOS
+date: 2014-06-02
+tags: [code, objc, swift]
 ---
 
 This post is my mind dump from a few minutes after "Swift" was announced. As I perused the [documentation][swift-docs]

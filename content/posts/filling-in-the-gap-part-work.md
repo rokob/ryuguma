@@ -1,9 +1,7 @@
 ---
-layout: post
-title:  "Filling in the gap - Work"
-date:   2014-01-02 21:26:35
-categories: update
-tags: ["life", "past"]
+title: Filling in the gap - Work
+date: 2014-01-02
+tags: [update, life, past]
 ---
 
 Okay so even though nearly every post was lost from my last blog incarnation,

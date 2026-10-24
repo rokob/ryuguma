@@ -1,10 +1,9 @@
---- 
-layout: post
+---
 title: Walden
-date: 2015-07-21 18:07:29
-categories: book
-tags: ["book", "nonfiction", "okay"]
-pagecount: 112
+finished: 2015-07-21
+pages: 112
+rating: okay
+form: nonfiction
 ---
 
 [*Walden*][walden-amazon] is yet another reminder that

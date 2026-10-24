@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Die a Little
-date: 2015-11-13 14:11:13
-categories: book
-tags: ["book", "crime", "fiction", "good"]
-pagecount: 256
+finished: 2015-11-13
+pages: 256
+rating: good
+form: fiction
+tags: [crime]
 ---
 
 I happened upon an [article in Slate][slate] that basically says

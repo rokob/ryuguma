@@ -1,14 +1,9 @@
 ---
-layout: post
 title: Deep Work
-date: '2024-11-05T19:48:10Z'
-categories: book
-tags:
-- book
-- good
-- nonfiction
-published: true
-pagecount: 304
+finished: 2024-11-05
+pages: 304
+rating: good
+form: nonfiction
 ---
 
 [*Deep Work*][book-amaz] has been sitting on my shelf for over a year. I had some time being sick to

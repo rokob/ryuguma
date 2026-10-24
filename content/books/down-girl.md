@@ -1,15 +1,14 @@
 ---
-layout: post
 title: Down Girl
-date: 2018-02-07T09:14:22-08:00
-categories: book
-tags: ["book", "great", "nonfiction", "philosophy", "society"]
-pagecount: 309
+finished: 2018-02-07
+pages: 309
+rating: great
+form: nonfiction
+tags: [philosophy, society]
 ---
 
 I added this book to my list some months ago after I believe seeing a review in a newspaper. I
-bought it in the last batch of books along with [*Between the World and
-Me*](/blog/2018-01-29-between-the-world-and-me/), not fully aware of the potential for overlapping
+bought it in the last batch of books along with [[between-the-world-and-me]], not fully aware of the potential for overlapping
 themes. But after reading the former, I decided why not continue in the spirit of understanding
 bigotry and continue on to reading [*Down Girl: The Logic of Misogyny*][down-amaz]. A modern take on
 the foundational philosophical foundations of mysogyny. This book is fantastic. I highly recommend

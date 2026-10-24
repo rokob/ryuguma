@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Children of Dune
-date: 2015-12-09 08:12:59
-categories: book
-tags: ["book", "fiction", "great", "scifi"]
-pagecount: 416
+finished: 2015-12-09
+pages: 416
+rating: great
+form: fiction
+tags: [scifi]
 ---
 
 Wow, *Dune* was long, a bit complex, and good; *Dune Messiah* was

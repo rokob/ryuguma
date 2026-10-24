@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Forensics
-date: 2015-12-31 22:01:55
-categories: book
-tags: ["book", "crime", "nonfiction", "okay"]
-pagecount: 320
+finished: 2015-12-31
+pages: 320
+rating: okay
+form: nonfiction
+tags: [crime]
 ---
 
 I have always been interested in the criminal justice

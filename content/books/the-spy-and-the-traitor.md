@@ -1,14 +1,10 @@
 ---
-layout: post
 title: The Spy and the Traitor
-date: '2019-06-10T13:38:54Z'
-categories: book
-tags:
-- book
-- good
-- history
-- nonfiction
-pagecount: 345
+finished: 2019-06-10
+pages: 345
+rating: good
+form: nonfiction
+tags: [history]
 ---
 
 I am not sure why this one got recommeneded to me but [*The Spy and the Traitor*][book-amaz] as been

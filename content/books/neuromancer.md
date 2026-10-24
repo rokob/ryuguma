@@ -1,10 +1,10 @@
---- 
-layout: post
+---
 title: Neuromancer
-date: 2015-07-07 13:07:54
-categories: book
-tags: ["book", "fiction", "okay", "scifi"]
-pagecount: 292
+finished: 2015-07-07
+pages: 292
+rating: okay
+form: fiction
+tags: [scifi]
 ---
 
 I have always enjoyed reading science fiction books, but for whatever

@@ -1,10 +1,10 @@
 ---
-layout: post
 title: American Sniper
-date: 2015-01-04 19:01:24
-categories: book
-tags: ["book", "good", "military", "nonfiction"]
-pagecount: 416
+finished: 2015-01-04
+pages: 416
+rating: good
+form: nonfiction
+tags: [military]
 ---
 
 I had heard about the story of Chris Kyle through various sources

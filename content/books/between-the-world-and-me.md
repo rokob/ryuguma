@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Between the World and Me
-date: 2018-01-29T20:51:47-08:00
-categories: book
-tags: ["book", "great", "life", "nonfiction", "society"]
-pagecount: 176
+finished: 2018-01-29
+pages: 176
+rating: great
+form: nonfiction
+tags: [life, society]
 ---
 
 A letter from a father to his son, [*Between the World and Me*][between-amaz] is something that got

@@ -1,14 +1,10 @@
 ---
-layout: post
 title: The Three-Body Problem
-date: '2020-01-20T20:32:57Z'
-categories: book
-tags:
-- book
-- fiction
-- good
-- scifi
-pagecount: 400
+finished: 2020-01-20
+pages: 400
+rating: good
+form: fiction
+tags: [scifi]
 ---
 
 I think I heard about [*The Three-Body Problem*][book-amaz] on the A16Z podcast, but I do not

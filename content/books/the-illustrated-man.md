@@ -1,14 +1,10 @@
 ---
-layout: post
 title: The Illustrated Man
-date: '2019-03-23T21:53:08Z'
-categories: book
-tags:
-- book
-- fiction
-- great
-- scifi
-pagecount: 291
+finished: 2019-03-23
+pages: 291
+rating: great
+form: fiction
+tags: [scifi]
 ---
 
 The first I had heard of [*The Illustrated Man*][book-amaz] was in a reference on a tv show about a

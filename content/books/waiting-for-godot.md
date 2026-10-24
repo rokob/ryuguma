@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Waiting For Godot
-date: 2015-01-01 22:01:32
-categories: book
-tags: ["book", "play", "bad", "fiction"]
-pagecount: 128
+finished: 2015-01-01
+pages: 128
+rating: bad
+form: fiction
+tags: [play]
 ---
 
 Through a series of comedic errors I was recommended the play [*Waiting for Godot*][godot-amazon]

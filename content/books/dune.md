@@ -1,10 +1,10 @@
---- 
-layout: post
+---
 title: Dune
-date: 2015-08-03 19:08:19
-categories: book
-tags: ["book", "fiction", "great", "scifi"]
-pagecount: 894
+finished: 2015-08-03
+pages: 894
+rating: great
+form: fiction
+tags: [scifi]
 ---
 
 I had only vaguely heard of [*Dune*][dune-amazon]

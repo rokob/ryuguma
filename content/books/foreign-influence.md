@@ -1,14 +1,10 @@
 ---
-layout: post
 title: Foreign Influence
-date: '2019-02-17T22:18:52Z'
-categories: book
-tags:
-- book
-- fiction
-- good
-- thriller
-pagecount: 388
+finished: 2019-02-17
+pages: 388
+rating: good
+form: fiction
+tags: [thriller]
 ---
 
 [*Foreign Influence*][book-amaz] is the next entry in the Scot Harvath series from Brad Thor. An

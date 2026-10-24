@@ -1,15 +1,10 @@
 ---
-layout: post
 title: Hunt, Gather, Parent
-date: '2021-03-27T21:41:56Z'
-categories: book
-tags:
-- book
-- children
-- great
-- nonfiction
-- parenting
-pagecount: 309
+finished: 2021-03-27
+pages: 309
+rating: great
+form: nonfiction
+tags: [children, parenting]
 ---
 
 [*Hunt, Gather, Parent*][book-amaz] is the best parenting book I have read so far. It has many

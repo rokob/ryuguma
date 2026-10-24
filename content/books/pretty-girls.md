@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Pretty Girls
-date: 2015-10-29 22:10:35
-categories: book
-tags: ["book", "crime", "fiction", "good", "thriller"]
-pagecount: 548
+finished: 2015-10-29
+pages: 548
+rating: good
+form: fiction
+tags: [crime, thriller]
 ---
 
 Since I am back on the reading train, I went all in and

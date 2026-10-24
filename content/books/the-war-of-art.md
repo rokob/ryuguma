@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The War of Art
-date: 2018-01-21T20:36:43-08:00
-categories: book
-tags: ["book", "good", "life", "nonfiction"]
-pagecount: 190
+finished: 2018-01-21
+pages: 190
+rating: good
+form: nonfiction
+tags: [life]
 ---
 
 Another book made it onto my list for a reason I can no longer remember. I decided to pick up

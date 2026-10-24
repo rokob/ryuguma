@@ -1,16 +1,10 @@
 ---
-layout: post
 title: The Devil by Name
-date: '2024-11-17T08:53:19Z'
-categories: book
-tags:
-- book
-- fiction
-- good
-- horror
-- thriller
-published: true
-pagecount: 376
+finished: 2024-11-17
+pages: 376
+rating: good
+form: fiction
+tags: [horror, thriller]
 ---
 
 After reading *Fever House* I knew that I would need to read [*The Devil by Name*][book-amaz] which

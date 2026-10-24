@@ -1,14 +1,10 @@
 ---
-layout: post
 title: Ice
-date: '2019-02-10T22:33:16Z'
-categories: book
-tags:
-- book
-- fiction
-- good
-- scifi
-pagecount: 183
+finished: 2019-02-10
+pages: 183
+rating: good
+form: fiction
+tags: [scifi]
 ---
 
 Sometimes a book comes along where I'm convinced it is either horrible or amazing and I vacillate

@@ -1,9 +1,7 @@
 ---
-layout: post
-title: "Everything Quiet"
-date: 2014-06-21 20:17:19
-categories: life
-tags: ["life", "introversion", "personality"]
+title: Everything Quiet
+date: 2014-06-21
+tags: [life, introversion, personality]
 ---
 
 I have recently started reading [Quiet][quiet-book], a book about introversion. I am an

@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The Moonlit Garden
-date: 2016-01-13 15:01:26
-categories: book
-tags: ["book", "fiction", "history", "okay"]
-pagecount: 430
+finished: 2016-01-13
+pages: 430
+rating: okay
+form: fiction
+tags: [history]
 ---
 
 Amazon started a program called [Kindle First][kindle-first]

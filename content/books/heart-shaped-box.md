@@ -1,11 +1,10 @@
 ---
-layout: post
 title: Heart-Shaped Box
-date: 2018-10-30T08:38:21Z
-categories: book
-tags: ["book", "death", "fiction", "great", "thriller"]
-published: true
-pagecount: 402
+finished: 2018-10-30
+pages: 402
+rating: great
+form: fiction
+tags: [death, thriller]
 ---
 
 I enjoyed all the other Joe Hill books I have read so far, and [*Heart-Shaped Box*][book-amaz] is no

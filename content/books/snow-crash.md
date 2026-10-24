@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Snow Crash
-date: 2016-08-07T15:08:04Z
-categories: book
-tags: ["book", "fiction", "great", "scifi"]
-pagecount: 480
+finished: 2016-08-07
+pages: 480
+rating: great
+form: fiction
+tags: [scifi]
 ---
 
 I am dragging this year on my reading. Part of that has to do with skydiving taking up a lot

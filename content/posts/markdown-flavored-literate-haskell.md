@@ -1,9 +1,7 @@
 ---
-layout: post
-title: "Markdown Flavored Literate Haskell"
-date: 2014-08-18 15:14:09
-categories: code
-tags: ["code", "haskell", "blog"]
+title: Markdown Flavored Literate Haskell
+date: 2014-08-18
+tags: [code, haskell, blog]
 ---
 
 I have been playing around with literate Haskell recently while working on some exercises

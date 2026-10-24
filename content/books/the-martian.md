@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The Martian
-date: 2015-01-26 20:01:38
-categories: book
-tags: ["book", "fiction", "scifi", "good"]
-pagecount: 385
+finished: 2015-01-26
+pages: 385
+rating: good
+form: fiction
+tags: [scifi]
 ---
 
 Somehow [*The Martian*][martian-amazon] ended up on my reading

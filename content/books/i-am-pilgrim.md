@@ -1,10 +1,10 @@
 ---
-layout: post
 title: I Am Pilgrim
-date: 2015-01-19 22:01:24
-categories: book
-tags: ["book", "fiction", "crime", "great", "thriller"]
-pagecount: 801
+finished: 2015-01-19
+pages: 801
+rating: great
+form: fiction
+tags: [crime, thriller]
 ---
 
 Focus is one of the attributes that I like most about myself.

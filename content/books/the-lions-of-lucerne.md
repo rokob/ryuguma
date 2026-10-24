@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The Lions of Lucerne
-date: 2015-02-24 17:02:44
-categories: book
-tags: ["book", "fiction", "military", "good", "thriller"]
-pagecount: 544
+finished: 2015-02-24
+pages: 544
+rating: good
+form: fiction
+tags: [military, thriller]
 ---
 
 I have always liked thrillers like *Rainbow Six* and

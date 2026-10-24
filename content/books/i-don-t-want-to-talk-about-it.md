@@ -1,17 +1,10 @@
 ---
-layout: post
-title: "I Don't Want to Talk About It"
-date: '2025-06-05T10:38:57Z'
-categories: book
-tags:
-- book
-- great
-- nonfiction
-- life
-- past
-- relationships
-published: true
-pagecount: 384
+title: I Don't Want to Talk About It
+finished: 2025-06-05
+pages: 384
+rating: great
+form: nonfiction
+tags: [life, past, relationships]
 ---
 
 I heard about [*I Don't Want to Talk About It*][book-amaz] from *The Drive* podcast. I had a lot of

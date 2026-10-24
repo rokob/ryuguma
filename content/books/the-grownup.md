@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The Grownup
-date: 2015-12-16 10:12:37
-categories: book
-tags: ["book", "crime", "fiction", "good", "thriller"]
-pagecount: 66
+finished: 2015-12-16
+pages: 66
+rating: good
+form: fiction
+tags: [crime, thriller]
 ---
 
 Gillian Flynn has proven to be one of my favorite authors.

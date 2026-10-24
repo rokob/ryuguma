@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Zen and the Art of Motorcycle Maintenance
-date: 2016-03-29 19:03:21
-categories: book
-tags: ["book", "great", "life", "nonfiction"]
-pagecount: 404
+finished: 2016-03-29
+pages: 404
+rating: great
+form: nonfiction
+tags: [life]
 ---
 
 [*Zen and the Art of Motorcycle Maintenance*][zen-amazon] is not

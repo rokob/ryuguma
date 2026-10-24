@@ -1,14 +1,10 @@
 ---
-layout: post
 title: Managing Humans
-date: '2021-11-20T20:38:30Z'
-categories: book
-tags:
-- book
-- okay
-- nonfiction
-- work
-pagecount: 281
+finished: 2021-11-20
+pages: 281
+rating: okay
+form: nonfiction
+tags: [work]
 ---
 
 [*Managing Humans*][book-amaz] was a recommendation from someone at work. It is basically a

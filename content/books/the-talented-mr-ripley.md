@@ -1,14 +1,10 @@
 ---
-layout: post
 title: The Talented Mr. Ripley
-date: '2021-04-16T23:30:44Z'
-categories: book
-tags:
-- book
-- fiction
-- great
-- thriller
-pagecount: 275
+finished: 2021-04-16
+pages: 275
+rating: great
+form: fiction
+tags: [thriller]
 ---
 
 I am really glad I decided to read [*The Talented Mr. Ripley*][book-amaz]. I was thinking that I had

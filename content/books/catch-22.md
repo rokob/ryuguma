@@ -1,10 +1,9 @@
 ---
-layout: post
 title: Catch 22
-date: 2016-07-01 15:07:23
-categories: book
-tags: ["book", "fiction", "good"]
-pagecount: 530
+finished: 2016-07-01
+pages: 530
+rating: good
+form: fiction
 ---
 
 There are many books that for one reason or another exist in my mind as

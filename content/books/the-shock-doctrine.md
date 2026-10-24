@@ -1,11 +1,9 @@
 ---
-layout: post
 title: The Shock Doctrine
-date: 2018-09-20T08:34:00Z
-categories: book
-tags: ["book", "good", "nonfiction"]
-published: true
-pagecount: 724
+finished: 2018-09-20
+pages: 724
+rating: good
+form: nonfiction
 ---
 
 [*The Shock Doctrine*][book-amaz] is a book detailing how capitalism has been spread throughout the

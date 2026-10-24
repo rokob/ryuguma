@@ -1,14 +1,10 @@
 ---
-layout: post
 title: Thinking in Systems
-date: '2021-02-21T14:56:42Z'
-categories: book
-tags:
-- book
-- great
-- nonfiction
-- systems
-pagecount: 217
+finished: 2021-02-21
+pages: 217
+rating: great
+form: nonfiction
+tags: [systems]
 ---
 
 [*Thinking in Systems*][book-amaz] is a great book about, well, thinking in systems. I have never

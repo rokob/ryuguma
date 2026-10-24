@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Mindset
-date: 2015-11-08 21:11:24
-categories: book
-tags: ["book", "good", "life", "nonfiction", "personality"]
-pagecount: 288
+finished: 2015-11-08
+pages: 288
+rating: good
+form: nonfiction
+tags: [life, personality]
 ---
 
 Pop psychology books are usually not my bag, but I have had

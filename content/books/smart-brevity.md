@@ -1,16 +1,10 @@
 ---
-layout: post
 title: Smart Brevity
-date: '2025-08-15T16:47:58Z'
-categories: book
-tags:
-- book
-- business
-- nonfiction
-- okay
-- writing
-published: true
-pagecount: 199
+finished: 2025-08-15
+pages: 199
+rating: okay
+form: nonfiction
+tags: [business, writing]
 ---
 
 [*Smart Brevity*][book-amaz] was recommend at work many months ago. I bought it and it has been

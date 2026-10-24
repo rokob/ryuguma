@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Rise and Kill First
-date: 2018-04-04T22:45:03Z
-categories: book
-tags: ["book", "great", "history", "military", "nonfiction"]
-pagecount: 631
+finished: 2018-04-04
+pages: 631
+rating: great
+form: nonfiction
+tags: [history, military]
 ---
 
 I saw a review for [*Rise and Kill First*][book-amaz] a month or so ago and immediately put it on my

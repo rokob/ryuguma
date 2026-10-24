@@ -1,15 +1,10 @@
 ---
-layout: post
 title: In a Dark, Dark Wood
-date: '2019-01-31T18:40:12Z'
-categories: book
-tags:
-- book
-- crime
-- fiction
-- okay 
-- thriller
-pagecount: 354
+finished: 2019-01-31
+pages: 354
+rating: okay
+form: fiction
+tags: [crime, thriller]
 ---
 
 In the same general genre as *Gone Girl* and *The Girl on the Train*, [*In a Dark, Dark Wood*][book-amaz]

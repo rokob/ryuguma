@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The Harvard Psychedelic Club
-date: 2018-07-01T09:53:39Z
-categories: book
-tags: ["book", "drugs", "good", "history", "nonfiction"]
-pagecount: 272
+finished: 2018-07-01
+pages: 272
+rating: good
+form: nonfiction
+tags: [drugs, history]
 ---
 
 [*The Harvard Psychedelic Club*][book-amaz] was recommended to me by Taya as she was surprised I had

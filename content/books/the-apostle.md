@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The Apostle
-date: 2018-12-09T20:15:02Z
-categories: book
-tags: ["book", "fiction", "good", "thriller"]
-pagecount: 369
+finished: 2018-12-09
+pages: 369
+rating: good
+form: fiction
+tags: [thriller]
 ---
 
 [*The Apostle*][book-amaz] is book eight in the Scot Harvath series by Brad Thor. Not much to say

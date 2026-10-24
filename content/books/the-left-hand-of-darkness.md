@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The Left Hand of Darkness
-date: 2018-03-01T10:55:52-08:00
-categories: book
-tags: ["book", "fiction", "scifi", "society", "good"]
-pagecount: 320
+finished: 2018-03-01
+pages: 320
+rating: good
+form: fiction
+tags: [scifi, society]
 ---
 
 [*The Left Hand of Darkness*][amaz-dark] was recommended to me by Taya after she read this as well

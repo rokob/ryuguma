@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The Handmaid's Tale
-date: 2017-05-30T22:02:31Z
-categories: book
-tags: ["book", "fiction", "great", "scifi"]
-pagecount: 325
+finished: 2017-05-30
+pages: 325
+rating: great
+form: fiction
+tags: [scifi]
 ---
 
 Taya started watching the Hulu show based on this book, and before I wanted to watch it I had to

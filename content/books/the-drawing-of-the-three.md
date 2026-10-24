@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The Drawing of the Three
-date: 2017-05-16T23:17:35Z
-categories: book
-tags: ["book", "fiction", "good", "scifi"]
-pagecount: 529
+finished: 2017-05-16
+pages: 529
+rating: good
+form: fiction
+tags: [scifi]
 ---
 
 I guess I am reading the Dark Tower series now, so this was the second installment,

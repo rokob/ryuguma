@@ -1,10 +1,10 @@
---- 
-layout: post
+---
 title: State of the Union
-date: 2015-07-09 13:07:19
-categories: book
-tags: ["book", "fiction", "good", "thriller"]
-pagecount: 592
+finished: 2015-07-09
+pages: 592
+rating: good
+form: fiction
+tags: [thriller]
 ---
 
 I decided to put [*State of the Union*][state-amazon]

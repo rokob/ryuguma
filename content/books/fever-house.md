@@ -1,16 +1,10 @@
 ---
-layout: post
 title: Fever House
-date: '2024-11-12T13:24:46Z'
-categories: book
-tags:
-- book
-- fiction
-- great
-- horror
-- thriller
-published: true 
-pagecount: 426
+finished: 2024-11-12
+pages: 426
+rating: great
+form: fiction
+tags: [horror, thriller]
 ---
 
 I heard about [*Fever House*][book-amaz] from a NYT Book Review podcast episode about favorite

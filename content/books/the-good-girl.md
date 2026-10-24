@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The Good Girl
-date: 2016-08-23T09:29:55Z
-categories: book
-tags: ["book", "crime", "fiction", "good"]
-pagecount: 383
+finished: 2016-08-23
+pages: 383
+rating: good
+form: fiction
+tags: [crime]
 ---
 
 I think I ended up reading [*The Good Girl*][good-amazon] because it was on the list of free books

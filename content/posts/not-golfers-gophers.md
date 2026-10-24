@@ -1,9 +1,7 @@
 ---
-layout: post
-title: "Not Golfers, Gophers"
-date: 2014-05-18 11:01:37
-categories: code
-tags: ["go", "code", "erlang"]
+title: Not Golfers, Gophers
+date: 2014-05-18
+tags: [code, go, erlang]
 ---
 
 I was doing some language exploration as I am toying with the idea of getting some backend

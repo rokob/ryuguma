@@ -1,10 +1,10 @@
 ---
-layout: post
 title: A Small Indiscretion
-date: 2015-06-22 14:06:43
-categories: book
-tags: ["book", "fiction", "good", "relationships"]
-pagecount: 354
+finished: 2015-06-22
+pages: 354
+rating: good
+form: fiction
+tags: [relationships]
 ---
 
 I read *Everything I Never Told You* and *The Girl on The Train*

@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Guns, Germs, and Steel
-date: 2015-03-30 10:03:53
-categories: book
-tags: ["book", "good", "nonfiction", "history"]
-pagecount: 480
+finished: 2015-03-30
+pages: 480
+rating: good
+form: nonfiction
+tags: [history]
 ---
 
 One of the more eye opening books I have read in a while,

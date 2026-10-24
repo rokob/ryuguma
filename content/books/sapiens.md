@@ -1,10 +1,10 @@
 ---
-layout: post
 title: 'Sapiens: A Brief History of Humankind'
-date: 2016-11-02T03:18:46Z
-categories: book
-tags: ["book", "good", "history", "nonfiction"]
-pagecount: 469
+finished: 2016-11-02
+pages: 469
+rating: good
+form: nonfiction
+tags: [history]
 ---
 
 I thoroughly enjoyed *Guns, Germs, and Steel* as it presented a narrative that was based on the

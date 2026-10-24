@@ -1,11 +1,10 @@
 ---
-layout: post
 title: The Martian Chronicles
-date: 2018-10-10T00:36:39Z
-categories: book
-tags: ["book", "fiction", "good", "scifi"]
-published: true
-pagecount: 298
+finished: 2018-10-10
+pages: 298
+rating: good
+form: fiction
+tags: [scifi]
 ---
 
 A classic sci-fi (although I think he classified it as fantasy) novel,

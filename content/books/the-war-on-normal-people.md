@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The War on Normal People
-date: 2018-08-25T13:06:03Z
-categories: book
-tags: ["book", "okay", "nonfiction", "society"]
-pagecount: 305
+finished: 2018-08-25
+pages: 305
+rating: okay
+form: nonfiction
+tags: [society]
 ---
 
 I have been thinking about universal basic income (UBI) a lot lately, and luckily enough so have a lot of

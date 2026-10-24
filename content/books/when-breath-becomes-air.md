@@ -1,10 +1,10 @@
 ---
-layout: post
 title: When Breath Becomes Air
-date: 2016-04-27 15:04:11
-categories: book
-tags: ["book", "good", "life", "nonfiction"]
-pagecount: 258
+finished: 2016-04-27
+pages: 258
+rating: good
+form: nonfiction
+tags: [life]
 ---
 
 I heard about [*When Breath Becomes Air*][breath-amazon] coming

@@ -1,10 +1,10 @@
 ---
-layout: post
 title: The Tibetan Book of Living and Dying
-date: 2016-09-19T23:55:50Z
-categories: book
-tags: ["book", "good", "life", "nonfiction", "death"]
-pagecount: 425
+finished: 2016-09-19
+pages: 425
+rating: good
+form: nonfiction
+tags: [life, death]
 ---
 
 I have delayed writing this post for over a month now. I read

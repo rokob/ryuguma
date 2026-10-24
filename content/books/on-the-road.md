@@ -1,10 +1,10 @@
 ---
-layout: post
 title: On the Road
-date: 2015-06-12 11:06:52
-categories: book
-tags: ["book", "fiction", "okay", "past", "society"]
-pagecount: 293
+finished: 2015-06-12
+pages: 293
+rating: okay
+form: fiction
+tags: [past, society]
 ---
 
 I don't completely know what to say about

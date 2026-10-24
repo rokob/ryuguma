@@ -1,15 +1,14 @@
 ---
-layout: post
 title: Giraffe
-date: 2016-04-26 11:04:54
-categories: book
-tags: ["book", "fiction", "great"]
-pagecount: 304
+finished: 2016-04-26
+pages: 304
+rating: great
+form: fiction
 ---
 
 [*Giraffe*][giraffe-amazon] is the debut novel by J.M. Ledgard although it
 is the second book of his that I have read. I forget why I initially read
-[*Submergence*][sub-me], but afterwards I wanted to read something else by
+[[submergence]], but afterwards I wanted to read something else by
 Ledgard and I figured his debut was a good a place as any to look.
 
 *Giraffe* is technically based on a true story, but it definitely falls into
@@ -34,5 +33,4 @@ point that it is hard to accept the truth.
 
 
 [giraffe-amazon]:     http://amzn.to/2EnOPea
-[sub-me]:             http://andrewledvina.com/blog/2015-12-14-submergence/
 

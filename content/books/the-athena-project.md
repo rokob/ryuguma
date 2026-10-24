@@ -1,15 +1,10 @@
 ---
-layout: post
 title: The Athena Project
-date: '2020-06-14T13:18:54Z'
-categories: book
-tags:
-- book
-- fiction
-- military
-- okay
-- thriller
-pagecount: 337
+finished: 2020-06-14
+pages: 337
+rating: okay
+form: fiction
+tags: [military, thriller]
 ---
 
 [*The Athena Project*][book-amaz] is the next installment in the Scot Harvath series by Brad Thor.

@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Station Eleven
-date: 2018-03-20T15:02:13Z
-categories: book
-tags: ["book", "fiction", "good", "scifi"]
-pagecount: 354
+finished: 2018-03-20
+pages: 354
+rating: good
+form: fiction
+tags: [scifi]
 ---
 
 Another suggestion from Amazon's list of best books, [*Station Eleven*][book-amaz] is a story about
@@ -23,8 +23,7 @@ acceptance. The focus on one set of characters woven from decades before to deca
 leads to a sense of being one of them. You only know as much as they do and therefore that sense of
 not knowing is felt alongside them.
 
-Parts of this story were particularly interesting to me after reading [*The Great
-Leveler*](/blog/2018-02-26-the-great-leveler/). I had all of these thoughts about how this flu
+Parts of this story were particularly interesting to me after reading [[the-great-leveler]]. I had all of these thoughts about how this flu
 was affecting wealth distributions and income inequality. This book took the flu lethality to the
 extreme, worse than anything in history, so that the destruction was almost complete. The largest
 grouping of people that we hear of is a few hundred by twenty years after. That sort of decimation

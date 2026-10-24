@@ -1,13 +1,9 @@
 ---
-layout: post
 title: Intermezzo
-date: '2025-02-07T08:47:04Z'
-categories: book
-tags:
-- book
-- fiction
-- okay
-pagecount: 464
+finished: 2025-02-07
+pages: 464
+rating: okay
+form: fiction
 ---
 
 [*Intermezzo*][book-amaz] is a strange novel. It was good I guess but it was also awful. The writing

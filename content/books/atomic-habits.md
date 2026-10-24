@@ -1,14 +1,10 @@
 ---
-layout: post
 title: Atomic Habits
-date: '2020-01-09T22:51:01Z'
-categories: book
-tags:
-- book
-- good
-- life
-- nonfiction
-pagecount: 270
+finished: 2020-01-09
+pages: 270
+rating: good
+form: nonfiction
+tags: [life]
 ---
 
 I heard about [*Atomic Habits*][book-amaz] on a podcast I listen to and decided to give it a shot.

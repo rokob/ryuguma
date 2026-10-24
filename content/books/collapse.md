@@ -1,16 +1,10 @@
 ---
-layout: post
 title: Collapse
-date: '2021-05-31T13:57:38Z'
-categories: book
-tags:
-- book
-- great
-- history
-- nonfiction
-- society
-- systems
-pagecount: 580
+finished: 2021-05-31
+pages: 580
+rating: great
+form: nonfiction
+tags: [history, society, systems]
 ---
 
 I loved *Guns, Germs, and Steel* by Jared Diamond so I have been looking forward to reading [*Collapse*][book-amaz] and I finally got around to it. It was a fascinating read. My world view was altered more by the former book but this was still quite enlightening.

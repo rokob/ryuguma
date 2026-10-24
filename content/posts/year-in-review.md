@@ -1,9 +1,7 @@
 ---
-layout: post
 title: Year In Review
-date: 2016-01-01 12:01:47
-categories: life
-tags: ["life"]
+date: 2016-01-01
+tags: [life]
 ---
 
 My New Year's resolution for 2015 was to read a book a week. I was successful

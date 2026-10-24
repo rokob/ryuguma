@@ -1,16 +1,10 @@
 ---
-layout: post
 title: The Ending Writes Itself
-date: '2026-06-22T00:00:00+00:00'
-categories: book
-tags:
-- book
-- crime
-- fiction
-- good
-- thriller
-published: true
-pagecount: 352
+finished: 2026-06-22
+pages: 352
+rating: good
+form: fiction
+tags: [crime, thriller]
 ---
 
 I was in a bookstore and saw, [*The Ending Writes Itself*][book-amaz], on a shelf as a staff pick. I

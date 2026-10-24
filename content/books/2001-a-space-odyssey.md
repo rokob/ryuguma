@@ -1,14 +1,10 @@
 ---
-layout: post
 title: '2001: A Space Odyssey'
-date: '2019-06-02T12:43:24Z'
-categories: book
-tags:
-- book
-- fiction
-- great
-- scifi
-pagecount: 255
+finished: 2019-06-02
+pages: 255
+rating: great
+form: fiction
+tags: [scifi]
 ---
 
 [*2001: A Space Odyssey*][book-amaz] is a classic science fiction novel as well as a classic movie.

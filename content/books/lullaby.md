@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Lullaby
-date: 2017-05-22T23:25:45Z
-categories: book
-tags: ["book", "death", "fiction", "great", "life"]
-pagecount: 274
+finished: 2017-05-22
+pages: 274
+rating: great
+form: fiction
+tags: [death, life]
 ---
 
 Chuck Palahniuk is one weird dude, I knew that after reading *Fight Club*. Reading

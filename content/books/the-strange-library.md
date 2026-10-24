@@ -1,10 +1,9 @@
 ---
-layout: post
 title: The Strange Library
-date: 2015-03-05 21:03:09
-categories: book
-tags: ["bad", "book", "fiction"]
-pagecount: 96
+finished: 2015-03-05
+pages: 96
+rating: bad
+form: fiction
 ---
 
 Another weird book that made it onto my list, but this one

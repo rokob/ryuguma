@@ -1,10 +1,8 @@
 ---
-layout: post
-title: "10 ways Facebook is actually the devil"
-date: 2014-07-04 15:33:27
-categories: code
-tags: ["life", "facebook", "clowntown"]
-excerpt: There recently was a bit of controversy over a paper that was published by some researchers at Facebook. In the press there was mostly misinformation and alarmist pieces of yellow journalism. This post is about how my name was used to further the agenda of a disingenuous Wall Street Journal reporter by taking what I said out of context.
+title: 10 ways Facebook is actually the devil
+date: 2014-07-04
+summary: There recently was a bit of controversy over a paper that was published by some researchers at Facebook. In the press there was mostly misinformation and alarmist pieces of yellow journalism. This post is about how my name was used to further the agenda of a disingenuous Wall Street Journal reporter by taking what I said out of context.
+tags: [code, life, facebook, clowntown]
 ---
 
 ## Read This First (added later)

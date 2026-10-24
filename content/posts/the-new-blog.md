@@ -1,9 +1,7 @@
 ---
-layout: post
-title:  "The New Blog"
-date:   2013-12-30 19:11:00
-categories: update
-tags: ["blog", "jekyll"]
+title: The New Blog
+date: 2013-12-30
+tags: [update, blog, jekyll]
 ---
 
 Two years ago I said that I was going to blog every single day as my New Year's

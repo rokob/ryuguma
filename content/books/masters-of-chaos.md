@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Masters of Chaos
-date: 2015-06-20 16:06:39
-categories: book
-tags: ["book", "good", "history", "military", "nonfiction"]
-pagecount: 418
+finished: 2015-06-20
+pages: 418
+rating: good
+form: nonfiction
+tags: [history, military]
 ---
 
 While reading *Chosen Soldier*, there was a reference to

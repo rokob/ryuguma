@@ -1,10 +1,9 @@
 ---
-layout: post
 title: The Sympathizer
-date: 2017-07-30T22:11:11Z
-categories: book
-tags: ["book", "fiction", "great"]
-pagecount: 384
+finished: 2017-07-30
+pages: 384
+rating: great
+form: fiction
 ---
 
 Again on my search for things to read I went back to books that have won prizes and came up with

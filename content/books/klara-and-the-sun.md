@@ -1,14 +1,10 @@
 ---
-layout: post
 title: Klara and the Sun
-date: '2021-11-07T20:01:28Z'
-categories: book
-tags:
-- book
-- fiction
-- good
-- scifi
-pagecount: 321
+finished: 2021-11-07
+pages: 321
+rating: good
+form: fiction
+tags: [scifi]
 ---
 
 I took a pretty serious hiatus from reading. Part of it is the move, part is just being generally

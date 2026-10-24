@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Dark Places
-date: 2015-05-25 19:05:01
-categories: book
-tags: ["book", "crime", "fiction", "great", "thriller"]
-pagecount: 349
+finished: 2015-05-25
+pages: 349
+rating: great
+form: fiction
+tags: [crime, thriller]
 ---
 
 This is the last of Gillian Flynn's books that I needed to read.

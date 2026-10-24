@@ -1,10 +1,10 @@
 ---
-layout: post
 title: American Gods
-date: 2018-06-14T12:31:41Z
-categories: book
-tags: ["book", "fiction", "good", "scifi"]
-pagecount: 636
+finished: 2018-06-14
+pages: 636
+rating: good
+form: fiction
+tags: [scifi]
 ---
 
 [*American Gods*][book-amaz] made its way on to my reading list again for some unknown reason. I

@@ -1,15 +1,10 @@
 ---
-layout: post
 title: '2666: A Novel'
-date: '2024-11-05T19:43:25Z'
-categories: book
-tags:
-- book
-- fiction
-- great
-- crime
-published: true
-pagecount: 913
+finished: 2024-11-05
+pages: 913
+rating: great
+form: fiction
+tags: [crime]
 ---
 
 [*2666: A Novel*][book-amaz] is insane. I think it was quite good but it took me forever to read and

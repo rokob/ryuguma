@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Nausea
-date: 2017-12-08T14:44:10-08:00
-categories: book
-tags: ["book", "fiction", "okay", "philosophy"]
-pagecount: 192
+finished: 2017-12-08
+pages: 192
+rating: okay
+form: fiction
+tags: [philosophy]
 ---
 
 [*Nausea*][nausea-amazon] was not that good. In some sense I feel bad saying that, especially when the Amazon tagline

@@ -1,12 +1,7 @@
 ---
-layout: post
 title: What I'm thinking of reading
-date: '2019-01-02T20:27:36Z'
-categories: life
-tags:
-- life
-- musings
-- reading
+date: 2019-01-02
+tags: [life, musings, reading]
 ---
 
 I am looking for things to read. Always. We subscribe to the New York Times to be delivered in paper
