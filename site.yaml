@@ -1,0 +1,5 @@
+# Site-wide settings, available to templates as .Config.
+title: ryuguma
+url: https://ryuguma.com
+author: Andy Weiss
+repo: https://github.com/rokob/ryuguma
