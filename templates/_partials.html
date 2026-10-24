@@ -20,10 +20,10 @@
 {{/* An atom shown in full, as in the atom stream. */}}
 {{define "atom"}}
 <article class="atom">
-  {{with .Title}}<h3 class="atom-title">{{.}}</h3>{{end}}
+  <h3 class="atom-title"><a href="{{.URL}}">{{.Title}}</a></h3>
   <div class="prose">{{.HTML}}</div>
   <footer>
-    <a class="permalink" href="{{.URL}}"><time datetime="{{isodate .Date}}">{{date .Date}}</time></a>
+    <time datetime="{{isodate .Date}}">{{date .Date}}</time>
     {{- template "tag-list" .Tags}}
   </footer>
 </article>
@@ -34,7 +34,7 @@
 {{- end}}{{end}}
 
 {{/* A link to any page, labelled the way a [[ref]] would be. */}}
-{{define "ref"}}<a href="{{.URL}}">{{if eq .Kind "book"}}<cite>{{.Title}}</cite>{{else}}{{.DisplayTitle}}{{end}}</a>{{end}}
+{{define "ref"}}<a href="{{.URL}}">{{if eq .Kind "book"}}<cite>{{.Title}}</cite>{{else}}{{.Title}}{{end}}</a>{{end}}
 
 {{define "backlinks"}}{{with .Backlinks}}
 <aside class="backlinks">

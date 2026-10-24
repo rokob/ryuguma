@@ -46,6 +46,7 @@ var commands = []command{
 	{name: "book add", group: "Writing", summary: "put a book on the to-read list, looked up on Open Library", usage: `ryu book add ["Title"]`, run: runBookAdd},
 	{name: "book start", group: "Writing", summary: "start reading a book from the list", usage: "ryu book start [-date d] [slug]", run: runBookStart},
 	{name: "book finish", group: "Writing", summary: "finish a book: rating, form, and pages", usage: "ryu book finish [-date d] [slug]", run: runBookFinish},
+	{name: "new atom", group: "Writing", summary: "write and publish a small idea", usage: `ryu new atom ["Name"]`, run: runNewAtom},
 	{name: "new post", group: "Writing", summary: "start a draft post", usage: `ryu new post ["Title"]`, run: runNewPost},
 	{name: "publish", group: "Writing", summary: "publish a draft, dated today", usage: "ryu publish [-keep-date] [slug]", run: runPublish},
 	{name: "serve", group: "Site", summary: "preview locally with drafts, rebuilding on change", usage: "ryu serve [-addr :8080] [-drafts=true]", run: runServe},

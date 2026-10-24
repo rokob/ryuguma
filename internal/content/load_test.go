@@ -12,7 +12,7 @@ func TestLoadReadsAllKinds(t *testing.T) {
 	fsys := fstest.MapFS{
 		"books/dune.md":        {Data: []byte("---\ntitle: Dune\nfinished: 2015-08-03\n---\n")},
 		"posts/hello.md":       {Data: []byte("---\ntitle: Hello\ndate: 2014-01-01\n---\n")},
-		"atoms/idea.md":        {Data: []byte("---\ndate: 2026-01-01\n---\nidea\n")},
+		"atoms/idea.md":        {Data: []byte("---\ntitle: Idea\ndate: 2026-01-01\n---\nidea\n")},
 		"images/flow.png":      {Data: []byte("png")},
 		"books/notes.txt":      {Data: []byte("ignored")},
 		"README.md":            {Data: []byte("not content")},

@@ -27,7 +27,7 @@ func post(slug, date, body string, tags ...string) content.Entry {
 }
 
 func atom(slug, date, body string) content.Entry {
-	return content.Entry{Kind: content.KindAtom, Slug: slug, Path: "atoms/" + slug + ".md", Date: content.MustDate(date), Body: body}
+	return content.Entry{Kind: content.KindAtom, Slug: slug, Path: "atoms/" + slug + ".md", Title: slug, Date: content.MustDate(date), Body: body}
 }
 
 func slugs(pages []*site.Page) string {

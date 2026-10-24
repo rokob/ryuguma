@@ -43,7 +43,7 @@ type postFrontmatter struct {
 }
 
 type atomFrontmatter struct {
-	Title string   `yaml:"title,omitempty"`
+	Title string   `yaml:"title"`
 	Date  Date     `yaml:"date"`
 	Tags  []string `yaml:"tags,omitempty,flow"`
 	Draft bool     `yaml:"draft,omitempty"`
@@ -150,8 +150,11 @@ func decodeStrict(data []byte, v any) error {
 
 func validate(e Entry) error {
 	var errs []error
-	if e.Title == "" && e.Kind != KindAtom {
+	if e.Title == "" {
 		errs = append(errs, errors.New("title is required"))
+	}
+	if e.Kind == KindAtom && strings.TrimSpace(e.Body) == "" {
+		errs = append(errs, errors.New("an atom needs some text below the frontmatter"))
 	}
 	if e.Date.IsZero() && (e.Kind == KindPost || e.Kind == KindAtom) {
 		errs = append(errs, errors.New("date is required"))

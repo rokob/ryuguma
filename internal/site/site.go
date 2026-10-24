@@ -146,13 +146,5 @@ func (r resolver) Resolve(slug string) (markdown.Target, bool) {
 	if !ok {
 		return markdown.Target{}, false
 	}
-	return markdown.Target{Slug: p.Slug, URL: p.URL, Title: p.DisplayTitle(), Cite: p.Kind == content.KindBook}, true
-}
-
-// DisplayTitle falls back to the date for untitled atoms.
-func (p *Page) DisplayTitle() string {
-	if p.Title != "" {
-		return p.Title
-	}
-	return p.Date.Format("January 2, 2006")
+	return markdown.Target{Slug: p.Slug, URL: p.URL, Title: p.Title, Cite: p.Kind == content.KindBook}, true
 }

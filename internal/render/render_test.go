@@ -27,7 +27,7 @@ func fixtureSite(t *testing.T) *site.Site {
 			Date: content.MustDate("2026-02-01"), Book: &content.Book{Added: content.MustDate("2026-02-01")}},
 		{Kind: content.KindPost, Slug: "hello", Path: "posts/hello.md", Title: "Hello", Date: content.MustDate("2014-01-01"),
 			Tags: []string{"life"}, Body: "First I read [[dune]].\n"},
-		{Kind: content.KindAtom, Slug: "idea", Path: "atoms/idea.md", Date: content.MustDate("2026-06-01"), Body: "A small idea.\n"},
+		{Kind: content.KindAtom, Slug: "idea", Path: "atoms/idea.md", Title: "An idea", Date: content.MustDate("2026-06-01"), Body: "A small idea.\n"},
 		{Kind: content.KindPage, Slug: "home", Path: "pages/home.md", Title: "Home", Body: "Hi, I write here.\n"},
 		{Kind: content.KindPage, Slug: "about", Path: "pages/about.md", Title: "About", Body: "About me.\n"},
 		{Kind: content.KindPage, Slug: "reading", Path: "pages/reading.md", Title: "Reading", Body: "Why I track books.\n"},

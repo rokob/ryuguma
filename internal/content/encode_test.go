@@ -66,8 +66,9 @@ func TestEncodeRoundTrip(t *testing.T) {
 		},
 		{
 			Kind: content.KindAtom, Slug: "an-idea", Path: "atoms/an-idea.md",
-			Date: content.MustDate("2026-10-24T15:04:05Z"),
-			Body: "A small idea.\n",
+			Title: "An idea",
+			Date:  content.MustDate("2026-10-24T15:04:05Z"),
+			Body:  "A small idea.\n",
 		},
 	}
 	for _, e := range entries {

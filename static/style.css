@@ -202,10 +202,11 @@ time, .count, .kind, .eyebrow, .byline, .more, .tags, .site-header, .site-footer
 .atom { padding: var(--space-3) 0; border-bottom: 1px solid var(--rule); }
 .atom .prose > :first-child { margin-top: 0; }
 .atom .prose > :last-child { margin-bottom: var(--space-2); }
-.atom-title { margin: 0 0 var(--space-2); }
-.atom footer { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-3); font-size: var(--text-xs); }
+.atom-title { margin: 0 0 var(--space-2); font-size: var(--text-base); }
+.atom-title a { color: inherit; text-decoration: none; }
+.atom-title a:hover { color: var(--accent); }
+.atom footer { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-3); font-size: var(--text-xs); color: var(--muted); }
 .atom footer .tags { margin: 0; font-size: var(--text-xs); }
-.permalink { color: var(--muted); }
 
 /*
  * Entries

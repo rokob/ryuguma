@@ -21,6 +21,7 @@ ryu status                # reading now, up next, open drafts
 ryu book add "Piranesi"   # look it up on Open Library, add to the to-read list
 ryu book start            # pick from the to-read list
 ryu book finish           # pick from what you're reading; asks rating, form, pages
+ryu new atom "Name"       # type a small idea, Ctrl-D to publish it
 ryu new post "Title"      # start a draft post
 ryu publish               # pick a draft, publish it dated today
 ryu serve                 # preview at localhost:8080 with drafts; reload after editing
@@ -53,7 +54,8 @@ tags: [literary]
 ```
 
 **Posts** (`content/posts/`) take `title`, `date`, optional `summary`, `tags`, and `draft`.
-**Atoms** (`content/atoms/`) take `date`, optional `title`, `tags`, and `draft`.
+**Atoms** (`content/atoms/`) take `title` (a short name, which is also the slug), `date`, and `tags`.
+They need some text and are published as soon as they exist.
 **Pages** (`content/pages/`) take only `title` and render at `/<slug>/`. `home.md` is the home page
 intro, and `reading.md` is the intro to the reading stats page.
 
@@ -118,7 +120,7 @@ content/ templates/ static/
 - [x] Reading stats page
 - [x] `ryu` writing commands for books, posts, and drafts
 - [x] Deploy config for Cloudflare
-- [ ] Atoms: format and `ryu new atom`
+- [x] Atoms: named, published immediately, `ryu new atom`
 - [ ] Feeds (Atom) and sitemap
 - [ ] Search
 - [ ] Syntax highlighting at build time

@@ -275,3 +275,33 @@ func TestUnknownCommand(t *testing.T) {
 		t.Errorf("err = %v", err)
 	}
 }
+
+func TestNewAtom(t *testing.T) {
+	h := newHarness(t, nil)
+	input := "ideas\nIt is easier to say more when you don't understand something.\n\nShort communication requires deeper knowledge.\n"
+	if err := h.run(input, "new", "atom", "Short is better than long"); err != nil {
+		t.Fatal(err)
+	}
+	e := h.entry("atoms/short-is-better-than-long.md")
+	if e.Title != "Short is better than long" || e.Date.String() != "2026-10-25" || e.Draft {
+		t.Errorf("atom = %+v, want titled, dated today, published", e)
+	}
+	if !slices.Equal(e.Tags, []string{"ideas"}) {
+		t.Errorf("tags = %v", e.Tags)
+	}
+	want := "It is easier to say more when you don't understand something.\n\nShort communication requires deeper knowledge.\n"
+	if e.Body != want {
+		t.Errorf("body = %q, want %q", e.Body, want)
+	}
+}
+
+func TestNewAtomNeedsText(t *testing.T) {
+	h := newHarness(t, nil)
+	err := h.run("\n", "new", "atom", "Empty")
+	if err == nil || !strings.Contains(err.Error(), "text") {
+		t.Errorf("err = %v", err)
+	}
+	if _, statErr := os.Stat(filepath.Join(h.root, "content", "atoms", "empty.md")); statErr == nil {
+		t.Error("an empty atom was written")
+	}
+}

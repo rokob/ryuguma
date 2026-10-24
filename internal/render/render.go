@@ -76,9 +76,9 @@ func Site(s *site.Site, cfg Config, tmpl fs.FS, out Output) error {
 	r.page("tags/index.html", "tags.html", Data{Path: "/tags/", Title: "Tags"})
 
 	for _, p := range s.All {
-		r.page(indexFor(p.URL), string(p.Kind)+".html", Data{Path: p.URL, Title: p.DisplayTitle(), Page: p})
+		r.page(indexFor(p.URL), string(p.Kind)+".html", Data{Path: p.URL, Title: p.Title, Page: p})
 		if len(p.History) > 0 {
-			r.page(indexFor(p.URL+"history/"), "history.html", Data{Path: p.URL + "history/", Title: "History of " + p.DisplayTitle(), Page: p})
+			r.page(indexFor(p.URL+"history/"), "history.html", Data{Path: p.URL + "history/", Title: "History of " + p.Title, Page: p})
 		}
 	}
 	for _, p := range s.Standalone {

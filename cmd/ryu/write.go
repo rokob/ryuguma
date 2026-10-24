@@ -181,6 +181,46 @@ func runNewPost(e *env, fs *flag.FlagSet, args []string) error {
 	return nil
 }
 
+func runNewAtom(e *env, fs *flag.FlagSet, args []string) error {
+	if err := fs.Parse(args); err != nil {
+		return err
+	}
+	title := strings.Join(fs.Args(), " ")
+	var err error
+	if title == "" {
+		if title, err = e.askRequired("Name (becomes the title and the [[slug]])"); err != nil {
+			return err
+		}
+	}
+	entries, err := e.entries()
+	if err != nil {
+		return err
+	}
+	tags, err := e.askTags(entries)
+	if err != nil {
+		return err
+	}
+	fmt.Fprintln(e.out, "Type the atom, then press Ctrl-D on a new line:")
+	body, err := io.ReadAll(e.in)
+	if err != nil {
+		return err
+	}
+	text := strings.TrimSpace(string(body))
+	if text == "" {
+		return errors.New("an atom needs some text; nothing was written")
+	}
+	slug := slugify(title)
+	en := content.Entry{
+		Kind: content.KindAtom, Slug: slug, Path: "atoms/" + slug + ".md",
+		Title: title, Date: e.today(), Tags: tags, Body: text + "\n",
+	}
+	if err := e.create(en); err != nil {
+		return err
+	}
+	fmt.Fprintf(e.out, "Published content/%s; it goes live with your next push.\n", en.Path)
+	return nil
+}
+
 func (e *env) askTags(entries []content.Entry) ([]string, error) {
 	var inUse []string
 	for _, en := range entries {

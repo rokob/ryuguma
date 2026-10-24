@@ -131,7 +131,7 @@ func TestParseToleratesSloppyDelimiters(t *testing.T) {
 }
 
 func TestParseKeepsTimeOfDay(t *testing.T) {
-	src := "---\ndate: 2026-10-24T15:04:05Z\n---\nan idea\n"
+	src := "---\ntitle: An idea\ndate: 2026-10-24T15:04:05Z\n---\nan idea\n"
 	e, err := content.Parse("atoms/an-idea.md", []byte(src))
 	if err != nil {
 		t.Fatalf("Parse: %v", err)
@@ -168,6 +168,8 @@ func TestParseErrors(t *testing.T) {
 		{"unknown directory", "notes/x.md", "---\ntitle: x\n---\n", "notes"},
 		{"bad slug", "posts/Hello World.md", "---\ntitle: x\ndate: 2020-01-01\n---\n", "slug"},
 		{"bad tag", "posts/x.md", "---\ntitle: x\ndate: 2020-01-01\ntags: [sci fi]\n---\n", "sci fi"},
+		{"atom missing title", "atoms/x.md", "---\ndate: 2020-01-01\n---\nidea\n", "title"},
+		{"atom without text", "atoms/x.md", "---\ntitle: x\ndate: 2020-01-01\n---\n\n", "text"},
 		{"page missing title", "pages/x.md", "---\n---\n", "title"},
 		{"page with date", "pages/x.md", "---\ntitle: x\ndate: 2020-01-01\n---\n", "date"},
 	}
