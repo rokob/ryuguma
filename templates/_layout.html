@@ -6,6 +6,8 @@
 <title>{{with .Title}}{{.}} · {{end}}{{.Config.Title}}</title>
 {{- with .Page}}{{with .Summary}}
 <meta name="description" content="{{.}}">{{end}}{{end}}
+{{- with .Path}}
+<link rel="canonical" href="{{$.Config.URL}}{{.}}">{{end}}
 <link rel="stylesheet" href="/style.css">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">

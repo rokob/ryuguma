@@ -75,7 +75,7 @@ func TestPagesShowTheirContent(t *testing.T) {
 		"books/dune/index.html": {"<title>Dune · ryuguma</title>", "<cite>Dune</cite>", "Frank Herbert", "896", "Referenced by", `href="/posts/hello/"`,
 			`href="https://github.com/rokob/ryuguma/commit/c0ffee1234567890"><code>c0ffee12</code>`, `href="/books/dune/history/"`, `<a href="https://www.amazon.com/dp/0441013597">amazon.com</a>`},
 		"books/dune/history/index.html": {"post about dune", `href="https://github.com/rokob/ryuguma/blob/aaaa1111bbbb2222/_posts/2015-08-03-dune.md"`, "Aug 3, 2015"},
-		"books/james/index.html":        {"reading now", "Started"},
+		"books/james/index.html":        {"reading now", "Started", `<link rel="canonical" href="https://ryuguma.com/books/james/">`},
 		"index.html":                    {"Hi, I write here.", "Reading now", "James", `href="/books/dune/"`, "A small idea."},
 		"books/index.html":              {"Up next", "Someday", "2015", "1 book"},
 		"posts/hello/index.html":        {`<a href="/books/dune/"><cite>Dune</cite></a>`, "#life"},

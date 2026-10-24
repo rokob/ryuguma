@@ -9,6 +9,7 @@
     "html_handling": "auto-trailing-slash"
   },
   "routes": [
-    { "pattern": "ryuguma.com", "custom_domain": true }
+    { "pattern": "ryuguma.com", "custom_domain": true },
+    { "pattern": "www.ryuguma.com", "custom_domain": true }
   ]
 }
