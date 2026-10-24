@@ -3,6 +3,7 @@
 //	migrate frontmatter              rewrite legacy frontmatter in place
 //	migrate authors-lookup > a.tsv   look up missing book authors on Open Library
 //	migrate authors-apply a.tsv      write reviewed authors into book files
+//	migrate links                    set each book's link from the store link in its text
 package main
 
 import (
@@ -22,7 +23,7 @@ import (
 func main() {
 	root := flag.String("content", "content", "content directory")
 	flag.Usage = func() {
-		fmt.Fprintln(os.Stderr, "usage: migrate [-content dir] frontmatter | authors-lookup | authors-apply FILE")
+		fmt.Fprintln(os.Stderr, "usage: migrate [-content dir] frontmatter | authors-lookup | authors-apply FILE | links")
 		flag.PrintDefaults()
 	}
 	flag.Parse()
@@ -33,6 +34,8 @@ func main() {
 		err = migrateFrontmatter(*root)
 	case "authors-lookup":
 		err = runAuthorsLookup(*root)
+	case "links":
+		err = runLinks(*root)
 	case "authors-apply":
 		if flag.NArg() != 2 {
 			flag.Usage()
@@ -180,4 +183,27 @@ func checkLoads(root string) error {
 func slugOf(rel string) string {
 	base := filepath.Base(rel)
 	return base[:len(base)-len(filepath.Ext(base))]
+}
+
+func runLinks(root string) error {
+	files, err := readFiles(root, "books")
+	if err != nil {
+		return err
+	}
+	r := httpResolver{client: &http.Client{
+		Timeout:       15 * time.Second,
+		CheckRedirect: func(*http.Request, []*http.Request) error { return http.ErrUseLastResponse },
+	}}
+	out, report, err := backfillLinks(context.Background(), r, files)
+	if err != nil {
+		return err
+	}
+	if err := writeFiles(root, out); err != nil {
+		return err
+	}
+	for _, line := range report {
+		fmt.Println(line)
+	}
+	fmt.Printf("set links on %d books\n", len(out))
+	return checkLoads(root)
 }
