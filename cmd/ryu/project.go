@@ -145,8 +145,10 @@ func runServe(e *env, fs *flag.FlagSet, args []string) error {
 }
 
 func summarize(s *site.Site) string {
-	return fmt.Sprintf("%d books read (%d reading, %d to read), %d posts, %d atoms, %d pages",
-		len(s.Books), len(s.Reading), len(s.ToRead), len(s.Posts), len(s.Atoms), len(s.Standalone))
+	count := func(n int, one, many string) string { return fmt.Sprintf("%d %s", n, plural(n, one, many)) }
+	return fmt.Sprintf("%s read (%d reading, %d to read), %s, %s, %s",
+		count(len(s.Books), "book", "books"), len(s.Reading), len(s.ToRead),
+		count(len(s.Posts), "post", "posts"), count(len(s.Atoms), "atom", "atoms"), count(len(s.Standalone), "page", "pages"))
 }
 
 func plural(n int, one, many string) string {
