@@ -57,7 +57,7 @@ func TestBuildGroupsAndOrders(t *testing.T) {
 	checks := []struct {
 		name, got, want string
 	}{
-		{"all", slugs(s.Pages), "idea,james,later,someday,ubik,dune,hello"},
+		{"all", slugs(s.All), "idea,james,later,someday,ubik,dune,hello"},
 		{"read", slugs(s.Books), "ubik,dune"},
 		{"reading", slugs(s.Reading), "james"},
 		{"to-read", slugs(s.ToRead), "later,someday"},
@@ -106,6 +106,24 @@ func TestBuildTags(t *testing.T) {
 	}
 	if s.Tags[0].URL != "/tags/life/" {
 		t.Errorf("tag URL = %s", s.Tags[0].URL)
+	}
+}
+
+func TestStandalonePages(t *testing.T) {
+	about := content.Entry{Kind: content.KindPage, Slug: "about", Path: "pages/about.md", Title: "About", Body: "I read [[dune]]."}
+	s, err := site.Build(append(fixture(), about), site.Options{})
+	if err != nil {
+		t.Fatal(err)
+	}
+	p := s.Lookup("about")
+	if p == nil || p.URL != "/about/" || slugs(s.Standalone) != "about" {
+		t.Fatalf("about = %+v, standalone = %s", p, slugs(s.Standalone))
+	}
+	if strings.Contains(slugs(s.All), "about") {
+		t.Error("standalone page is in the dated stream")
+	}
+	if !strings.Contains(slugs(s.Lookup("dune").Backlinks), "about") {
+		t.Error("refs from standalone pages are not backlinked")
 	}
 }
 

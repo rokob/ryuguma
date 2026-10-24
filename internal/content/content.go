@@ -15,6 +15,8 @@ const (
 	KindBook Kind = "book"
 	KindPost Kind = "post"
 	KindAtom Kind = "atom"
+	// KindPage is a standalone page like /about/, outside the dated stream.
+	KindPage Kind = "page"
 )
 
 // Dirs maps each content directory to the kind of entry it holds.
@@ -22,6 +24,7 @@ var Dirs = map[string]Kind{
 	"books": KindBook,
 	"posts": KindPost,
 	"atoms": KindAtom,
+	"pages": KindPage,
 }
 
 // DirFor returns the content directory for a kind.

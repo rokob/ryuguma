@@ -49,6 +49,10 @@ type atomFrontmatter struct {
 	Draft bool     `yaml:"draft,omitempty"`
 }
 
+type pageFrontmatter struct {
+	Title string `yaml:"title"`
+}
+
 // Parse reads one content file. The path, relative to the content root,
 // determines the entry's kind and slug.
 func Parse(p string, data []byte) (Entry, error) {
@@ -105,6 +109,12 @@ func parse(p string, data []byte) (Entry, error) {
 			return Entry{}, err
 		}
 		e.Title, e.Date, e.Tags, e.Draft = f.Title, f.Date, f.Tags, f.Draft
+	case KindPage:
+		var f pageFrontmatter
+		if err := decodeStrict(fm, &f); err != nil {
+			return Entry{}, err
+		}
+		e.Title = f.Title
 	}
 	return e, validate(e)
 }
@@ -143,8 +153,13 @@ func validate(e Entry) error {
 	if e.Title == "" && e.Kind != KindAtom {
 		errs = append(errs, errors.New("title is required"))
 	}
-	if e.Date.IsZero() && e.Kind != KindBook {
+	if e.Date.IsZero() && (e.Kind == KindPost || e.Kind == KindAtom) {
 		errs = append(errs, errors.New("date is required"))
+	}
+	for _, t := range e.Tags {
+		if !slugPattern.MatchString(t) {
+			errs = append(errs, fmt.Errorf("invalid tag %q (want lowercase letters, digits, and dashes)", t))
+		}
 	}
 	if b := e.Book; b != nil {
 		if b.Rating != "" && !slices.Contains(Ratings, b.Rating) {

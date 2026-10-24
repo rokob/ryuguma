@@ -35,8 +35,8 @@ type Tag struct {
 }
 
 type Site struct {
-	// Pages holds every published entry, newest first.
-	Pages []*Page
+	// All holds every published book, post, and atom, newest first.
+	All []*Page
 	// Books holds read books, most recently finished first.
 	Books   []*Page
 	Reading []*Page
@@ -44,6 +44,8 @@ type Site struct {
 	Posts   []*Page
 	Atoms   []*Page
 	Tags    []Tag
+	// Standalone holds pages like /about/, which sit outside All.
+	Standalone []*Page
 
 	bySlug map[string]*Page
 }
@@ -51,6 +53,9 @@ type Site struct {
 func (s *Site) Lookup(slug string) *Page { return s.bySlug[slug] }
 
 func URLFor(e content.Entry) string {
+	if e.Kind == content.KindPage {
+		return "/" + e.Slug + "/"
+	}
 	return "/" + content.DirFor(e.Kind) + "/" + e.Slug + "/"
 }
 
@@ -61,14 +66,18 @@ func Build(entries []content.Entry, opts Options) (*Site, error) {
 			continue
 		}
 		p := &Page{Entry: e, URL: URLFor(e)}
-		s.Pages = append(s.Pages, p)
+		if e.Kind == content.KindPage {
+			s.Standalone = append(s.Standalone, p)
+		} else {
+			s.All = append(s.All, p)
+		}
 		s.bySlug[e.Slug] = p
 	}
-	sortNewestFirst(s.Pages)
+	sortNewestFirst(s.All)
 
 	md := markdown.New(resolver{s})
 	var errs []error
-	for _, p := range s.Pages {
+	for _, p := range slices.Concat(s.All, s.Standalone) {
 		res, err := md.Render([]byte(p.Body))
 		if err != nil {
 			errs = append(errs, fmt.Errorf("%s: %w", p.Path, err))
@@ -85,7 +94,7 @@ func Build(entries []content.Entry, opts Options) (*Site, error) {
 	}
 
 	tags := map[string]*Tag{}
-	for _, p := range s.Pages {
+	for _, p := range s.All {
 		switch {
 		case p.Kind == content.KindPost:
 			s.Posts = append(s.Posts, p)

@@ -33,6 +33,8 @@ func Encode(e Entry) ([]byte, error) {
 		fm = postFrontmatter{Title: e.Title, Date: e.Date, Summary: e.Summary, Tags: e.Tags, Draft: e.Draft}
 	case KindAtom:
 		fm = atomFrontmatter{Title: e.Title, Date: e.Date, Tags: e.Tags, Draft: e.Draft}
+	case KindPage:
+		fm = pageFrontmatter{Title: e.Title}
 	default:
 		return nil, fmt.Errorf("unknown kind %q", e.Kind)
 	}

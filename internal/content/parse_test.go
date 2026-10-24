@@ -141,6 +141,16 @@ func TestParseKeepsTimeOfDay(t *testing.T) {
 	}
 }
 
+func TestParsePage(t *testing.T) {
+	e, err := content.Parse("pages/about.md", []byte("---\ntitle: About\n---\nHi.\n"))
+	if err != nil {
+		t.Fatalf("Parse: %v", err)
+	}
+	if e.Kind != content.KindPage || e.Title != "About" || !e.Date.IsZero() {
+		t.Errorf("got %+v", e)
+	}
+}
+
 func TestParseErrors(t *testing.T) {
 	cases := []struct {
 		name, path, src, want string
@@ -157,6 +167,9 @@ func TestParseErrors(t *testing.T) {
 		{"finished before started", "books/x.md", "---\ntitle: x\nstarted: 2020-02-01\nfinished: 2020-01-01\n---\n", "before"},
 		{"unknown directory", "notes/x.md", "---\ntitle: x\n---\n", "notes"},
 		{"bad slug", "posts/Hello World.md", "---\ntitle: x\ndate: 2020-01-01\n---\n", "slug"},
+		{"bad tag", "posts/x.md", "---\ntitle: x\ndate: 2020-01-01\ntags: [sci fi]\n---\n", "sci fi"},
+		{"page missing title", "pages/x.md", "---\n---\n", "title"},
+		{"page with date", "pages/x.md", "---\ntitle: x\ndate: 2020-01-01\n---\n", "date"},
 	}
 	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {
