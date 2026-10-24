@@ -273,7 +273,7 @@ func TestCommandHelpIsNotAnError(t *testing.T) {
 	if err := h.run("", "book", "finish", "-h"); err != nil {
 		t.Fatalf("err = %v", err)
 	}
-	if !strings.Contains(h.out.String(), "usage: ryu book finish") {
+	if !strings.Contains(h.out.String(), "usage: ./ryu book finish") {
 		t.Errorf("output:\n%s", h.out.String())
 	}
 }
@@ -314,5 +314,112 @@ func TestNewAtomNeedsText(t *testing.T) {
 	}
 	if _, statErr := os.Stat(filepath.Join(h.root, "content", "atoms", "empty.md")); statErr == nil {
 		t.Error("an empty atom was written")
+	}
+}
+
+const readOdyssey = "---\ntitle: '2001: A Space Odyssey'\nauthor: Arthur C. Clarke\nlink: https://www.amazon.com/dp/B000FC0PBC\nfinished: 2019-06-02\npages: 297\nrating: great\nform: fiction\n---\n\nReview.\n"
+
+func TestBookAddRereadMakesALinkedEntry(t *testing.T) {
+	h := newHarness(t, map[string]string{"books/2001-a-space-odyssey.md": readOdyssey})
+	h.search.err = errors.New("should not search for a re-read")
+	if err := h.run("r\n\n", "book", "add", "2001: a Space Odyssey"); err != nil {
+		t.Fatal(err)
+	}
+	out := h.out.String()
+	if !strings.Contains(out, "You already have 2001: A Space Odyssey by Arthur C. Clarke") || !strings.Contains(out, "finished Jun 2, 2019") {
+		t.Errorf("should describe the existing book:\n%s", out)
+	}
+	e := h.entry("books/2001-a-space-odyssey-2026.md")
+	b := e.Book
+	if e.Title != "2001: A Space Odyssey" || !slices.Equal(b.Authors, []string{"Arthur C. Clarke"}) {
+		t.Errorf("re-read = %+v", e)
+	}
+	if b.Link != "https://www.amazon.com/dp/B000FC0PBC" || b.Pages != 297 || b.Form != content.FormFiction {
+		t.Errorf("details should be copied from the first read: %+v", b)
+	}
+	if b.Status() != content.StatusToRead || b.Rating != "" || b.Added.String() != "2026-10-25" {
+		t.Errorf("re-read should start on the to-read list: %+v", b)
+	}
+	if !strings.Contains(e.Body, "[[2001-a-space-odyssey]]") {
+		t.Errorf("body should link the first read: %q", e.Body)
+	}
+}
+
+func TestBookAddSameTitleDifferentBook(t *testing.T) {
+	h := newHarness(t, map[string]string{
+		"books/the-power-of-the-dog.md": "---\ntitle: The Power of the Dog\nauthor: Don Winslow\nfinished: 2016-01-07\n---\n",
+	})
+	h.search.docs = map[string][]openlibrary.Doc{"The Power of the Dog": {
+		{Key: "/works/OL1W", Title: "The Power of the Dog", Authors: []string{"Thomas Savage"}, Pages: 276},
+	}}
+	if err := h.run("d\n1\n\n\n", "book", "add", "The Power of the Dog"); err != nil {
+		t.Fatal(err)
+	}
+	e := h.entry("books/the-power-of-the-dog-savage.md")
+	if e.Title != "The Power of the Dog" || !slices.Equal(e.Book.Authors, []string{"Thomas Savage"}) {
+		t.Errorf("entry = %+v", e)
+	}
+	if !strings.Contains(h.out.String(), "the-power-of-the-dog-savage") {
+		t.Errorf("should say which slug it used:\n%s", h.out.String())
+	}
+}
+
+func TestBookAddAlreadyOnTheList(t *testing.T) {
+	h := newHarness(t, map[string]string{"books/someday.md": "---\ntitle: Someday\nadded: 2026-02-01\n---\n"})
+	// A book you haven't read can't be re-read, so only "different" or "cancel".
+	if err := h.run("r\nc\n", "book", "add", "Someday"); err != nil {
+		t.Fatalf("cancel should not be an error: %v", err)
+	}
+	out := h.out.String()
+	if !strings.Contains(out, "on your to-read list since Feb 1, 2026") || !strings.Contains(out, "Nothing added") {
+		t.Errorf("output:\n%s", out)
+	}
+	entries, _ := os.ReadDir(filepath.Join(h.root, "content", "books"))
+	if len(entries) != 1 {
+		t.Errorf("files = %d, want nothing new", len(entries))
+	}
+}
+
+func TestBookAddCustomSlug(t *testing.T) {
+	h := newHarness(t, nil)
+	if err := h.run("Jane Doe\n\n\n", "book", "add", "-slug", "my-slug", "Some Book"); err != nil {
+		t.Fatal(err)
+	}
+	if e := h.entry("books/my-slug.md"); e.Title != "Some Book" {
+		t.Errorf("entry = %+v", e)
+	}
+	if err := h.run("", "book", "add", "-slug", "Not A Slug", "X"); err == nil {
+		t.Error("expected an error for an invalid slug")
+	}
+}
+
+func TestBookAddPickerExplainsPageCounts(t *testing.T) {
+	h := newHarness(t, nil)
+	h.search.docs = map[string][]openlibrary.Doc{"2001: a Space Odyssey": {
+		{Title: "The Making of 2001", Authors: []string{"Jay Cocks"}, Pages: 317, Editions: 1},
+		{Key: "/works/OL2W", Title: "2001 A SPACE ODYSSEY", Authors: []string{"Arthur C. Clarke"}, FirstPublishYear: 1968, Pages: 213, Editions: 2},
+	}}
+	if err := h.run("1\n\n\n", "book", "add", "2001: a Space Odyssey"); err != nil {
+		t.Fatal(err)
+	}
+	out := h.out.String()
+	if !strings.Contains(out, "1) 2001 A SPACE ODYSSEY — Arthur C. Clarke, 1968, 2 editions (median 213 pages)") {
+		t.Errorf("exact match should come first with an explained page count:\n%s", out)
+	}
+	if !strings.Contains(out, "2) The Making of 2001 — Jay Cocks, 317 pages") {
+		t.Errorf("single-edition page count:\n%s", out)
+	}
+}
+
+func TestChooseAcceptsAUniquePrefix(t *testing.T) {
+	h := newHarness(t, map[string]string{
+		"books/james.md": "---\ntitle: James\nstarted: 2026-10-01\npages: 300\n---\n",
+	})
+	// "g" could be good or great, so it is asked again.
+	if err := h.run("g\ngre\nnon\n\n\n", "book", "finish", "james"); err != nil {
+		t.Fatal(err)
+	}
+	if b := h.entry("books/james.md").Book; b.Rating != content.RatingGreat || b.Form != content.FormNonfiction {
+		t.Errorf("book = %+v", b)
 	}
 }

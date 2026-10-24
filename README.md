@@ -27,6 +27,12 @@ is asked for. The script rebuilds from source when the Go code has changed, so i
 ./ryu check                 # validate content, references, and templates
 ```
 
+Adding a book you already have says so first. For a book you've finished you can add a re-read: a
+new entry like `dune-2026` with the details copied over and a `[[link]]` to the first read, so each
+read has its own write-up and counts in its year. A different book with the same title keeps its
+title but gets the author's surname in its slug (`the-power-of-the-dog-savage`). `-slug` picks one
+by hand.
+
 After `ryu` changes a file, commit it with jj as usual. Pushing to `main` deploys.
 
 ## Content

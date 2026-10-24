@@ -47,15 +47,26 @@ func (e *env) askRequired(label string) (string, error) {
 	}
 }
 
-// choose asks until the answer is one of allowed.
+// choose asks until the answer is one of allowed, or the start of exactly
+// one of them.
 func (e *env) choose(label string, allowed []string, def string) (string, error) {
 	for {
 		s, err := e.ask(fmt.Sprintf("%s (%s)", label, strings.Join(allowed, ", ")), def)
 		if err != nil {
 			return "", err
 		}
-		if slices.Contains(allowed, strings.ToLower(s)) {
-			return strings.ToLower(s), nil
+		s = strings.ToLower(s)
+		var matches []string
+		for _, a := range allowed {
+			if a == s {
+				return a, nil
+			}
+			if s != "" && strings.HasPrefix(a, s) {
+				matches = append(matches, a)
+			}
+		}
+		if len(matches) == 1 {
+			return matches[0], nil
 		}
 		fmt.Fprintf(e.out, "Pick one of: %s.\n", strings.Join(allowed, ", "))
 	}
@@ -88,17 +99,26 @@ func (e *env) entries() ([]content.Entry, error) {
 	return content.Load(os.DirFS(e.path("content")))
 }
 
-func (e *env) find(slug string) (content.Entry, error) {
+// lookup finds an entry by slug; an error means the content didn't load.
+func (e *env) lookup(slug string) (content.Entry, bool, error) {
 	entries, err := e.entries()
 	if err != nil {
-		return content.Entry{}, err
+		return content.Entry{}, false, err
 	}
 	for _, en := range entries {
 		if en.Slug == slug {
-			return en, nil
+			return en, true, nil
 		}
 	}
-	return content.Entry{}, fmt.Errorf("no entry with slug %q", slug)
+	return content.Entry{}, false, nil
+}
+
+func (e *env) find(slug string) (content.Entry, error) {
+	en, found, err := e.lookup(slug)
+	if err == nil && !found {
+		err = fmt.Errorf("no entry with slug %q", slug)
+	}
+	return en, err
 }
 
 func (e *env) save(en content.Entry) error {
@@ -192,7 +212,7 @@ func runNewPost(e *env, fs *flag.FlagSet, args []string) error {
 	if err := e.create(en); err != nil {
 		return err
 	}
-	fmt.Fprintf(e.out, "Created content/%s as a draft.\nWrite it, preview with ryu serve, then: ryu publish %s\n", en.Path, slug)
+	fmt.Fprintf(e.out, "Created content/%s as a draft.\nWrite it, preview with ./ryu serve, then: ./ryu publish %s\n", en.Path, slug)
 	return nil
 }
 
@@ -263,6 +283,7 @@ func (e *env) askTags(entries []content.Entry) ([]string, error) {
 }
 
 func runBookAdd(e *env, fs *flag.FlagSet, args []string) error {
+	slugFlag := fs.String("slug", "", "file name and URL to use instead of one made from the title")
 	if err := fs.Parse(args); err != nil {
 		return err
 	}
@@ -273,15 +294,48 @@ func runBookAdd(e *env, fs *flag.FlagSet, args []string) error {
 			return err
 		}
 	}
-	b := &content.Book{Added: e.today()}
+	slug := slugify(title)
+	if *slugFlag != "" {
+		if slugify(*slugFlag) != *slugFlag {
+			return fmt.Errorf("invalid slug %q: use lowercase letters, digits, and dashes", *slugFlag)
+		}
+		slug = *slugFlag
+	}
 
+	// Sort out a clash with an existing entry before asking anything else.
+	sameTitle := false
+	existing, found, err := e.lookup(slug)
+	if err != nil {
+		return err
+	}
+	if found {
+		fmt.Fprintf(e.out, "You already have %s.\n", describeExisting(existing))
+		label, choices := "A different book with the same title", []string{"different", "cancel"}
+		if existing.Kind == content.KindBook && existing.Book.Status() == content.StatusRead {
+			label, choices = "Re-reading it, or a different book with the same title", []string{"reread", "different", "cancel"}
+		}
+		choice, err := e.choose(label, choices, "")
+		if err != nil {
+			return err
+		}
+		switch choice {
+		case "cancel":
+			fmt.Fprintln(e.out, "Nothing added.")
+			return nil
+		case "reread":
+			return e.addReread(existing)
+		}
+		sameTitle = true
+	}
+
+	b := &content.Book{Added: e.today()}
 	docs, err := e.search.Search(context.Background(), title)
 	if err != nil {
 		fmt.Fprintf(e.out, "Open Library lookup failed (%v); enter the details by hand.\n", err)
 	}
 	var candidates []openlibrary.Doc
 	var options []string
-	for _, d := range docs {
+	for _, d := range openlibrary.Rank(docs, title) {
 		if len(d.Authors) == 0 {
 			continue
 		}
@@ -293,8 +347,12 @@ func runBookAdd(e *env, fs *flag.FlagSet, args []string) error {
 		if d.FirstPublishYear != 0 {
 			detail += fmt.Sprintf(", %d", d.FirstPublishYear)
 		}
-		if d.Pages != 0 {
-			detail += fmt.Sprintf(", ~%d pages", d.Pages)
+		// Open Library gives the median page count across editions.
+		switch {
+		case d.Pages != 0 && d.Editions > 1:
+			detail += fmt.Sprintf(", %d editions (median %d pages)", d.Editions, d.Pages)
+		case d.Pages != 0:
+			detail += fmt.Sprintf(", %d pages", d.Pages)
 		}
 		options = append(options, fmt.Sprintf("%s — %s", d.Title, detail))
 	}
@@ -331,7 +389,13 @@ func runBookAdd(e *env, fs *flag.FlagSet, args []string) error {
 		return err
 	}
 
-	slug := slugify(title)
+	if sameTitle {
+		// The title stays the same; the author's surname keeps the slug apart.
+		slug = withSurname(slug, b.Authors)
+		if _, taken, err := e.lookup(slug); err != nil || taken {
+			return fmt.Errorf("%s is taken too; pick a slug with ./ryu book add -slug <slug> %q", slug, title)
+		}
+	}
 	en := content.Entry{Kind: content.KindBook, Slug: slug, Path: "books/" + slug + ".md", Title: title, Book: b}
 	if note != "" {
 		en.Body = note + "\n"
@@ -339,8 +403,71 @@ func runBookAdd(e *env, fs *flag.FlagSet, args []string) error {
 	if err := e.create(en); err != nil {
 		return err
 	}
-	fmt.Fprintf(e.out, "Added %s to the to-read list (content/%s).\nWhen you start it: ryu book start %s\n", title, en.Path, slug)
+	fmt.Fprintf(e.out, "Added %s to the to-read list (content/%s).\nWhen you start it: ./ryu book start %s\n", title, en.Path, slug)
 	return nil
+}
+
+// addReread makes a new to-read entry for another reading of a finished
+// book, carrying over its details and linking back to the first read.
+func (e *env) addReread(first content.Entry) error {
+	slug := fmt.Sprintf("%s-%d", first.Slug, e.today().Time().Year())
+	if _, taken, err := e.lookup(slug); err != nil || taken {
+		return fmt.Errorf("%s already exists; pick a slug with ./ryu book add -slug <slug> %q", slug, first.Title)
+	}
+	note, err := e.ask("Note, like why you're reading it again (optional)", "")
+	if err != nil {
+		return err
+	}
+	fb := first.Book
+	en := content.Entry{
+		Kind: content.KindBook, Slug: slug, Path: "books/" + slug + ".md", Title: first.Title,
+		Book: &content.Book{Authors: fb.Authors, Link: fb.Link, Pages: fb.Pages, Form: fb.Form, Added: e.today()},
+		Body: fmt.Sprintf("Re-reading [[%s]], which I first read in %d.\n", first.Slug, fb.Finished.Time().Year()),
+	}
+	if note != "" {
+		en.Body += "\n" + note + "\n"
+	}
+	if err := e.create(en); err != nil {
+		return err
+	}
+	fmt.Fprintf(e.out, "Added a re-read of %s (content/%s).\nWhen you start it: ./ryu book start %s\n", first.Title, en.Path, slug)
+	return nil
+}
+
+// describeExisting says what an entry is, for messages about clashes.
+func describeExisting(en content.Entry) string {
+	if en.Kind != content.KindBook {
+		return fmt.Sprintf("a %s called %s (content/%s)", en.Kind, en.Title, en.Path)
+	}
+	b := en.Book
+	s := en.Title
+	if len(b.Authors) > 0 {
+		s += " by " + strings.Join(b.Authors, ", ")
+	}
+	switch b.Status() {
+	case content.StatusRead:
+		s += ", finished " + b.Finished.Format("Jan 2, 2006")
+	case content.StatusReading:
+		s += ", reading since " + b.Started.Format("Jan 2, 2006")
+	default:
+		s += ", on your to-read list"
+		if !b.Added.IsZero() {
+			s += " since " + b.Added.Format("Jan 2, 2006")
+		}
+	}
+	return s + " (content/" + en.Path + ")"
+}
+
+// withSurname adds the first author's surname to a slug, or -2 without one.
+func withSurname(slug string, authors []string) string {
+	if len(authors) > 0 {
+		if words := strings.Fields(authors[0]); len(words) > 0 {
+			if s := slugify(words[len(words)-1]); s != "" {
+				return slug + "-" + s
+			}
+		}
+	}
+	return slug + "-2"
 }
 
 // pickBook resolves a slug argument, or offers the books in the given
@@ -372,7 +499,7 @@ func (e *env) pickBook(slug, label string, statuses ...content.Status) (content.
 		books = append(books, group...)
 	}
 	if len(books) == 0 {
-		return content.Entry{}, errors.New("no books to choose from; add one with ryu book add")
+		return content.Entry{}, errors.New("no books to choose from; add one with ./ryu book add")
 	}
 	options := make([]string, len(books))
 	for i, b := range books {
@@ -417,7 +544,7 @@ func runBookStart(e *env, fs *flag.FlagSet, args []string) error {
 	if err := e.save(en); err != nil {
 		return err
 	}
-	fmt.Fprintf(e.out, "Started %s on %s.\nWhen you're done: ryu book finish %s\n", en.Title, when, en.Slug)
+	fmt.Fprintf(e.out, "Started %s on %s.\nWhen you're done: ./ryu book finish %s\n", en.Title, when, en.Slug)
 	return nil
 }
 

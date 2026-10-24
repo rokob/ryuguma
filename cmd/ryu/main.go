@@ -42,16 +42,16 @@ type command struct {
 
 // Commands are listed in help in this order.
 var commands = []command{
-	{name: "status", group: "Writing", summary: "what you're reading, what's next, and open drafts", usage: "ryu status", run: runStatus},
-	{name: "book add", group: "Writing", summary: "put a book on the to-read list, looked up on Open Library", usage: `ryu book add ["Title"]`, run: runBookAdd},
-	{name: "book start", group: "Writing", summary: "start reading a book from the list", usage: "ryu book start [-date d] [slug]", run: runBookStart},
-	{name: "book finish", group: "Writing", summary: "finish a book: rating, form, and pages", usage: "ryu book finish [-date d] [slug]", run: runBookFinish},
-	{name: "new atom", group: "Writing", summary: "write and publish a small idea", usage: `ryu new atom ["Name"]`, run: runNewAtom},
-	{name: "new post", group: "Writing", summary: "start a draft post", usage: `ryu new post ["Title"]`, run: runNewPost},
-	{name: "publish", group: "Writing", summary: "publish a draft, dated today", usage: "ryu publish [-keep-date] [slug]", run: runPublish},
-	{name: "serve", group: "Site", summary: "preview locally with drafts, rebuilding on change", usage: "ryu serve [-addr :8080] [-drafts=true]", run: runServe},
-	{name: "build", group: "Site", summary: "write the site to dist/", usage: "ryu build [-out dist] [-drafts]", run: runBuild},
-	{name: "check", group: "Site", summary: "validate content, references, and templates", usage: "ryu check", run: runCheck},
+	{name: "status", group: "Writing", summary: "what you're reading, what's next, and open drafts", usage: "./ryu status", run: runStatus},
+	{name: "book add", group: "Writing", summary: "put a book on the to-read list, looked up on Open Library", usage: `./ryu book add [-slug s] ["Title"]`, run: runBookAdd},
+	{name: "book start", group: "Writing", summary: "start reading a book from the list", usage: "./ryu book start [-date d] [slug]", run: runBookStart},
+	{name: "book finish", group: "Writing", summary: "finish a book: rating, form, and pages", usage: "./ryu book finish [-date d] [slug]", run: runBookFinish},
+	{name: "new atom", group: "Writing", summary: "write and publish a small idea", usage: `./ryu new atom ["Name"]`, run: runNewAtom},
+	{name: "new post", group: "Writing", summary: "start a draft post", usage: `./ryu new post ["Title"]`, run: runNewPost},
+	{name: "publish", group: "Writing", summary: "publish a draft, dated today", usage: "./ryu publish [-keep-date] [slug]", run: runPublish},
+	{name: "serve", group: "Site", summary: "preview locally with drafts, rebuilding on change", usage: "./ryu serve [-addr :8080] [-drafts=true]", run: runServe},
+	{name: "build", group: "Site", summary: "write the site to dist/", usage: "./ryu build [-out dist] [-drafts]", run: runBuild},
+	{name: "check", group: "Site", summary: "validate content, references, and templates", usage: "./ryu check", run: runCheck},
 }
 
 func main() {
@@ -127,10 +127,10 @@ func printHelp(w io.Writer) {
 			group = c.group
 			fmt.Fprintf(w, "\n%s:\n", group)
 		}
-		fmt.Fprintf(w, "  %-40s %s\n", c.usage, c.summary)
+		fmt.Fprintf(w, "  %-42s %s\n", c.usage, c.summary)
 	}
-	fmt.Fprintln(w, "\nAnything left off is asked for. Run ryu <command> -h for details.")
-	fmt.Fprintln(w, "ryu works from anywhere inside the repo.")
+	fmt.Fprintln(w, "\nAnything left off is asked for. Run ./ryu <command> -h for details.")
+	fmt.Fprintln(w, "From a subdirectory, run it by path, like ../ryu.")
 }
 
 // newFlags makes a flag set whose -h output shows the command's usage.
