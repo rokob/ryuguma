@@ -1,6 +1,8 @@
 ---
 title: The Athena Project
 author: Brad Thor
+series: Scot Harvath
+number: 9.5
 link: https://www.amazon.com/dp/B003UV8T9U
 finished: 2020-06-14
 pages: 337
