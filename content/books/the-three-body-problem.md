@@ -1,6 +1,8 @@
 ---
 title: The Three-Body Problem
 author: Cixin Liu
+series: Remembrance of Earth's Past
+number: 1
 link: https://www.amazon.com/dp/B00IQO403K
 finished: 2020-01-20
 pages: 400

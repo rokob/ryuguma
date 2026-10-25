@@ -1,6 +1,8 @@
 ---
 title: Fifty Shades of Grey
 author: E. L. James
+series: Fifty Shades
+number: 1
 link: https://www.amazon.com/dp/0345803485
 finished: 2015-01-11
 pages: 514

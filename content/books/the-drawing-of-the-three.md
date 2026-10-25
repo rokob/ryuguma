@@ -1,6 +1,8 @@
 ---
 title: The Drawing of the Three
 author: Stephen King
+series: The Dark Tower
+number: 2
 link: https://www.amazon.com/dp/B018ER7IRI
 finished: 2017-05-16
 pages: 529

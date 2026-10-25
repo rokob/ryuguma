@@ -1,6 +1,8 @@
 ---
 title: Fever House
 author: Keith Rosson
+series: Fever House
+number: 1
 link: https://www.amazon.com/dp/B0BP6S1S57
 finished: 2024-11-12
 pages: 426
