@@ -1,6 +1,8 @@
 ---
 title: Morning Star
 author: Pierce Brown
+series: Red Rising
+number: 3
 link: https://www.amazon.com/dp/B00SPVPX2G
 finished: 2016-04-15
 pages: 545

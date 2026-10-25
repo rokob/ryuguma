@@ -1,6 +1,8 @@
 ---
 title: State of the Union
 author: Brad Thor
+series: Scot Harvath
+number: 3
 link: https://www.amazon.com/dp/145160792X
 finished: 2015-07-09
 pages: 592

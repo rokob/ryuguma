@@ -1,6 +1,8 @@
 ---
 title: Golden Son
 author: Pierce Brown
+series: Red Rising
+number: 2
 link: https://www.amazon.com/dp/B00I765ZEU
 finished: 2015-07-04
 pages: 466

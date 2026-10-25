@@ -1,6 +1,8 @@
 ---
 title: The Return Of The King
 author: J.R.R. Tolkien
+series: The Lord of the Rings
+number: 3
 link: https://www.amazon.com/dp/B007978OY6
 finished: 2025-11-08
 pages: 432

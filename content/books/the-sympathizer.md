@@ -1,6 +1,8 @@
 ---
 title: The Sympathizer
 author: Viet Thanh Nguyen
+series: The Sympathizer
+number: 1
 link: https://www.amazon.com/dp/B00PSSG4MM
 finished: 2017-07-30
 pages: 384

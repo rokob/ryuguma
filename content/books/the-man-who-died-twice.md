@@ -1,6 +1,8 @@
 ---
 title: The Man Who Died Twice
 author: Richard Osman
+series: Thursday Murder Club
+number: 2
 link: https://www.amazon.com/dp/B08ZJVVB5S
 finished: 2026-01-02
 pages: 365

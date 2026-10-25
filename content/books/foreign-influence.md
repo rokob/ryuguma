@@ -1,6 +1,8 @@
 ---
 title: Foreign Influence
 author: Brad Thor
+series: Scot Harvath
+number: 9
 link: https://www.amazon.com/dp/B003BHM87C
 finished: 2019-02-17
 pages: 388

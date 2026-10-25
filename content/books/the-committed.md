@@ -1,6 +1,8 @@
 ---
 title: The Committed
 author: Viet Thanh Nguyen
+series: The Sympathizer
+number: 2
 link: https://www.amazon.com/dp/B085FP3VT1
 finished: 2022-04-15
 pages: 400

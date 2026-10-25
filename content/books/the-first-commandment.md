@@ -1,6 +1,8 @@
 ---
 title: The First Commandment
 author: Brad Thor
+series: Scot Harvath
+number: 6
 link: https://www.amazon.com/dp/B000UG78KY
 finished: 2017-12-31
 pages: 421

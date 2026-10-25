@@ -1,6 +1,8 @@
 ---
 title: Dune Messiah
 author: Frank Herbert
+series: Dune
+number: 2
 link: https://www.amazon.com/dp/B0011UGNDG
 finished: 2015-10-28
 pages: 340

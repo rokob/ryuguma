@@ -1,6 +1,8 @@
 ---
 title: Full Black
 author: Brad Thor
+series: Scot Harvath
+number: 10
 link: https://www.amazon.com/dp/B004G8QTZW
 finished: 2021-01-22
 pages: 402

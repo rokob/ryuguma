@@ -1,6 +1,8 @@
 ---
 title: The City of Ember
 author: Jeanne DuPrau
+series: Books of Ember
+number: 1
 link: https://www.amazon.com/dp/0375822747
 finished: 2015-07-02
 pages: 270

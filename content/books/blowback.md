@@ -1,6 +1,8 @@
 ---
 title: Blowback
 author: Brad Thor
+series: Scot Harvath
+number: 4
 link: https://www.amazon.com/dp/B000FCKB84
 finished: 2015-11-03
 pages: 608

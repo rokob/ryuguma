@@ -1,6 +1,8 @@
 ---
 title: Path of the Assassin
 author: Brad Thor
+series: Scot Harvath
+number: 2
 link: https://www.amazon.com/dp/B000FC0SP0
 finished: 2015-06-16
 pages: 496

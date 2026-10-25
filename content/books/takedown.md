@@ -1,6 +1,8 @@
 ---
 title: Takedown
 author: Brad Thor
+series: Scot Harvath
+number: 5
 link: https://www.amazon.com/dp/1451636156
 finished: 2015-12-10
 pages: 528

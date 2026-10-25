@@ -1,6 +1,8 @@
 ---
 title: Dune
 author: Frank Herbert
+series: Dune
+number: 1
 link: https://www.amazon.com/dp/B00B7NPRY8
 finished: 2015-08-03
 pages: 894

@@ -1,6 +1,8 @@
 ---
 title: Authority
 author: Jeff VanderMeer
+series: Southern Reach
+number: 2
 link: https://www.amazon.com/dp/B00GET18P2
 finished: 2018-04-22
 pages: 353

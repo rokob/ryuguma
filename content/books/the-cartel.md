@@ -1,6 +1,8 @@
 ---
 title: The Cartel
 author: Don Winslow
+series: Power of the Dog
+number: 2
 link: https://www.amazon.com/dp/B00PP3DNCE
 finished: 2017-11-30
 pages: 770

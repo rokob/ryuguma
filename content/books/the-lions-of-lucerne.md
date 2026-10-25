@@ -1,6 +1,8 @@
 ---
 title: The Lions of Lucerne
 author: Brad Thor
+series: Scot Harvath
+number: 1
 link: https://www.amazon.com/dp/B000FC0R7O
 finished: 2015-02-24
 pages: 544
