@@ -55,7 +55,7 @@ you had your daughter instead. The wheels keep turning around
 the same way even if the tune is different.
 
 I would not recommend reading this book immediately
-after reading [*See How Small*] like I did, but in general
+after reading [[see-how-small]] like I did, but in general
 I would recommend this book. It is mostly depressing, but
 I feel it has an honesty and realism that shine through
 to make it hard to put down.
