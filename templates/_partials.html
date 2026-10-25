@@ -36,6 +36,28 @@
 {{/* A link to any page, labelled the way a [[ref]] would be. */}}
 {{define "ref"}}<a href="{{.URL}}">{{if eq .Kind "book"}}<cite>{{.Title}}</cite>{{else}}{{.Title}}{{end}}</a>{{end}}
 
+{{/* The other books in a book's series. The book's own row is marked and not
+   linked. A book read more than once links each read instead of its title. */}}
+{{define "series"}}{{$page := .}}{{with .Series}}{{if gt (len .Books) 1}}
+<aside class="series">
+  <h2>{{.Name}} series</h2>
+  <ol>{{range $book := .Books}}{{$here := false}}{{range .Reads}}{{if eq .Slug $page.Slug}}{{$here = true}}{{end}}{{end}}
+    <li{{if $here}} aria-current="page"{{end}}>
+      <span class="series-number">{{with .Number}}{{.}}{{end}}</span>
+      {{if or $here (gt (len .Reads) 1)}}<cite>{{.Title}}</cite>{{else}}{{template "ref" index .Reads 0}}{{end}}
+      <span class="series-reads">
+        {{- range $i, $read := .Reads}}{{if $i}} · {{end}}
+        {{- if or (eq .Slug $page.Slug) (eq (len $book.Reads) 1)}}{{template "read-status" .}}{{else}}<a href="{{.URL}}">{{template "read-status" .}}</a>{{end}}
+        {{- end}}</span>
+    </li>{{end}}
+  </ol>
+</aside>
+{{end}}{{end}}{{end}}
+
+{{define "read-status"}}{{with .Book}}
+  {{- if eq .Status "read"}}read {{.Finished.Format "Jan 2006"}}{{else if eq .Status "reading"}}reading now{{else}}on the list{{end}}
+{{- end}}{{end}}
+
 {{define "backlinks"}}{{with .Backlinks}}
 <aside class="backlinks">
   <h2>Referenced by</h2>

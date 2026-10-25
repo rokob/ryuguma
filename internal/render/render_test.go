@@ -25,6 +25,10 @@ func fixtureSite(t *testing.T) *site.Site {
 			Book: &content.Book{Authors: []string{"Percival Everett"}, Started: content.MustDate("2026-05-01")}},
 		{Kind: content.KindBook, Slug: "someday", Path: "books/someday.md", Title: "Someday",
 			Date: content.MustDate("2026-02-01"), Book: &content.Book{Added: content.MustDate("2026-02-01")}},
+		{Kind: content.KindBook, Slug: "red-rising", Path: "books/red-rising.md", Title: "Red Rising", Date: content.MustDate("2019-01-01"),
+			Book: &content.Book{Series: "Red Rising", Number: 1, Finished: content.MustDate("2019-01-01")}},
+		{Kind: content.KindBook, Slug: "golden-son", Path: "books/golden-son.md", Title: "Golden Son", Date: content.MustDate("2019-02-01"),
+			Book: &content.Book{Series: "Red Rising", Number: 2, Finished: content.MustDate("2019-02-01")}},
 		{Kind: content.KindPost, Slug: "hello", Path: "posts/hello.md", Title: "Hello", Date: content.MustDate("2014-01-01"),
 			Tags: []string{"life"}, Body: "First I read [[dune]].\n"},
 		{Kind: content.KindAtom, Slug: "idea", Path: "atoms/idea.md", Title: "An idea", Date: content.MustDate("2026-06-01"), Body: "A small idea.\n"},
@@ -52,7 +56,7 @@ func TestSiteWritesEveryPage(t *testing.T) {
 	}
 	want := []string{
 		"404.html", "about/index.html", "atoms/idea/index.html", "atoms/index.html",
-		"books/dune/history/index.html", "books/dune/index.html", "books/index.html", "books/james/index.html", "books/someday/index.html",
+		"books/dune/history/index.html", "books/dune/index.html", "books/golden-son/index.html", "books/index.html", "books/james/index.html", "books/red-rising/index.html", "books/someday/index.html",
 		"index.html", "posts/hello/index.html", "posts/index.html", "reading/index.html",
 		"tags/index.html", "tags/life/index.html", "tags/scifi/index.html",
 	}
@@ -166,5 +170,30 @@ func TestPips(t *testing.T) {
 		if got := pips(r); !slices.Equal(got, want) {
 			t.Errorf("pips(%s) = %v, want %v", r, got, want)
 		}
+	}
+}
+
+func TestBookPageShowsItsSeries(t *testing.T) {
+	out := MemOutput{}
+	if err := Site(fixtureSite(t), cfg, os.DirFS("../../templates"), out); err != nil {
+		t.Fatalf("Site: %v", err)
+	}
+	html := string(out["books/golden-son/index.html"])
+	for _, want := range []string{
+		"<dt>Series</dt><dd>Red Rising, book 2</dd>",
+		"Red Rising series",
+		`<a href="/books/red-rising/"><cite>Red Rising</cite></a>`,
+		"read Jan 2019",
+		`aria-current="page"`,
+	} {
+		if !strings.Contains(html, want) {
+			t.Errorf("golden-son: missing %q", want)
+		}
+	}
+	if strings.Contains(html, `href="/books/golden-son/"`) {
+		t.Error("golden-son links to itself in its series")
+	}
+	if dune := string(out["books/dune/index.html"]); strings.Contains(dune, "series") {
+		t.Error("dune is not in a series but mentions one")
 	}
 }

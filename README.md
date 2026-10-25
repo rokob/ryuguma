@@ -60,7 +60,9 @@ tags: [literary]
 ```
 
 A book in a series takes `series: Red Rising` and, optionally, `number: 2` for its place in it (`2.5`
-works for an in-between novella). Keep them as two keys: in YAML, ` #2` would start a comment.
+works for an in-between novella). Keep them as two keys: in YAML, ` #2` would start a comment. The
+book's page lists every book from the series you've logged, numbered ones first. Re-reads share a row,
+since they keep the title. Spellings of a series that differ only in case or punctuation fail the build.
 
 **Posts** (`content/posts/`) take `title`, `date`, optional `summary`, `tags`, and `draft`.
 **Atoms** (`content/atoms/`) take `title` (a short name, which is also the slug), `date`, and `tags`.
