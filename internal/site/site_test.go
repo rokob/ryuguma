@@ -177,3 +177,57 @@ func TestRefToDraftOrMissingIsAnError(t *testing.T) {
 		}
 	}
 }
+
+func seriesBook(slug, title string, number float64, b content.Book) content.Entry {
+	b.Series, b.Number = "Red Rising", number
+	return book(slug, title, b, "")
+}
+
+func TestBuildSeries(t *testing.T) {
+	entries := append(fixture(),
+		seriesBook("golden-son", "Golden Son", 2, content.Book{Finished: content.MustDate("2019-02-01")}),
+		seriesBook("red-rising", "Red Rising", 1, content.Book{Finished: content.MustDate("2019-01-01")}),
+		seriesBook("dark-age", "Dark Age", 5, content.Book{Added: content.MustDate("2020-01-01")}),
+		seriesBook("red-rising-2026", "Red Rising", 1, content.Book{Started: content.MustDate("2026-09-01")}),
+		seriesBook("lightbringer", "Lightbringer", 0, content.Book{Finished: content.MustDate("2021-01-01")}),
+		seriesBook("sevro", "Sevro", 0, content.Book{Finished: content.MustDate("2018-01-01")}),
+	)
+	s, err := site.Build(entries, site.Options{})
+	if err != nil {
+		t.Fatal(err)
+	}
+	series := s.Lookup("golden-son").Series
+	if series == nil || series.Name != "Red Rising" {
+		t.Fatalf("golden-son series = %+v", series)
+	}
+	var got []string
+	for _, b := range series.Books {
+		got = append(got, b.Title+"="+slugs(b.Reads))
+	}
+	// Numbered books in order, then unnumbered ones in the order they were
+	// read. A re-read joins the first read of the same title.
+	want := "Red Rising=red-rising,red-rising-2026 Golden Son=golden-son Dark Age=dark-age Sevro=sevro Lightbringer=lightbringer"
+	if strings.Join(got, " ") != want {
+		t.Errorf("books = %v, want %s", got, want)
+	}
+	if s.Lookup("dark-age").Series != series {
+		t.Error("books in a series should share it")
+	}
+	if s.Lookup("dune").Series != nil {
+		t.Error("a book without a series has one")
+	}
+}
+
+func TestSeriesSpellingsMustMatch(t *testing.T) {
+	a := book("red-rising", "Red Rising", content.Book{Series: "Red Rising", Finished: content.MustDate("2019-01-01")}, "")
+	b := book("golden-son", "Golden Son", content.Book{Series: "Red rising", Finished: content.MustDate("2019-02-01")}, "")
+	_, err := site.Build([]content.Entry{a, b}, site.Options{})
+	if err == nil {
+		t.Fatal("expected error")
+	}
+	for _, want := range []string{"books/golden-son.md", `"Red rising"`, `"Red Rising"`, "books/red-rising.md"} {
+		if !strings.Contains(err.Error(), want) {
+			t.Errorf("error %q does not mention %s", err, want)
+		}
+	}
+}
