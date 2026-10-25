@@ -18,6 +18,8 @@ func TestEncodeBookFormat(t *testing.T) {
 		Body:  "Body text.\n",
 		Book: &content.Book{
 			Authors:  []string{"Robert M. Pirsig"},
+			Series:   "Phaedrus",
+			Number:   2,
 			Link:     "https://www.amazon.com/dp/0553299611",
 			Finished: content.MustDate("2017-03-10"),
 			Pages:    468,
@@ -32,6 +34,8 @@ func TestEncodeBookFormat(t *testing.T) {
 	want := `---
 title: 'Lila: An Inquiry into Morals'
 author: Robert M. Pirsig
+series: Phaedrus
+number: 2
 link: https://www.amazon.com/dp/0553299611
 finished: 2017-03-10
 pages: 468
@@ -55,6 +59,8 @@ func TestEncodeRoundTrip(t *testing.T) {
 			Body:  "Some *notes*.\n",
 			Book: &content.Book{
 				Authors: []string{"Daniel J. Siegel", "Tina Payne Bryson"},
+				Series:  "Parenting",
+				Number:  1.5,
 				ISBN:    "9780553386691",
 				Added:   content.MustDate("2019-12-01"),
 				Started: content.MustDate("2020-02-01"),

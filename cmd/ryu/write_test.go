@@ -317,7 +317,7 @@ func TestNewAtomNeedsText(t *testing.T) {
 	}
 }
 
-const readOdyssey = "---\ntitle: '2001: A Space Odyssey'\nauthor: Arthur C. Clarke\nlink: https://www.amazon.com/dp/B000FC0PBC\nfinished: 2019-06-02\npages: 297\nrating: great\nform: fiction\n---\n\nReview.\n"
+const readOdyssey = "---\ntitle: '2001: A Space Odyssey'\nauthor: Arthur C. Clarke\nseries: Space Odyssey\nnumber: 1\nlink: https://www.amazon.com/dp/B000FC0PBC\nfinished: 2019-06-02\npages: 297\nrating: great\nform: fiction\n---\n\nReview.\n"
 
 func TestBookAddRereadMakesALinkedEntry(t *testing.T) {
 	h := newHarness(t, map[string]string{"books/2001-a-space-odyssey.md": readOdyssey})
@@ -336,6 +336,9 @@ func TestBookAddRereadMakesALinkedEntry(t *testing.T) {
 	}
 	if b.Link != "https://www.amazon.com/dp/B000FC0PBC" || b.Pages != 297 || b.Form != content.FormFiction {
 		t.Errorf("details should be copied from the first read: %+v", b)
+	}
+	if b.Series != "Space Odyssey" || b.Number != 1 {
+		t.Errorf("series should be copied from the first read: %q %v", b.Series, b.Number)
 	}
 	if b.Status() != content.StatusToRead || b.Rating != "" || b.Added.String() != "2026-10-25" {
 		t.Errorf("re-read should start on the to-read list: %+v", b)

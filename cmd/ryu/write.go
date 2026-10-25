@@ -421,7 +421,7 @@ func (e *env) addReread(first content.Entry) error {
 	fb := first.Book
 	en := content.Entry{
 		Kind: content.KindBook, Slug: slug, Path: "books/" + slug + ".md", Title: first.Title,
-		Book: &content.Book{Authors: fb.Authors, Link: fb.Link, Pages: fb.Pages, Form: fb.Form, Added: e.today()},
+		Book: &content.Book{Authors: fb.Authors, Series: fb.Series, Number: fb.Number, Link: fb.Link, Pages: fb.Pages, Form: fb.Form, Added: e.today()},
 		Body: fmt.Sprintf("Re-reading [[%s]], which I first read in %d.\n", first.Slug, fb.Finished.Time().Year()),
 	}
 	if note != "" {

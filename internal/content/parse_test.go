@@ -72,6 +72,22 @@ func TestParseBookMultipleAuthors(t *testing.T) {
 	}
 }
 
+func TestParseBookSeries(t *testing.T) {
+	src := "---\ntitle: Golden Son\nseries: Red Rising\nnumber: 2\nfinished: 2019-02-01\n---\n"
+	e, err := content.Parse("books/golden-son.md", []byte(src))
+	if err != nil {
+		t.Fatalf("Parse: %v", err)
+	}
+	if e.Book.Series != "Red Rising" || e.Book.Number != 2 {
+		t.Errorf("Series, Number = %q, %v", e.Book.Series, e.Book.Number)
+	}
+
+	src = "---\ntitle: Edgedancer\nseries: The Stormlight Archive\nnumber: 2.5\nfinished: 2019-02-01\n---\n"
+	if e, err = content.Parse("books/edgedancer.md", []byte(src)); err != nil || e.Book.Number != 2.5 {
+		t.Errorf("novella number = %v, %v", e.Book.Number, err)
+	}
+}
+
 func TestBookStatusFollowsLifecycleDates(t *testing.T) {
 	cases := []struct {
 		dates string
@@ -169,6 +185,8 @@ func TestParseErrors(t *testing.T) {
 		{"bad form", "books/x.md", "---\ntitle: x\nform: poetry\n---\n", "form"},
 		{"bad link", "books/x.md", "---\ntitle: x\nlink: amazon\n---\n", "link"},
 		{"bad date", "posts/x.md", "---\ntitle: x\ndate: last tuesday\n---\n", "date"},
+		{"number without series", "books/x.md", "---\ntitle: x\nnumber: 2\n---\n", "series"},
+		{"number not positive", "books/x.md", "---\ntitle: x\nseries: y\nnumber: -1\n---\n", "number"},
 		{"finished before started", "books/x.md", "---\ntitle: x\nstarted: 2020-02-01\nfinished: 2020-01-01\n---\n", "before"},
 		{"unknown directory", "notes/x.md", "---\ntitle: x\n---\n", "notes"},
 		{"bad slug", "posts/Hello World.md", "---\ntitle: x\ndate: 2020-01-01\n---\n", "slug"},

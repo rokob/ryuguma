@@ -24,6 +24,8 @@ var slugPattern = regexp.MustCompile(`^[a-z0-9]+(-[a-z0-9]+)*$`)
 type bookFrontmatter struct {
 	Title    string   `yaml:"title"`
 	Author   names    `yaml:"author,omitempty"`
+	Series   string   `yaml:"series,omitempty"`
+	Number   float64  `yaml:"number,omitempty"`
 	Link     string   `yaml:"link,omitempty"`
 	ISBN     string   `yaml:"isbn,omitempty"`
 	Added    Date     `yaml:"added,omitempty"`
@@ -90,6 +92,8 @@ func parse(p string, data []byte) (Entry, error) {
 		e.Title, e.Tags, e.Draft = f.Title, f.Tags, f.Draft
 		e.Book = &Book{
 			Authors:  f.Author,
+			Series:   f.Series,
+			Number:   f.Number,
 			Link:     f.Link,
 			ISBN:     f.ISBN,
 			Added:    f.Added,
@@ -173,6 +177,12 @@ func validate(e Entry) error {
 		}
 		if b.Form != "" && !slices.Contains(Forms, b.Form) {
 			errs = append(errs, fmt.Errorf("invalid form %q (want fiction or nonfiction)", b.Form))
+		}
+		if b.Number != 0 && b.Series == "" {
+			errs = append(errs, errors.New("number needs a series"))
+		}
+		if b.Number < 0 {
+			errs = append(errs, fmt.Errorf("invalid number %v (want a positive number)", b.Number))
 		}
 		if b.Link != "" && !IsWebURL(b.Link) {
 			errs = append(errs, fmt.Errorf("invalid link %q (want a full http or https URL)", b.Link))

@@ -59,6 +59,9 @@ tags: [literary]
 ---
 ```
 
+A book in a series takes `series: Red Rising` and, optionally, `number: 2` for its place in it (`2.5`
+works for an in-between novella). Keep them as two keys: in YAML, ` #2` would start a comment.
+
 **Posts** (`content/posts/`) take `title`, `date`, optional `summary`, `tags`, and `draft`.
 **Atoms** (`content/atoms/`) take `title` (a short name, which is also the slug), `date`, and `tags`.
 They need some text and are published as soon as they exist.

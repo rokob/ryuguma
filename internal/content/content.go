@@ -57,6 +57,10 @@ type Entry struct {
 
 type Book struct {
 	Authors []string
+	// Series names the series the book belongs to, and Number is its place in
+	// it. Number is optional, and can be fractional for in-between novellas.
+	Series string
+	Number float64
 	// Link points at a canonical page for the book, like its Open Library
 	// or store page.
 	Link     string
