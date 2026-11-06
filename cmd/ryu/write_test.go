@@ -13,6 +13,7 @@ import (
 	"time"
 
 	"github.com/rokob/ryuguma/internal/content"
+	"github.com/rokob/ryuguma/internal/history"
 	"github.com/rokob/ryuguma/internal/openlibrary"
 )
 
@@ -32,6 +33,9 @@ type harness struct {
 	root   string
 	out    bytes.Buffer
 	search fakeSearch
+	// historyReads counts reads of git history, which the harness fakes as
+	// empty.
+	historyReads int
 }
 
 // newHarness makes a site repo in a temp dir with the given content files.
@@ -58,13 +62,18 @@ func (h *harness) run(input string, args ...string) error {
 	h.t.Helper()
 	h.out.Reset()
 	e := &env{
-		project: &project{root: h.root},
+		project: &project{root: h.root, readHistory: h.readHistory},
 		now:     func() time.Time { return testNow },
 		in:      bufio.NewReader(strings.NewReader(input)),
 		out:     &h.out,
 		search:  h.search,
 	}
 	return run(args, e)
+}
+
+func (h *harness) readHistory(_ string, paths []string) (*history.Log, error) {
+	h.historyReads++
+	return history.Parse(strings.NewReader(""), paths)
 }
 
 func (h *harness) entry(rel string) content.Entry {

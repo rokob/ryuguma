@@ -24,6 +24,9 @@ const configFile = "site.yaml"
 // project is the site repo on disk.
 type project struct {
 	root string
+	// readHistory reads the git history of paths in the repo at root. It
+	// defaults to history.FromGit.
+	readHistory func(root string, paths []string) (*history.Log, error)
 }
 
 func (p *project) path(parts ...string) string {
@@ -44,31 +47,55 @@ func (p *project) config() (render.Config, error) {
 	return cfg, nil
 }
 
-func (p *project) load(opts site.Options) (*site.Site, error) {
+// source is the content and its git history, read once so more than one site
+// can be built from it.
+type source struct {
+	entries []content.Entry
+	log     *history.Log
+}
+
+func (p *project) read() (source, error) {
 	entries, err := content.Load(os.DirFS(p.path("content")))
 	if err != nil {
-		return nil, err
+		return source{}, err
 	}
 	paths := make([]string, len(entries))
 	for i, e := range entries {
 		paths[i] = "content/" + e.Path
 	}
-	log, err := history.FromGit(p.root, paths)
-	if err != nil {
-		return nil, err
+	readHistory := p.readHistory
+	if readHistory == nil {
+		readHistory = history.FromGit
 	}
-	opts.History = func(path string) []history.Revision { return log.For("content/" + path) }
-	return site.Build(entries, opts)
+	log, err := readHistory(p.root, paths)
+	if err != nil {
+		return source{}, err
+	}
+	return source{entries: entries, log: log}, nil
+}
+
+func (src source) site(opts site.Options) (*site.Site, error) {
+	opts.History = func(path string) []history.Revision { return src.log.For("content/" + path) }
+	return site.Build(src.entries, opts)
 }
 
 // build renders the whole site into out.
 func (p *project) build(opts site.Options, out render.Output, now time.Time) (*site.Site, error) {
+	src, err := p.read()
+	if err != nil {
+		return nil, err
+	}
+	return p.renderSite(src, opts, out, now)
+}
+
+// renderSite builds a site from src and renders it into out.
+func (p *project) renderSite(src source, opts site.Options, out render.Output, now time.Time) (*site.Site, error) {
 	cfg, err := p.config()
 	if err != nil {
 		return nil, err
 	}
 	cfg.BuiltAt = now
-	s, err := p.load(opts)
+	s, err := src.site(opts)
 	if err != nil {
 		return nil, err
 	}
@@ -110,12 +137,18 @@ func runCheck(e *env, fs *flag.FlagSet, args []string) error {
 	if err := fs.Parse(args); err != nil {
 		return err
 	}
-	// Building without drafts also catches published pages linking to drafts.
-	s, err := e.build(site.Options{}, render.MemOutput{}, e.now())
+	// Content and history are read once and built twice. Building without
+	// drafts catches published pages linking to drafts, and building with
+	// them checks the drafts themselves.
+	src, err := e.read()
 	if err != nil {
 		return err
 	}
-	withDrafts, err := e.load(site.Options{Drafts: true})
+	s, err := e.renderSite(src, site.Options{}, render.MemOutput{}, e.now())
+	if err != nil {
+		return err
+	}
+	withDrafts, err := src.site(site.Options{Drafts: true})
 	if err != nil {
 		return err
 	}
