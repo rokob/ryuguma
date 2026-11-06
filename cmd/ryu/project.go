@@ -112,12 +112,15 @@ func (p *project) renderSite(src source, opts site.Options, out render.Output, n
 }
 
 func runBuild(e *env, fs *flag.FlagSet, args []string) error {
-	outDir := fs.String("out", "dist", "output directory, relative to the repo root")
+	outDir := fs.String("out", "dist", "output directory inside the repo, relative to the repo root")
 	drafts := fs.Bool("drafts", false, "include drafts")
 	if err := fs.Parse(args); err != nil {
 		return err
 	}
-	dir := e.path(*outDir)
+	dir := *outDir
+	if !filepath.IsAbs(dir) {
+		dir = e.path(dir)
+	}
 	if rel, err := filepath.Rel(e.root, dir); err != nil || rel == "." || strings.HasPrefix(rel, "..") {
 		return fmt.Errorf("refusing to build into %s: it must be a subdirectory of the repo", dir)
 	}

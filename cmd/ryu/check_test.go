@@ -67,3 +67,27 @@ func TestCheckCatchesPublishedLinksToDrafts(t *testing.T) {
 		t.Errorf("err = %v, want the link to the draft", err)
 	}
 }
+
+func TestBuildRefusesAnAbsoluteOutOutsideTheRepo(t *testing.T) {
+	h := newSiteHarness(t, map[string]string{"books/dune.md": readDune})
+	outside := t.TempDir()
+	err := h.run("", "build", "-out", outside)
+	if err == nil || !strings.Contains(err.Error(), "subdirectory of the repo") {
+		t.Errorf("err = %v", err)
+	}
+	// It used to be joined onto the repo root and quietly built in there.
+	if _, err := os.Stat(filepath.Join(h.root, outside)); !os.IsNotExist(err) {
+		t.Errorf("built inside the repo: %v", err)
+	}
+}
+
+func TestBuildTakesAnAbsoluteOutInsideTheRepo(t *testing.T) {
+	h := newSiteHarness(t, map[string]string{"books/dune.md": readDune})
+	out := filepath.Join(h.root, "public")
+	if err := h.run("", "build", "-out", out); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := os.Stat(filepath.Join(out, "books", "dune", "index.html")); err != nil {
+		t.Error(err)
+	}
+}
