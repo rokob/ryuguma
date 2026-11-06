@@ -1,7 +1,15 @@
 #!/bin/sh
-# Runs ryu from the current source, so it is never stale. The build is
-# cached and takes a moment only after Go code changes.
+# Runs ryu from the current source, so it is never stale. Asking go build
+# whether anything changed costs a few hundred milliseconds, so it only
+# runs when some file under cmd/ or internal/, or go.mod or go.sum, is newer
+# than the binary.
 set -e
 root=$(dirname "$0")
-go build -C "$root" -o bin/ryu ./cmd/ryu
-exec "$root/bin/ryu" "$@"
+bin="$root/bin/ryu"
+if [ ! -x "$bin" ] || [ -n "$(find "$root/cmd" "$root/internal" "$root/go.mod" "$root/go.sum" -newer "$bin" -print -quit)" ]; then
+  go build -C "$root" -o bin/ryu ./cmd/ryu
+  # go build leaves the binary alone when nothing really changed, so mark it
+  # current or every run would rebuild.
+  touch "$bin"
+fi
+exec "$bin" "$@"
